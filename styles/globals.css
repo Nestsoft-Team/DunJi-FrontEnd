@@ -1,16 +1,19 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+html {
+    font-size: 62.5%;
 }
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base {
+    @font-face {
+        font-family: "SegoeUI";
+        src: local("SegoeUI"), url("../fonts/SegoeUI.ttf") format("truetype");
+    }
 
-* {
-  box-sizing: border-box;
+    @font-face {
+        font-family: "HANDotum";
+        src: local("Nanum-Gothic"),
+            url("../fonts/HANDotum.ttf") format("truetype");
+    }
 }
