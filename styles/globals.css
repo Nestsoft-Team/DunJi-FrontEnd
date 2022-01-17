@@ -9,11 +9,13 @@ html {
     @font-face {
         font-family: "SegoeUI";
         src: local("SegoeUI"), url("../fonts/SegoeUI.ttf") format("truetype");
+        font-display: swap;
     }
 
     @font-face {
         font-family: "HANDotum";
         src: local("Nanum-Gothic"),
             url("../fonts/HANDotum.ttf") format("truetype");
+        font-display: swap;
     }
 }
