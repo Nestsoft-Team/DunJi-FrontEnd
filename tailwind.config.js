@@ -13,6 +13,7 @@ module.exports = {
             fontFamily: {
                 sans: ["SegoeUI"],
                 HANDotum: ["HANDotum"],
+                NotoSansKR: ["NotoSansKR"],
             },
             width: {
                 main_width: "25rem",
