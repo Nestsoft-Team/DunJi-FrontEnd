@@ -12,18 +12,16 @@ const Login = () => {
             <h1 className="text-6xl mb-8  text-yellow">DUNGJI</h1>
             <form className="w-full flex flex-col">
                 <input
-                    className=" p-4 mb-4 h-16 border-solid border border-black text-blur rounded-2xl font-sans outline-0 
+                    className=" p-4 mb-4 h-16 border-solid border border-black text-blur rounded-2xl  outline-0 
                     focus:border-yellow"
                     placeholder="이메일 주소 입력"
                 ></input>
                 <input
-                    className=" p-4 mb-4 h-16 border-solid border border-black text-blur rounded-2xl font-sans outline-0 
+                    className=" p-4 mb-4 h-16 border-solid border border-black text-blur rounded-2xl  outline-0 
                     focus:border-yellow"
                     placeholder="비밀번호 입력"
                 ></input>
-                <button className="bg-yellow h-16 font-sans text-2xl">
-                    로그인
-                </button>
+                <button className="bg-yellow h-16  text-2xl ">로그인</button>
             </form>
             <div className="w-full flex items-center h-16 mb-4">
                 <input
