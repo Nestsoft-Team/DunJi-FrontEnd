@@ -18,4 +18,11 @@ html {
             url("../fonts/HANDotum.ttf") format("truetype");
         font-display: swap;
     }
+
+    @font-face {
+        font-family: "NotoSansKR";
+        src: local("NotoSansKR"),
+            url("../fonts/NotoSansKR-Medium.otf") format("truetype");
+        font-display: swap;
+    }
 }
