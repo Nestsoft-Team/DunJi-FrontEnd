@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Login({}) {
     const [check, setCheck] = useState(false);
-    const checkBoxHandler = (check: boolean, setCheck: any) => {
+    const checkBoxHandler = (check: boolean) => {
         setCheck(!check);
     };
     return (
@@ -38,7 +38,7 @@ export default function Login({}) {
                     className={`font-SegoeUI   inline-block before:content-[''] w-6 h-6 border border-blur mr-2  algin-middle font-NotoSansKR  rounded-md text-center ${
                         check ? "before:content-['✔️'] text-white " : ""
                     }`}
-                    onClick={() => checkBoxHandler(check, setCheck)}
+                    onClick={() => checkBoxHandler(check)}
                 ></label>
                 <span className="text-blur text-xl font-normal">
                     아이디 저장
