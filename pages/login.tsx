@@ -8,7 +8,7 @@ export default function Login({}) {
         setCheck(!check);
     };
     return (
-        <div className="flex items-center flex-col mx-auto my-40 w-main_width font-bold ">
+        <div className="flex items-center flex-col mx-auto my-40 w-main_width  font-bold ">
             <h1 className="text-6xl mb-8  text-yellow font-NotoSansKR">
                 DUNGJI
             </h1>
