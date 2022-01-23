@@ -16,7 +16,7 @@ module.exports = {
                 NotoSansKR: ["NotoSansKR"],
             },
             width: {
-                main_width: "60vw",
+                main_width: "70vw",
             },
             height: {
                 "10vh": "10vh",
@@ -39,6 +39,9 @@ module.exports = {
                 "80vw": "80vw",
                 "90vw": "90vw",
                 "100vw": "100vw",
+            },
+            minWidth: {
+                20: "25rem",
             },
         },
     },
