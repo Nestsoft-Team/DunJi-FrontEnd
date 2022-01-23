@@ -8,7 +8,7 @@ export default function Login({}) {
         setCheck(!check);
     };
     return (
-        <div className="flex items-center flex-col mx-auto my-40 w-main_width  font-bold ">
+        <div className="flex min-w-20 items-center flex-col mx-auto my-40 w-main_width  font-bold ">
             <h1 className="text-6xl mb-8  text-yellow font-NotoSansKR">
                 DUNGJI
             </h1>
@@ -28,10 +28,9 @@ export default function Login({}) {
             <div className="w-full flex items-center h-16 mb-4 ">
                 <input
                     type="checkbox"
-                    color="default"
                     id="id-save"
-                    checked={check}
-                    className="hidden group"
+                    defaultChecked={check}
+                    className="hidden"
                 />
                 <label
                     htmlFor="id-save"
@@ -44,10 +43,10 @@ export default function Login({}) {
                     아이디 저장
                 </span>
                 <div className="ml-auto font-normal">
-                    <Link href="/policy">
-                        <span className="  mr-2 after:content-['|'] after:pl-2">
+                    <Link href="/register/policy">
+                        <a className="  mr-2 after:content-['|'] after:pl-2">
                             회원가입
-                        </span>
+                        </a>
                     </Link>
                     <Link href="/password_reset">비밀번호 재설정</Link>
                 </div>
