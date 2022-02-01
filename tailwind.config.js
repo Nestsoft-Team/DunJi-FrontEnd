@@ -7,6 +7,8 @@ module.exports = {
         extend: {
             colors: {
                 yellow: "#fbd40a",
+                light_yellow: "#FEECA3",
+                title_color: "#282F66",
                 blur: "rgba(0,0,0,0.4)",
                 sky_blue: "#8ec2f6",
             },
