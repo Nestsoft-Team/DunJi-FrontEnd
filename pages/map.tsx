@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import Nav from "../components/map/nav";
 
 declare global {
     interface Window {
@@ -8,9 +11,12 @@ declare global {
     }
 }
 
-function Map() {
+export default function Map() {
     const [latitude, setLatitude] = useState(37.297526827747966);
     const [longitude, setLongitude] = useState(126.835628984629);
+
+    const inputRef = useRef<HTMLInputElement>(null);
+    const inputContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const getLocation = () => {
@@ -21,7 +27,7 @@ function Map() {
                         setLongitude(position.coords.longitude);
                     },
                     function (error) {
-                        alert("브라우저 설정에서 위치 접근을 허용해 주세요");
+                        // alert("브라우저 설정에서 위치 접근을 허용해 주세요");
                         console.log(error);
                     },
                     {
@@ -49,7 +55,7 @@ function Map() {
                 const container = document.getElementById("map");
                 const options = {
                     center: new window.kakao.maps.LatLng(latitude, longitude),
-                    level: 5,
+                    level: 6,
                 };
                 const map = new window.kakao.maps.Map(container, options);
                 const markerPosition = new window.kakao.maps.LatLng(
@@ -66,25 +72,66 @@ function Map() {
         return () => mapScript.removeEventListener("load", onLoadKakaoMap);
     }, [latitude, longitude]);
 
+    function inputBlurHandler() {
+        inputRef.current ? inputRef.current.blur() : null;
+        inputContainerRef.current
+            ? inputContainerRef.current.classList.remove("shadow-xl")
+            : null;
+    }
+
+    function inputShadowHandler() {
+        inputContainerRef.current
+            ? inputContainerRef.current.classList.add("shadow-xl")
+            : null;
+    }
+
     return (
-        <div className="w-full h-full">
-            <div className="absolute z-10 text-yellow text-5xl top-5 left-5">
+        <div className="w-full h-full flex flex-col">
+            <div className="absolute z-10 text-dark_yellow text-5xl top-12 left-5">
                 <Link href="/">
                     <a>
+                        {/* <Image
+                        src={require("../image/map/search.png")}
+                        alt="search"
+                        width={40}
+                        height={40}
+                    ></Image> */}
                         <FontAwesomeIcon icon="chevron-left" />
                     </a>
                 </Link>
             </div>
-            <input
-                className="absolute z-10 top-20 right-1/2 translate-x-1/2
-                h-16
-                w-4/5
-                rounded-2xl
-            "
-            ></input>
-            <div id="map" className=" z-0 text-yelloww-screen h-screen"></div>;
+            <div
+                ref={inputContainerRef}
+                className="absolute z-10 bg-white top-32 right-1/2 translate-x-1/2  flex items-center h-20 w-4/5 border  rounded-3xl "
+            >
+                <div className=" ml-4  flex items-center">
+                    <Image
+                        src={require("../image/map/search.png")}
+                        alt="search"
+                        width={40}
+                        height={40}
+                    ></Image>
+                </div>
+                <input
+                    onFocus={inputShadowHandler}
+                    ref={inputRef}
+                    className="ml-4 w-full h-full border-none outline-none bg-transparent text-xl"
+                ></input>
+                <div className=" mr-6 flex items-center">
+                    <Image
+                        src={require("../image/map/filter_yellow.png")}
+                        alt="filter"
+                        width={40}
+                        height={40}
+                    ></Image>
+                </div>
+            </div>
+            <Nav />
+            <div
+                id="map"
+                onClick={inputBlurHandler}
+                className="w-screen h-screen"
+            ></div>
         </div>
     );
 }
-
-export default Map;
