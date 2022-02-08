@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import Nav from "../components/map/nav";
+import RoomList from "../components/map/roomList";
 
 declare global {
     interface Window {
@@ -12,7 +13,7 @@ declare global {
 }
 
 export default function Map() {
-    const [latitude, setLatitude] = useState(37.297526827747966);
+    const [latitude, setLatitude] = useState(37.297526827747966); //한양대 에리카 위도,경도
     const [longitude, setLongitude] = useState(126.835628984629);
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -72,16 +73,17 @@ export default function Map() {
         return () => mapScript.removeEventListener("load", onLoadKakaoMap);
     }, [latitude, longitude]);
 
+    function inputShadowHandler() {
+        //input Box 클릭 시 그림자 추가
+        inputContainerRef.current
+            ? inputContainerRef.current.classList.add("shadow-xl")
+            : null;
+    }
     function inputBlurHandler() {
+        //지도 클릭 시 input Box 그림자 제거
         inputRef.current ? inputRef.current.blur() : null;
         inputContainerRef.current
             ? inputContainerRef.current.classList.remove("shadow-xl")
-            : null;
-    }
-
-    function inputShadowHandler() {
-        inputContainerRef.current
-            ? inputContainerRef.current.classList.add("shadow-xl")
             : null;
     }
 
@@ -96,7 +98,7 @@ export default function Map() {
             </div>
             <div
                 ref={inputContainerRef}
-                className="absolute z-10 bg-white top-32 right-1/2 translate-x-1/2  flex items-center h-20 w-4/5 border  rounded-3xl shadow-thick"
+                className="absolute z-10 bg-white top-32 right-1/2 translate-x-1/2  flex items-center h-20 w-4/5 border  rounded-3xl "
             >
                 <div className=" ml-4  flex items-center">
                     <Image
@@ -120,7 +122,10 @@ export default function Map() {
                     ></Image>
                 </div>
             </div>
-            <Nav />
+            <div className="flex flex-col  fixed bottom-0 z-10 items-center">
+                <RoomList />
+                <Nav />
+            </div>
             <div
                 id="map"
                 onClick={inputBlurHandler}

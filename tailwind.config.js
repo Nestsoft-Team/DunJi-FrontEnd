@@ -47,12 +47,19 @@ module.exports = {
                 20: "25rem",
             },
             boxShadow: {
-                thick: "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-                notBottom:
-                    "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
+                thick: "0 0 20px 3px rgba(0,0,0,0.2)",
             },
             rounded: {
                 middle: "40px 40px 40px 40px",
+            },
+            animation: {
+                "room-list-up": "room-list-up-key 0.3s linear reverse",
+            },
+            keyframes: {
+                "room-list-up-key": {
+                    "0%": { transform: "none" },
+                    "100%": { transform: "translateY(100%)" },
+                },
             },
         },
     },
