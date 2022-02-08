@@ -6,6 +6,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
+                dark_yellow: "#e58e26",
                 yellow: "#fbd40a",
                 light_yellow: "#FEECA3",
                 title_color: "#282F66",
@@ -44,6 +45,21 @@ module.exports = {
             },
             minWidth: {
                 20: "25rem",
+            },
+            boxShadow: {
+                thick: "0 0 20px 3px rgba(0,0,0,0.2)",
+            },
+            rounded: {
+                middle: "40px 40px 40px 40px",
+            },
+            animation: {
+                "room-list-up": "room-list-up-key 0.3s linear reverse",
+            },
+            keyframes: {
+                "room-list-up-key": {
+                    "0%": { transform: "none" },
+                    "100%": { transform: "translateY(100%)" },
+                },
             },
         },
     },
