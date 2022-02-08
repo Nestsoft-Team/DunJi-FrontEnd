@@ -90,19 +90,13 @@ export default function Map() {
             <div className="absolute z-10 text-dark_yellow text-5xl top-12 left-5">
                 <Link href="/">
                     <a>
-                        {/* <Image
-                        src={require("../image/map/search.png")}
-                        alt="search"
-                        width={40}
-                        height={40}
-                    ></Image> */}
                         <FontAwesomeIcon icon="chevron-left" />
                     </a>
                 </Link>
             </div>
             <div
                 ref={inputContainerRef}
-                className="absolute z-10 bg-white top-32 right-1/2 translate-x-1/2  flex items-center h-20 w-4/5 border  rounded-3xl "
+                className="absolute z-10 bg-white top-32 right-1/2 translate-x-1/2  flex items-center h-20 w-4/5 border  rounded-3xl shadow-thick"
             >
                 <div className=" ml-4  flex items-center">
                     <Image
@@ -115,7 +109,7 @@ export default function Map() {
                 <input
                     onFocus={inputShadowHandler}
                     ref={inputRef}
-                    className="ml-4 w-full h-full border-none outline-none bg-transparent text-xl"
+                    className="ml-4 w-full h-full border-none outline-none bg-transparent text-xl "
                 ></input>
                 <div className=" mr-6 flex items-center">
                     <Image
