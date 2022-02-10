@@ -54,6 +54,7 @@ module.exports = {
             },
             animation: {
                 "room-list-up": "room-list-up-key 0.3s linear reverse",
+                "room-list-down": "room-list-up-key 0.3s linear",
             },
             keyframes: {
                 "room-list-up-key": {

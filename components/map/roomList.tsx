@@ -8,9 +8,11 @@ export default function RoomList() {
         setRoomFoucus(num);
     }
     const [upDown, setUpDown] = useState<boolean>(false);
+
     const unDownHandler = () => {
         setUpDown(!upDown);
     };
+
     return (
         <div className=" z-10 flex flex-col justify-center w-full items-center ">
             <div
@@ -29,7 +31,11 @@ export default function RoomList() {
                 </div>
             </div>
             {upDown ? (
-                <div className="h-full animate-room-list-up bg-white shadow-thick">
+                <div
+                    className={`h-full animate-room-list-up bg-white shadow-thick ${
+                        !upDown ? "animate-room-list-down" : null
+                    }`}
+                >
                     <div //upDownHandler 가 적용된 화살표 컴포넌트
                         onClick={unDownHandler}
                         className={`
