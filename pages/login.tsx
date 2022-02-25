@@ -1,11 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Dispatch } from "redux";
 
 export default function Login({}) {
     const [check, setCheck] = useState(false);
     const checkBoxHandler = (check: boolean) => {
         setCheck(!check);
+    };
+    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_REST_API_KEY}&redirect_uri=${process.env.NEXT_PUBLIC_REDIRECT_URL}&response_type=code`;
+
+    const loginHandler = (e: any) => {
+        e.preventDefault();
+        console.log(1);
     };
     return (
         <div className="flex min-w-20 items-center flex-col mx-auto my-40 w-main_width  font-bold ">
@@ -23,7 +30,12 @@ export default function Login({}) {
                     focus:border-yellow"
                     placeholder="비밀번호 입력"
                 ></input>
-                <button className="bg-yellow h-16  text-2xl ">로그인</button>
+                <button
+                    className="bg-yellow h-16  text-2xl"
+                    onClick={(e) => loginHandler(e)}
+                >
+                    로그인
+                </button>
             </form>
             <div className="w-full flex items-center h-16 mb-4 ">
                 <input
@@ -57,15 +69,19 @@ export default function Login({}) {
                     <Image
                         width={30}
                         height={30}
-                        src={require("../image/naver_logo.png")}
+                        src={require("image/logo/naver_logo.png")}
                         alt="naver_logo"
                     />
-                    <Image
-                        width={30}
-                        height={30}
-                        src={require("../image/google_logo.png")}
-                        alt="naver_logo"
-                    />
+                    <Link href={KAKAO_AUTH_URL}>
+                        <a>
+                            <Image
+                                width={30}
+                                height={30}
+                                src={require("image/logo/kakao_logo.png")}
+                                alt="naver_logo"
+                            />
+                        </a>
+                    </Link>
                 </span>
             </div>
         </div>
