@@ -1,6 +1,7 @@
 @tailwind base;
 html {
     font-size: 62.5%;
+    /* font-family: NotoSansKR; */
 }
 @tailwind components;
 @tailwind utilities;

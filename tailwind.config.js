@@ -12,6 +12,7 @@ module.exports = {
                 title_color: "#282F66",
                 blur: "rgba(0,0,0,0.4)",
                 sky_blue: "#8ec2f6",
+                orange: "#EC9449",
             },
             fontFamily: {
                 sans: ["SegoeUI"],
@@ -20,6 +21,19 @@ module.exports = {
             },
             width: {
                 main_width: "70vw",
+                "10vw": "10vw",
+                "20vw": "20vw",
+                "30vw": "30vw",
+                "40vw": "40vw",
+                "50vw": "50vw",
+                "60vw": "60vw",
+                "70vw": "70vw",
+                "80vw": "80vw",
+                "90vw": "90vw",
+                "100vw": "100vw",
+            },
+            padding: {
+                room_register_pd: "6vw",
             },
             height: {
                 "10vh": "10vh",
@@ -32,16 +46,6 @@ module.exports = {
                 "80vh": "80vh",
                 "90vh": "90vh",
                 "100vh": "100vh",
-                "10vw": "10vw",
-                "20vw": "20vw",
-                "30vw": "30vw",
-                "40vw": "40vw",
-                "50vw": "50vw",
-                "60vw": "60vw",
-                "70vw": "70vw",
-                "80vw": "80vw",
-                "90vw": "90vw",
-                "100vw": "100vw",
             },
             minWidth: {
                 20: "25rem",
@@ -49,8 +53,9 @@ module.exports = {
             boxShadow: {
                 thick: "0 0 20px 3px rgba(0,0,0,0.2)",
             },
-            rounded: {
+            borderRadius: {
                 middle: "40px 40px 40px 40px",
+                room_register_rounded: "2xl",
             },
             animation: {
                 "room-list-up": "room-list-up-key 0.3s linear reverse",
