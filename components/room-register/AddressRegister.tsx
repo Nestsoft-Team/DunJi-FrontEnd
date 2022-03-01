@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PostCode from "components/daum-postcode";
+import { useSelector } from "react-redux";
+import { RootState } from "store";
 
 type HeaderProps = {
     isPopupOpen: boolean;
@@ -10,6 +12,8 @@ export default function AddressRegister({
     isPopupOpen,
     setIsPopupOpen,
 }: HeaderProps) {
+    const RoomRegister = useSelector((state: RootState) => state.roomRegister);
+    console.log(RoomRegister);
     return (
         <>
             <PostCode
