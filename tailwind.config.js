@@ -12,7 +12,7 @@ module.exports = {
                 title_color: "#282F66",
                 blur: "rgba(0,0,0,0.4)",
                 sky_blue: "#8ec2f6",
-                orange: "#EC9449",
+                orange: "#EF9545",
             },
             fontFamily: {
                 sans: ["SegoeUI"],

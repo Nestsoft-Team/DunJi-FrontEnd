@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PostCode from "components/daum-postcode";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
+import PostCode from "components/daum-postcode";
+import Map from "components/room-register/Map";
+import { useState } from "react";
+import { dispatchDetailAddress } from "store/roomRegister";
 
 type HeaderProps = {
     isPopupOpen: boolean;
@@ -12,8 +15,13 @@ export default function AddressRegister({
     isPopupOpen,
     setIsPopupOpen,
 }: HeaderProps) {
+    const dispatch = useDispatch();
     const RoomRegister = useSelector((state: RootState) => state.roomRegister);
-    console.log(RoomRegister);
+    const [detailAddress, updateDetailAddress] = useState("");
+    const inputHandler = (e: any) => {
+        updateDetailAddress(e.target.value);
+        dispatch(dispatchDetailAddress(e.target.value));
+    };
     return (
         <>
             <PostCode
@@ -35,16 +43,42 @@ export default function AddressRegister({
                             icon="chevron-down"
                         />
                     </div>
-                    <button
-                        className="flex items-center justify-center bg-orange text-white w-80vw
-                h-[7vh]
-                text-2xl rounded-2xl mt-10"
-                        onClick={() => setIsPopupOpen(true)}
-                    >
-                        주소 찾기
-                    </button>
+                    <div className="px-room_register_pd  w-full">
+                        <button
+                            className="flex items-center justify-center mb-8 bg-orange text-white w-full 
+                        h-[7vh]
+                        text-2xl rounded-2xl mt-10"
+                            onClick={() => setIsPopupOpen(true)}
+                        >
+                            주소 찾기
+                        </button>
+                    </div>
+                    {RoomRegister.ROOM_REGISTER_MAIN_ADDRESS && (
+                        <>
+                            <div className="w-screen px-room_register_pd ">
+                                <Map />
+                            </div>
+                            <div className="w-full px-room_register_pd py-8 text-2xl font-semibold border-b">
+                                {RoomRegister.ROOM_REGISTER_MAIN_ADDRESS}
+                            </div>
+                            <div className="w-screen justify-between px-room_register_pd h-24 items-center text-xl">
+                                <div className="my-4 font-semibold">
+                                    상세주소를 입력해 주세요.
+                                </div>
+                                <input
+                                    type="text"
+                                    className="w-full px-4 outline-0 focus:shadow-thick border h-[6vh]  rounded-2xl"
+                                    value={detailAddress}
+                                    placeholder="동/호수를 입력해 주세요."
+                                    onChange={inputHandler}
+                                ></input>
+                            </div>
+                        </>
+                    )}
                 </>
             )}
         </>
     );
+}
+{
 }
