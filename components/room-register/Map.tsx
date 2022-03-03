@@ -25,7 +25,7 @@ export default function Map() {
                 var geocoder = new window.kakao.maps.services.Geocoder();
                 geocoder.addressSearch(
                     address,
-                    function (result: any, status: any) {
+                    function (result: any, status: String) {
                         if (status === window.kakao.maps.services.Status.OK) {
                             const longitude = result[0].x; // 경도
                             const latitude = result[0].y; //위도

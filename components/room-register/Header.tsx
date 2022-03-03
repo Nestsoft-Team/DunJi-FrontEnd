@@ -1,15 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store";
+import { dispatchAddressOpen } from "store/roomRegister";
 
-type HeaderProps = {
-    isPopupOpen: boolean;
-    setIsPopupOpen: Function;
-};
+export default function Header() {
+    const dispatch = useDispatch();
+    const roomRegister = useSelector((state: RootState) => state.roomRegister);
 
-export default function Header({ isPopupOpen, setIsPopupOpen }: HeaderProps) {
     return (
         <>
-            {isPopupOpen ? (
+            {roomRegister.ROOM_REGISTER_ADDRESS_OPEN ? (
                 <header
                     className="flex w-screen justify-between px-room_register_pd 
         py-4  h-24 items-center text-xl  border-b"
@@ -18,7 +19,11 @@ export default function Header({ isPopupOpen, setIsPopupOpen }: HeaderProps) {
                         <div
                             className="flex items-center"
                             onClick={() => {
-                                setIsPopupOpen(false);
+                                dispatch(
+                                    dispatchAddressOpen(
+                                        !roomRegister.ROOM_REGISTER_ADDRESS_OPEN
+                                    )
+                                );
                             }}
                         >
                             <FontAwesomeIcon icon="chevron-left" />
@@ -30,7 +35,13 @@ export default function Header({ isPopupOpen, setIsPopupOpen }: HeaderProps) {
                         height={15}
                         alt="x"
                         src={require("image/header/x.png")}
-                        onClick={() => setIsPopupOpen(false)}
+                        onClick={() =>
+                            dispatch(
+                                dispatchAddressOpen(
+                                    !roomRegister.ROOM_REGISTER_ADDRESS_OPEN
+                                )
+                            )
+                        }
                     />
                 </header>
             ) : (

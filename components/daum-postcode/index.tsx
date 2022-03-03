@@ -1,16 +1,15 @@
 import DaumPostcode from "react-daum-postcode";
-import { dispatchMainAddress } from "store/roomRegister";
-import { useDispatch } from "react-redux";
+import { dispatchAddressOpen, dispatchMainAddress } from "store/roomRegister";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "store";
 
-type HeaderProps = {
-    isPopupOpen: boolean;
-    setIsPopupOpen: Function;
-};
-const PostCode = ({ isPopupOpen, setIsPopupOpen }: HeaderProps) => {
+const PostCode = () => {
     const dispatch = useDispatch();
+    const RoomRegister = useSelector((state: RootState) => state.roomRegister);
+
     const handleComplete = (data: any) => {
         let fullAddress = data.autoJibunAddress || data.jibunAddress;
-        setIsPopupOpen(false);
+        dispatch(dispatchAddressOpen(!RoomRegister.ROOM_REGISTER_ADDRESS_OPEN));
         dispatch(dispatchMainAddress(fullAddress));
     };
 
@@ -19,7 +18,7 @@ const PostCode = ({ isPopupOpen, setIsPopupOpen }: HeaderProps) => {
     };
     return (
         <>
-            {isPopupOpen && (
+            {RoomRegister.ROOM_REGISTER_ADDRESS_OPEN && (
                 <DaumPostcode
                     style={postCodeStyle}
                     onComplete={handleComplete}

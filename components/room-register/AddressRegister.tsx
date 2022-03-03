@@ -4,32 +4,21 @@ import { RootState } from "store";
 import PostCode from "components/daum-postcode";
 import Map from "components/room-register/Map";
 import { useState } from "react";
-import { dispatchDetailAddress } from "store/roomRegister";
+import { dispatchAddressOpen, dispatchDetailAddress } from "store/roomRegister";
 
-type HeaderProps = {
-    isPopupOpen: boolean;
-    setIsPopupOpen: Function;
-};
-
-export default function AddressRegister({
-    isPopupOpen,
-    setIsPopupOpen,
-}: HeaderProps) {
+export default function AddressRegister() {
     const dispatch = useDispatch();
     const RoomRegister = useSelector((state: RootState) => state.roomRegister);
     const [detailAddress, updateDetailAddress] = useState("");
-    const inputHandler = (e: any) => {
-        updateDetailAddress(e.target.value);
-        dispatch(dispatchDetailAddress(e.target.value));
+    const btnHandler = (val: Boolean) => dispatch(dispatchAddressOpen(val));
+    const inputHandler = (e: React.FormEvent<HTMLInputElement>) => {
+        updateDetailAddress(e.currentTarget.value);
+        dispatch(dispatchDetailAddress(e.currentTarget.value));
     };
     return (
         <>
-            <PostCode
-                isPopupOpen={isPopupOpen}
-                setIsPopupOpen={setIsPopupOpen}
-            />
-
-            {!isPopupOpen && (
+            <PostCode />
+            {!RoomRegister.ROOM_REGISTER_ADDRESS_OPEN && (
                 <>
                     <div
                         className="flex w-screen justify-between px-room_register_pd 
@@ -48,7 +37,11 @@ export default function AddressRegister({
                             className="flex items-center justify-center mb-8 bg-orange text-white w-full 
                         h-[7vh]
                         text-2xl rounded-2xl mt-10"
-                            onClick={() => setIsPopupOpen(true)}
+                            onClick={() =>
+                                btnHandler(
+                                    !RoomRegister.ROOM_REGISTER_ADDRESS_OPEN
+                                )
+                            }
                         >
                             주소 찾기
                         </button>

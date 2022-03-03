@@ -8,7 +8,7 @@ import BottomNextBtn from "components/room-register/BottomNextBtn";
 export default function Register() {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const roomRegister = useSelector((state: RootState) => state.roomRegister);
-    // console.log(roomRegister);
+    console.log(roomRegister);
     return (
         <div className="h-screen relative flex flex-col items-center">
             <Header isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen} />
