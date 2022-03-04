@@ -1,5 +1,5 @@
 import DaumPostcode from "react-daum-postcode";
-import { dispatchAddressOpen, dispatchMainAddress } from "store/roomRegister";
+import { dispatchMainAddress, dispatchPostCodeOpen } from "store/roomRegister";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
 
@@ -9,12 +9,14 @@ const PostCode = () => {
 
     const handleComplete = (data: any) => {
         let fullAddress = data.autoJibunAddress || data.jibunAddress;
-        dispatch(dispatchAddressOpen(!RoomRegister.ROOM_REGISTER_ADDRESS_OPEN));
+        dispatch(
+            dispatchPostCodeOpen(!RoomRegister.ROOM_REGISTER_POSTCODE_OPEN)
+        );
         dispatch(dispatchMainAddress(fullAddress));
     };
 
     const postCodeStyle = {
-        height: "100%",
+        height: "85vh",
     };
     return (
         <>

@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
-import { dispatchAddressOpen } from "store/roomRegister";
+import { dispatchPostCodeOpen } from "store/roomRegister";
 
 export default function Header() {
     const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export default function Header() {
 
     return (
         <>
-            {roomRegister.ROOM_REGISTER_ADDRESS_OPEN ? (
+            {roomRegister.ROOM_REGISTER_POSTCODE_OPEN ? (
                 <header
                     className="flex w-screen justify-between px-room_register_pd 
         py-4  h-24 items-center text-xl  border-b"
@@ -20,8 +20,8 @@ export default function Header() {
                             className="flex items-center"
                             onClick={() => {
                                 dispatch(
-                                    dispatchAddressOpen(
-                                        !roomRegister.ROOM_REGISTER_ADDRESS_OPEN
+                                    dispatchPostCodeOpen(
+                                        !roomRegister.ROOM_REGISTER_POSTCODE_OPEN
                                     )
                                 );
                             }}
@@ -37,8 +37,8 @@ export default function Header() {
                         src={require("image/header/x.png")}
                         onClick={() =>
                             dispatch(
-                                dispatchAddressOpen(
-                                    !roomRegister.ROOM_REGISTER_ADDRESS_OPEN
+                                dispatchPostCodeOpen(
+                                    !roomRegister.ROOM_REGISTER_POSTCODE_OPEN
                                 )
                             )
                         }
