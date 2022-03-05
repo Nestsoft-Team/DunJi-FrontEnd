@@ -12,11 +12,13 @@ export default function Price() {
                 value={deposit}
                 setValue={setDeposit}
                 placeHolder="보증금"
+                unit="만원"
             />
             <CommonInput
                 value={monthly}
                 setValue={setMonthly}
                 placeHolder="월세"
+                unit="만원"
             />
         </>
     );

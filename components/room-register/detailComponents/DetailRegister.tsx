@@ -4,6 +4,16 @@ import SubHeader from "../SubHeader";
 import TransactionType from "./TransactionType";
 import Price from "./Price";
 import ManagementFee from "./ManagementFee";
+import Floor from "./Floor";
+import Area from "./Area";
+import Elevator from "./Elevator";
+import Parking from "./Parking";
+import Option from "./Option";
+import MoveDate from "./MoveDate";
+import DetailText from "./DetailText";
+import Owner from "./Owner";
+import Pet from "./Pet";
+import Loan from "./Loan";
 
 export default function DetailRegister() {
     const dispatch = useDispatch();
@@ -17,6 +27,16 @@ export default function DetailRegister() {
                 <TransactionType />
                 <Price />
                 <ManagementFee />
+                <Floor />
+                <Area />
+                <Elevator />
+                <Parking />
+                <Option />
+                <MoveDate />
+                <DetailText />
+                <Owner />
+                <Pet />
+                <Loan />
             </div>
         </div>
     );

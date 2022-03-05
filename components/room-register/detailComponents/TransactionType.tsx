@@ -29,7 +29,7 @@ export default function TransactionType() {
     return (
         <>
             <div className="py-6  text-orange text-2xl">거래유형</div>
-            <div className="w-full flex gap-2 h-16 ">
+            <div className="w-full flex gap-room_register_gap  h-room_register_btn_height1">
                 <CommonBtn
                     value="월세"
                     check={btn1Check}

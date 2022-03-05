@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CategoryHeader from "./CategoryHeader";
 import CommonBtn from "./CommonBtn";
 
@@ -11,52 +11,6 @@ export default function Price() {
     const [btn3Check, setBtn3Check] = useState(false);
     const [btn4Check, setBtn4Check] = useState(false);
     const [btn5Check, setBtn5Check] = useState(false);
-
-    useEffect(() => {
-        if (btn1Check) {
-            setBtn1Check(true);
-            setBtn2Check(false);
-            setBtn3Check(false);
-            setBtn4Check(false);
-            setBtn5Check(false);
-        }
-    }, [btn1Check]);
-    useEffect(() => {
-        if (btn2Check) {
-            setBtn1Check(false);
-            setBtn2Check(true);
-            setBtn3Check(false);
-            setBtn4Check(false);
-            setBtn5Check(false);
-        }
-    }, [btn2Check]);
-    useEffect(() => {
-        if (btn3Check) {
-            setBtn1Check(false);
-            setBtn2Check(false);
-            setBtn3Check(true);
-            setBtn4Check(false);
-            setBtn5Check(false);
-        }
-    }, [btn3Check]);
-    useEffect(() => {
-        if (btn4Check) {
-            setBtn1Check(false);
-            setBtn2Check(false);
-            setBtn3Check(false);
-            setBtn4Check(true);
-            setBtn5Check(false);
-        }
-    }, [btn4Check]);
-    useEffect(() => {
-        if (btn5Check) {
-            setBtn1Check(false);
-            setBtn2Check(false);
-            setBtn3Check(false);
-            setBtn4Check(false);
-            setBtn5Check(true);
-        }
-    }, [btn5Check]);
 
     const feeHandler = (value: string) => {
         if (!noFeeCheck && !negotiable) {
@@ -73,7 +27,7 @@ export default function Price() {
     return (
         <>
             <CategoryHeader title="관리비" />
-            <div className="relative h-16">
+            <div className="relative h-room_register_btn_height2">
                 <input
                     type="number"
                     className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-orange"
@@ -110,7 +64,7 @@ export default function Price() {
                 <input type="checkbox" id="negotiable" className="hidden" />
                 <span>협의 가능</span>
             </div>
-            <div className="w-full grid grid-cols-3 h-32 gap-2">
+            <div className="w-full grid grid-cols-3 h-[7rem] gap-2">
                 <CommonBtn
                     value="전기세"
                     check={btn1Check}

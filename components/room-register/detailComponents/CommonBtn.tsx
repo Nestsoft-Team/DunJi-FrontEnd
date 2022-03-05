@@ -7,7 +7,7 @@ type propsType = {
 export default function CommonBtn({ value, check, checkHandler }: propsType) {
     return (
         <button
-            className={`focus-bg-black  rounded-room_register_rounded h-full w-full border border-border_color text-xl  ${
+            className={`focus-bg-black  rounded-room_register_rounded h-room_register_btn_height1 w-full border border-border_color text-xl  ${
                 check
                     ? "bg-orange border-0 text-white"
                     : "  bg-white text-border_color"
