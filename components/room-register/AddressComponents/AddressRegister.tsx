@@ -50,7 +50,7 @@ export default function AddressRegister() {
                                 <div className="w-screen px-room_register_pd ">
                                     <Map />
                                 </div>
-                                <div className="w-full px-room_register_pd py-8 text-2xl font-semibold border-b">
+                                <div className="w-full px-room_register_pd py-8 text-2xl font-semibold border-b border-border_color">
                                     {roomRegister.ROOM_REGISTER_MAIN_ADDRESS}
                                 </div>
                                 <div className="w-screen justify-between px-room_register_pd  items-center text-xl">
@@ -59,7 +59,7 @@ export default function AddressRegister() {
                                     </div>
                                     <input
                                         type="text"
-                                        className="w-full px-4 outline-0 focus:shadow-thick border h-[6vh]  rounded-2xl"
+                                        className="w-full px-4 outline-0 focus:shadow-thick border border-border_color h-[6vh]  rounded-2xl"
                                         value={detailAddress}
                                         placeholder="동/호수를 입력해 주세요."
                                         onChange={inputHandler}

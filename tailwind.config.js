@@ -13,6 +13,7 @@ module.exports = {
                 blur: "rgba(0,0,0,0.4)",
                 sky_blue: "#8ec2f6",
                 orange: "#EF9545",
+                border_color: "#D2D2D2",
             },
             fontFamily: {
                 sans: ["SegoeUI"],
@@ -55,7 +56,7 @@ module.exports = {
             },
             borderRadius: {
                 middle: "40px 40px 40px 40px",
-                room_register_rounded: "2xl",
+                room_register_rounded: "1rem",
             },
             animation: {
                 "room-list-up": "room-list-up-key 0.3s linear reverse",

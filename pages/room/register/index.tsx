@@ -9,7 +9,7 @@ export default function Register() {
     const roomRegister = useSelector((state: RootState) => state.roomRegister);
     console.log(roomRegister);
     return (
-        <div className="min-h-screen overflow-y-auto relative">
+        <div className=" relative pb-[12rem]">
             <Header />
             <AddressRegister />
             <DetailRegister />
