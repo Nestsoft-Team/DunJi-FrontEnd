@@ -1,8 +1,9 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import "../styles/FontAwesome";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function app({ Component, pageProps }: AppProps) {
+    return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default app;
