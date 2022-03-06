@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home({}) {
     return (
-        <div className="font-NotoSansKR h-screen ">
+        <div className=" h-screen ">
             <section className="h-2/5 bg-yellow">
                 <header className="flex items-center text-4xl justify-between py-10 mx-12">
                     <div className="flex items-center">

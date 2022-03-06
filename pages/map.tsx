@@ -6,12 +6,6 @@ import Image from "next/image";
 import Nav from "../components/map/nav";
 import RoomList from "../components/map/roomList";
 
-declare global {
-    interface Window {
-        kakao: any;
-    }
-}
-
 export default function Map() {
     const [latitude, setLatitude] = useState(37.297526827747966); //한양대 에리카 위도,경도
     const [longitude, setLongitude] = useState(126.835628984629);
