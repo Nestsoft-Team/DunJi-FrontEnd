@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CategoryHeader from "./CategoryHeader";
+import CategoryHeader from "../CategoryHeader";
 
 export default function MoveDate() {
     const [year, setYear] = useState<string>();

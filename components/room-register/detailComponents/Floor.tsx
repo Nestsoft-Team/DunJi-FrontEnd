@@ -1,4 +1,4 @@
-import CategoryHeader from "./CategoryHeader";
+import CategoryHeader from "../CategoryHeader";
 import CommonSelect from "./CommonSelect";
 export default function Floor() {
     return (
