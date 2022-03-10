@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "store";
 import PostCode from "components/daum-postcode";
-import Map from "components/room-register/AddressComponents/Map";
+import Map from "components/room-register/addressComponents/Map";
 import { useState } from "react";
 import {
     dispatchDetailAddress,

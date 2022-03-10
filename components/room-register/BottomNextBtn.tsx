@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
 import {
     dispatchAddressOpen,
-    dispatchDetailInfoOpen,
+    dispatchDetailComponentOpen,
     dispatchPostCodeOpen,
 } from "store/roomRegister";
 
@@ -16,7 +16,7 @@ export default function BottomNextBtn() {
         ) {
             dispatch(dispatchPostCodeOpen(false));
             dispatch(dispatchAddressOpen(false));
-            dispatch(dispatchDetailInfoOpen(true));
+            dispatch(dispatchDetailComponentOpen(true));
         }
     };
     return (

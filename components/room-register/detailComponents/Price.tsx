@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CategoryHeader from "./CategoryHeader";
+import CategoryHeader from "../CategoryHeader";
 import CommonInput from "./CommonInput";
 
 export default function Price() {

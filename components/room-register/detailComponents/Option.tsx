@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CategoryHeader from "./CategoryHeader";
+import CategoryHeader from "../CategoryHeader";
 import CommonBtn from "./CommonBtn";
 
 export default function Option() {

@@ -5,6 +5,14 @@ import {
     faChevronDown,
     faChevronUp,
     faBars,
+    faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faChevronLeft, faChevronRight, faChevronDown, faChevronUp, faBars);
+library.add(
+    faChevronLeft,
+    faChevronRight,
+    faChevronDown,
+    faChevronUp,
+    faBars,
+    faPlus
+);

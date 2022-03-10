@@ -14,6 +14,7 @@ module.exports = {
                 sky_blue: "#8ec2f6",
                 orange: "#EF9545",
                 border_color: "#D2D2D2",
+                room_register_bg: "#F2F2F1",
             },
             fontFamily: {
                 sans: ["SegoeUI"],

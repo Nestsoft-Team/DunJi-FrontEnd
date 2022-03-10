@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CategoryHeader from "./CategoryHeader";
+import CategoryHeader from "../CategoryHeader";
 
 export default function MoveDate() {
     const [year, setYear] = useState<string>();
@@ -37,7 +37,7 @@ export default function MoveDate() {
                     <div key={index} className="relative h-full mb-4 w-full">
                         <select
                             onChange={(e) => item.valueHandler(e.target.value)}
-                            className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-orange"
+                            className="bg-white border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-orange"
                             value={item.value}
                         >
                             {item.arr.map((item, index) => (
