@@ -21,9 +21,9 @@ export default function DetailRegister() {
 
     return (
         <div className="h-full">
-            <div className="w-screen h-4  bg-zinc-100 border-t border-border_color"></div>
+            <div className="w-screen h-4  bg-room_register_bg border-t border-border_color"></div>
             <SubHeader title="2. 상세정보" />
-            <div className="px-room_register_pd w-screen">
+            <div className="px-room_register_pd w-screen mb-4">
                 <TransactionType />
                 <Price />
                 <ManagementFee />

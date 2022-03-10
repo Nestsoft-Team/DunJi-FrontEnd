@@ -11,6 +11,7 @@ export default function Parking() {
                 onChange={(e) => setText(e.target.value)}
                 className="border border-border_color
                 rounded-room_register_rounded w-full h-48 p-4 text-xl
+                focus:outline-orange
                 "
             ></textarea>
         </>

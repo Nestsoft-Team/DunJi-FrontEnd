@@ -1,5 +1,5 @@
 import Header from "components/room-register/Header";
-import AddressRegister from "components/room-register/addressComponents";
+import AddressRegister from "components/room-register/AddressComponents";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
 import BottomNextBtn from "components/room-register/BottomNextBtn";
