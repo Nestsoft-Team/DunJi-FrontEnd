@@ -123,7 +123,7 @@ export default function Map() {
             <div
                 id="map"
                 onClick={inputBlurHandler}
-                className="w-screen h-screen"
+                className="w-screen h-[90vh]"
             ></div>
         </div>
     );

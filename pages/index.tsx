@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
-export default function Home({}) {
+export default function Home() {
     return (
-        <div className=" h-screen ">
-            <section className="h-2/5 bg-yellow">
+        <div className="h-screen">
+            <div className="h-2/5 bg-yellow">
                 <header className="flex items-center text-4xl justify-between py-10 mx-12">
                     <div className="flex items-center">
                         <div className="w-16 h-16 mr-4">
@@ -37,8 +37,8 @@ export default function Home({}) {
                         <input className="ml-4 w-full h-full border-none outline-none bg-transparent"></input>
                     </div>
                 </section>
-            </section>
-            <nav className=" h-3/5 p-12">
+            </div>
+            <nav className="p-12">
                 <span className="text-2xl">이런 서비스도 있어요</span>
                 <div className="grid grid-cols-3 gap-5 my-12">
                     <div className="w-32">
