@@ -12,7 +12,7 @@ export default function Header() {
         <>
             {roomRegister.ROOM_REGISTER_POSTCODE_OPEN ? (
                 <header
-                    className="flex w-screen justify-between px-room_register_pd 
+                    className="flex w-screen justify-between px-base_pd 
         py-4  h-24 items-center text-xl  border-b"
                 >
                     <div className="flex text-2xl items-center">
