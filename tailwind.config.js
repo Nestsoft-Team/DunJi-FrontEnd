@@ -76,6 +76,10 @@ module.exports = {
                 "100vh": "100vh",
                 room_register_btn_height1: "3.5rem",
                 room_register_btn_height2: "4.5rem",
+                map_room_list_height: "25rem",
+            },
+            translate: {
+                map_room_list_height: "25rem",
             },
             minWidth: {
                 20: "25rem",
@@ -87,16 +91,16 @@ module.exports = {
                 middle: "40px 40px 40px 40px",
                 room_register_rounded: "0.9rem",
             },
-            animation: {
-                "room-list-up": "room-list-up-key 0.3s linear reverse",
-                "room-list-down": "room-list-up-key 0.3s linear",
-            },
-            keyframes: {
-                "room-list-up-key": {
-                    "0%": { transform: "none" },
-                    "100%": { transform: "translateY(100%)" },
-                },
-            },
+            // animation: {
+            //     "room-list-up": "room-list-up-key 0.3s linear reverse",
+            //     "room-list-down": "room-list-up-key 0.3s linear",
+            // },
+            // keyframes: {
+            //     "room-list-up-key": {
+            //         "0%": { transform: "none" },
+            //         "100%": { transform: "translateY(100%)" },
+            //     },
+            // },
             gap: {
                 room_register_gap: "1rem",
             },

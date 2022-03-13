@@ -1,34 +1,31 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 type propsType = {
-    upDown: boolean;
+    upDown: null | boolean;
     setUpDown: Function;
 };
 export default function RoomType({ upDown, setUpDown }: propsType) {
     const [roomFocus, setRoomFoucus] = useState<number>(0);
-    const updownNav = useRef(false);
     function roomFocusHandler(num: number) {
         setRoomFoucus(num);
     }
     const unDownHandler = () => {
         setUpDown(!upDown);
     };
+
     const roomType = ["전체 방", "중개사무소", "개인"];
 
     return (
         <div
-            className={`w-full flex flex-col items-center  bg-white
-        ${upDown && "hidden"}
-    
-    `}
+            className="w-full flex flex-col items-center  bg-white
+            "
         >
             <div
-                className={`w-16 h-2 bg-border_color rounded-[2rem] mt-4
-         
+                className={`w-16 h-2 bg-border_color rounded-[2rem] my-4
             `}
                 onClick={unDownHandler}
             />
-            <nav className="grid grid-cols-3 gap-2 w-full items-center text-xl mb-2 px-12 text-border_color">
+            <nav className="grid grid-cols-3 gap-2 w-full items-center text-xl pb-2 px-12 text-border_color">
                 {roomType.map((item, index) => (
                     <div
                         key={index}

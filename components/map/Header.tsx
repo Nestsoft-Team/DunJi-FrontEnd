@@ -9,13 +9,13 @@ type propsType = {
 };
 export default function Header({ inputRef, inputContainerRef }: propsType) {
     function inputShadowHandler() {
-        //input Box 클릭 시 그림자 추가
-        // inputContainerRef.current &&
-        //     inputContainerRef.current.classList.add("");
+        // input Box 클릭 시 그림자 추가
+        inputContainerRef.current &&
+            inputContainerRef.current.classList.add("shadow-xl");
     }
 
     return (
-        <header className="h-[20vh] w-full px-base_pd pt-6">
+        <header className="h-[20vh] w-full px-base_pd pt-6 z-10 bg-white">
             <div className="text-4xl flex items-center justify-between">
                 <Link href="/">
                     <a>
