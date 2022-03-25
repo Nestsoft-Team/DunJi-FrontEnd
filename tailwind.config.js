@@ -78,6 +78,9 @@ module.exports = {
                 room_register_btn_height2: "4.5rem",
                 map_room_list_height: "25rem",
             },
+            spacing: {
+                map_room_list_height: "25rem",
+            },
             translate: {
                 map_room_list_height: "25rem",
             },

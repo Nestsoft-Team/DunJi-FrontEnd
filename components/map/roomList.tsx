@@ -7,13 +7,9 @@ export default function RoomList() {
     const [upDown, setUpDown] = useState<null | boolean>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const translateHanler = () => {
-        setUpDown(!Boolean(upDown));
-    };
     return (
         <div
             ref={containerRef}
-            onClick={translateHanler}
             className={`flex flex-col justify-center w-full items-center 
                 shadow-2xl
             translate-y-map_room_list_height  transition duration-300
@@ -29,7 +25,7 @@ export default function RoomList() {
                     <section className="grid grid-cols-2  w-[80%] gap-10">
                         <div className="flex justify-center">
                             <div>
-                                <div className="mb-4">
+                                <div className="mb-4 text-orange">
                                     오피스텔, 복층형 원룸
                                 </div>
                                 <div className="">
@@ -50,37 +46,7 @@ export default function RoomList() {
                                     <span>안산시 상록구 이동</span>
                                 </p>
                                 <p>
-                                    <span className="text-[rgba(0,0,0,0.5)]">
-                                        역세권 남향 오피스텔
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex justify-center">
-                            <div>
-                                <div className="mb-4">
-                                    오피스텔, 복층형 원룸
-                                </div>
-                                <div className="">
-                                    <Image
-                                        src={
-                                            require("../../image/map/room.jpeg")
-                                                .default
-                                        }
-                                        alt="room picture"
-                                    ></Image>
-                                </div>
-                                <h2 className="text-2xl my-2">월세 500/40</h2>
-                                <p>
-                                    <span>62m2</span>
-                                    <span>저층/11층</span>
-                                </p>
-                                <p>
-                                    <span>안산시 상록구 이동</span>
-                                </p>
-                                <p>
-                                    <span className="text-[rgba(0,0,0,0.5)]">
+                                    <span className="text-orange">
                                         역세권 남향 오피스텔
                                     </span>
                                 </p>

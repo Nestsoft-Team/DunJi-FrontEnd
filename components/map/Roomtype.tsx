@@ -10,7 +10,7 @@ export default function RoomType({ upDown, setUpDown }: propsType) {
         setRoomFoucus(num);
     }
     const unDownHandler = () => {
-        setUpDown(!upDown);
+        setUpDown(!Boolean(upDown));
     };
 
     const roomType = ["전체 방", "중개사무소", "개인"];
