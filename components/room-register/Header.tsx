@@ -17,7 +17,6 @@ export default function Header() {
                 >
                     <div className="flex text-2xl items-center">
                         <div
-                            className="flex items-center"
                             onClick={() => {
                                 dispatch(
                                     dispatchPostCodeOpen(
@@ -27,22 +26,9 @@ export default function Header() {
                             }}
                         >
                             <FontAwesomeIcon icon="chevron-left" />
-                            <div className="ml-4">주소 검색</div>
                         </div>
+                        <div className="ml-4">주소 찾기</div>
                     </div>
-                    <Image
-                        width={15}
-                        height={15}
-                        alt="x"
-                        src={require("image/header/x.png")}
-                        onClick={() =>
-                            dispatch(
-                                dispatchPostCodeOpen(
-                                    !roomRegister.ROOM_REGISTER_POSTCODE_OPEN
-                                )
-                            )
-                        }
-                    />
                 </header>
             ) : (
                 <header
@@ -50,10 +36,10 @@ export default function Header() {
                 py-4  h-24 items-center text-xl  border-b"
                 >
                     <div className="flex text-2xl items-center">
-                        <div className="flex items-center" onClick={() => {}}>
+                        <div>
                             <FontAwesomeIcon icon="chevron-left" />
-                            <div className="ml-4">집 내놓기</div>
                         </div>
+                        <div className="ml-4">방 내놓기</div>
                     </div>
                     <div className="text-orange">도움말</div>
                 </header>

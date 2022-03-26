@@ -10,11 +10,11 @@ export default function Register() {
     const roomRegister = useSelector((state: RootState) => state.roomRegister);
     console.log(roomRegister);
     return (
-        <div className=" relative pb-[12rem]">
+        <div className=" relative pb-[12rem] h-screen">
             <Header />
             <AddressRegister />
-            <DetailRegister />
-            <PhotoRegister />
+            {/* <DetailRegister /> */}
+            {/* <PhotoRegister /> */}
             <BottomNextBtn />
         </div>
     );
