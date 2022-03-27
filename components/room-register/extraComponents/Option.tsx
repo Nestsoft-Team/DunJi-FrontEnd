@@ -1,6 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import CategoryHeader from "../CategoryHeader";
-import CommonBtn from "./CommonBtn";
+import CommonBtn from "../components/CommonBtn";
 
 export default function Option() {
     const [btn1Check, setBtn1Check] = useState(false);
@@ -33,7 +34,10 @@ export default function Option() {
 
     return (
         <>
-            <CategoryHeader title="옵션" />
+            <div className="py-4 text-2xl mt-4">
+                옵션
+                <span className="text-main">&nbsp;*</span>
+            </div>
             <div className=" grid grid-cols-3 gap-room_register_gap ">
                 {arr.map((item, index) => (
                     <CommonBtn
@@ -44,6 +48,13 @@ export default function Option() {
                     />
                 ))}
             </div>
+            <button className="bg-component_white flex px-4 w-full h-room_register_btn_height1 mt-4 rounded-room_register_rounded text-[1.3rem] justify-between items-center text-font_gray">
+                <div>기타 옵션 추가</div>
+                <FontAwesomeIcon
+                    className="border-[0.1rem] p-1 border-font_gray  rounded-[50%]"
+                    icon="plus"
+                ></FontAwesomeIcon>
+            </button>
         </>
     );
 }

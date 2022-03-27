@@ -22,7 +22,7 @@ export default function BottomNextBtn() {
     return (
         <div
             onClick={nextHandler}
-            className="bg-orange absolute bottom-0 w-screen flex flex-col items-center h-[8rem] justify-around"
+            className="bg-main absolute bottom-0 w-screen flex flex-col items-center h-[8rem] justify-around"
         >
             <div className="text-2xl text-white">다음으로</div>
             <div className="bg-white rounded-room_register_rounded w-[15rem] h-3" />

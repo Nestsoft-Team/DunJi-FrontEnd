@@ -41,7 +41,7 @@ export default function Header() {
                         </div>
                         <div className="ml-4">방 내놓기</div>
                     </div>
-                    <div className="text-orange">도움말</div>
+                    <div className="text-main">도움말</div>
                 </header>
             )}
         </>

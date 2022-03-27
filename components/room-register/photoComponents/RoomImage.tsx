@@ -20,12 +20,12 @@ export default function RoomImage() {
     ];
 
     return (
-        <>
+        <div className="py-4">
             <PhotoHeader
                 title="거실 / 방 사진 (필수)"
                 subTitle="모든 방의 사진을 올려주세요. 사진으로 구조를 파악할 수 있으면 좋습니다. 다양한 각도로 찍어주세요. (최소 2장)"
             />
-            <div className="h-64 grid grid-cols-3 gap-2">
+            <div className="h-64 grid grid-cols-3 gap-4">
                 {fileArr.map((item, index) => (
                     <UploadImageSmall
                         index={index}
@@ -35,6 +35,6 @@ export default function RoomImage() {
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 }

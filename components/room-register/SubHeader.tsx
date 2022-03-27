@@ -19,7 +19,7 @@ export default function SubHeader() {
                 <button
                     className={`py-4  text-xl  h-max ${
                         roomRegister.ROOM_REGISTER_COMPONENT_HANDLER ===
-                            index && "text-orange border-b-2 border-orange"
+                            index && "text-main border-b-2 border-main"
                     }`}
                     onClick={() => onClickHandler(index)}
                     key={index}

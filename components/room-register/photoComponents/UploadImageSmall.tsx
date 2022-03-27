@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Dispatch, SetStateAction } from "react";
 
 type propsType = {
     file: string;
-    setFile: Function;
+    setFile: Dispatch<SetStateAction<string>>;
     index: number;
 };
 
@@ -17,7 +18,7 @@ export default function UploadImageSmall({ file, setFile, index }: propsType) {
         };
     };
     return (
-        <div className="bg-room_register_bg h-full w-full rounded-room_register_rounded flex items-center justify-center relative">
+        <div className="bg-component_white h-full w-full rounded-room_register_rounded flex items-center justify-center relative">
             {file ? (
                 <div>
                     <label htmlFor="image-upload">

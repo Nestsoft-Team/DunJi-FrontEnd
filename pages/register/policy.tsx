@@ -113,8 +113,8 @@ export default function Policy({}) {
                 <div className="w-full text-blur my-6">
                     <p>만 14세 이상 회원 가입이 가능합니다.</p>
                     <p>
-                        해당 내용은{" "}
-                        <span className="text-sky_blue">이용약관 및 정책</span>
+                        해당 내용은
+                        <span className="">이용약관 및 정책</span>
                         에서도 확인 가능합니다.
                     </p>
                 </div>
