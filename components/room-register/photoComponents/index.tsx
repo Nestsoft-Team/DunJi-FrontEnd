@@ -1,9 +1,11 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "store";
 
 import SubHeader from "../SubHeader";
 import MainImage from "./MainImage";
 import RoomImage from "./RoomImage";
+import EtcRoomImage from "./EtcRoomImage";
+
 export default function PhotoRegister() {
     const roomRegister = useSelector((state: RootState) => state.roomRegister);
 
@@ -15,6 +17,7 @@ export default function PhotoRegister() {
                     <div className="px-room_register_pd w-screen">
                         <MainImage />
                         <RoomImage />
+                        <EtcRoomImage />
                     </div>
                 </div>
             )}

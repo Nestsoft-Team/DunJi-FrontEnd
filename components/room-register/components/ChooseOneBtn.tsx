@@ -16,7 +16,7 @@ export default function ChooseOneBtn({
     return (
         <div className=" rounded-room_register_rounded overflow-hidden text-black  grid grid-cols-2 border-[0.1rem] border-font_gray items-center h-full">
             <button
-                className={`border-r-[0.1rem] border-font_gray h-full ${
+                className={`border-r-[0.1rem]  border-font_gray h-full ${
                     check1 && "text-white bg-font_gray"
                 }`}
                 onClick={() => checkHandler1(!check1)}
