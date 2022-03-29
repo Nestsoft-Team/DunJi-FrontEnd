@@ -16,7 +16,7 @@ const PostCode = () => {
     };
 
     const postCodeStyle = {
-        height: "85vh",
+        height: "70vh",
     };
     return (
         <>

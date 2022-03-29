@@ -1,3 +1,5 @@
+export const ROOM_REGISTER_COMPONENT_HANDLER =
+    "ROOM_REGISTER_COMPONENT_HANDLER";
 export const ROOM_REGISTER_ADDRESS_OPEN = "ROOM_REGISTER_ADDRESS_OPEN";
 export const ROOM_REGISTER_POSTCODE_OPEN = "ROOM_REGISTER_POSTCODE_OPEN";
 export const ROOM_REGISTER_MAIN_ADDRESS = "ROOM_REGISTER_MAIN_ADDRESS";
@@ -6,6 +8,13 @@ export const ROOM_REGISTER_DETAIL_COMPONENT_OPEN =
     "ROOM_REGISTER_DETAIL_COMPONENT_OPEN";
 export const ROOM_REGISTER_DETAIL_TRANSACTION =
     "ROOM_REGISTER_DETAIL_TRANSACTION";
+
+export const dispatchComponentHandler = (value: Number) => {
+    return {
+        type: ROOM_REGISTER_COMPONENT_HANDLER,
+        ROOM_REGISTER_COMPONENT_HANDLER: value,
+    };
+};
 
 export const dispatchPostCodeOpen = (value: Boolean) => {
     // postcode 컴포넌트 열고 닫기
@@ -51,6 +60,7 @@ export const dispatchTransactionType = (transaction: String) => {
 };
 
 const initialState = {
+    ROOM_REGISTER_COMPONENT_HANDLER: 0,
     ROOM_REGISTER_POSTCODE_OPEN: false,
     ROOM_REGISTER_ADDRESS_OPEN: true,
     ROOM_REGISTER_MAIN_ADDRESS: null,
@@ -60,6 +70,12 @@ const initialState = {
 
 export default function reducer(state = initialState, action: any) {
     switch (action.type) {
+        case ROOM_REGISTER_COMPONENT_HANDLER: // 주소 등록,기본 정보, 추가 정보, 사진 등록 컴포넌트 열고 닫기
+            return {
+                ...state,
+                ROOM_REGISTER_COMPONENT_HANDLER:
+                    action.ROOM_REGISTER_COMPONENT_HANDLER,
+            };
         case ROOM_REGISTER_POSTCODE_OPEN: // postcode 컴포넌트 열고 닫기
             return {
                 ...state,

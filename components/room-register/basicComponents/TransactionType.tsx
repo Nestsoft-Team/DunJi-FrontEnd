@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import CommonBtn from "./CommonBtn";
+import CommonBtn from "../components/CommonBtn";
 import { RootState } from "store";
 
 export default function TransactionType() {
@@ -20,12 +20,12 @@ export default function TransactionType() {
         {
             value: btn2Check,
             valueHandler: setBtn2Check,
-            type: "전세",
+            type: "단기임대",
         },
         {
             value: btn3Check,
             valueHandler: setBtn3Check,
-            type: "매매",
+            type: "양도",
         },
     ];
 
@@ -50,7 +50,9 @@ export default function TransactionType() {
 
     return (
         <>
-            <div className="py-6  text-orange text-2xl">거래유형</div>
+            <div className="py-6 text-2xl flex items-center">
+                거래유형<span className="text-main">&nbsp;*</span>
+            </div>
             <div className="w-full flex gap-room_register_gap  h-room_register_btn_height1">
                 {btnArr.map((item, index) => (
                     <CommonBtn

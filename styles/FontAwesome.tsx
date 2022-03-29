@@ -6,6 +6,7 @@ import {
     faChevronUp,
     faBars,
     faPlus,
+    faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -14,5 +15,6 @@ library.add(
     faChevronDown,
     faChevronUp,
     faBars,
-    faPlus
+    faPlus,
+    faMagnifyingGlass
 );

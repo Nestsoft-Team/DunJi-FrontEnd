@@ -4,8 +4,9 @@ type propsType = {
 
 export default function CategoryHeader({ title }: propsType) {
     return (
-        <div className="py-4  text-orange text-2xl border-t border-border_color mt-8">
+        <div className="py-4 text-2xl border-t border-border_color mt-8">
             {title}
+            <span className="text-main">&nbsp;*</span>
         </div>
     );
 }

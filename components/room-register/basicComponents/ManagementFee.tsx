@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CategoryHeader from "../CategoryHeader";
-import CommonBtn from "./CommonBtn";
+import CommonBtn from "../components/CommonBtn";
 
 export default function Price() {
     const [fee, setFee] = useState("");
@@ -27,42 +27,38 @@ export default function Price() {
     return (
         <>
             <CategoryHeader title="관리비" />
-            <div className="relative h-room_register_btn_height2">
-                <input
-                    type="number"
-                    className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-orange"
-                    placeholder="관리비"
-                    value={fee}
-                    onChange={(e) => {
-                        feeHandler(e.target.value);
-                    }}
-                ></input>
-                <div
-                    className="absolute text-border_color text-xl
-                right-8 bottom-[50%] translate-y-[50%]"
-                >
-                    만원
+            <div className="w-full grid grid-cols-[2fr_1fr] h-[3.5rem] mb-4">
+                <div className="relative h-full mb-4">
+                    <input
+                        type="number"
+                        className="bg-transparent border border-font_gray w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-font_gray outline-0"
+                        placeholder="관리비"
+                        value={fee}
+                        onChange={(e) => {
+                            feeHandler(e.target.value);
+                        }}
+                    ></input>
+                    <div
+                        className="absolute  text-xl
+            right-8 bottom-[50%] translate-y-[50%]"
+                    >
+                        만원
+                    </div>
                 </div>
-            </div>
-            <div className="flex justify-end gap-2 text-border_color py-4">
-                <label
-                    htmlFor="noFee"
-                    className={`inline-block before:content-[''] w-7 h-7 border border-border_color mr-2  algin-middle  rounded-md text-center ${
-                        noFeeCheck ? "before:content-['✔️'] text-white " : ""
-                    }`}
-                    onClick={() => feeOptionHandler(noFeeCheck, setNoFeeCheck)}
-                ></label>
-                <input type="checkbox" id="noFee" className="hidden" />
-                <span>관리비 없음</span>
-                <label
-                    htmlFor="negotiable"
-                    className={`inline-block before:content-[''] w-7 h-7 border border-border_color mr-2  algin-middle  rounded-md text-center ${
-                        negotiable ? "before:content-['✔️'] text-white " : ""
-                    }`}
-                    onClick={() => feeOptionHandler(negotiable, setNegotiable)}
-                ></label>
-                <input type="checkbox" id="negotiable" className="hidden" />
-                <span>협의 가능</span>
+                <div className="flex justify-end gap-2 items-center text-xl">
+                    <label
+                        htmlFor="noFee"
+                        className={`inline-block before:content-[''] w-[1.6rem] h-[1.6rem] border  border-black mr-2  algin-middle  rounded-[0.3rem] text-center  ${
+                            noFeeCheck &&
+                            "before:content-['✔️']  bg-font_gray border-0"
+                        }`}
+                        onClick={() =>
+                            feeOptionHandler(noFeeCheck, setNoFeeCheck)
+                        }
+                    ></label>
+                    <input type="checkbox" id="noFee" className="hidden" />
+                    <span>관리비 없음</span>
+                </div>
             </div>
             <div className="w-full grid grid-cols-3 h-[7rem] gap-2">
                 <CommonBtn

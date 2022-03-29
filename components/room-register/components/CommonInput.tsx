@@ -12,10 +12,10 @@ export default function CommonInput({
     unit,
 }: propsType) {
     return (
-        <div className="relative h-room_register_btn_height2 mb-4 w-full">
+        <div className="relative h-room_register_btn_height1 mb-4 w-full">
             <input
                 type="number"
-                className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-orange"
+                className="bg-transparent border border-font_gray w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-font_gray outline-0"
                 placeholder={placeHolder}
                 value={value}
                 onChange={(e) => {
@@ -23,7 +23,7 @@ export default function CommonInput({
                 }}
             ></input>
             <div
-                className="absolute text-border_color text-xl
+                className="absolute  text-xl
             right-8 bottom-[50%] translate-y-[50%]"
             >
                 {unit}

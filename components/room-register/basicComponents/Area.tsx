@@ -2,17 +2,17 @@ import { useState } from "react";
 import CategoryHeader from "../CategoryHeader";
 
 export default function Area() {
-    const [pyeong, setPyeong] = useState("");
-    const [squareMeter, setSquareMeter] = useState("");
+    const [pyeong, setPyeong] = useState<string | number>("실평수");
+    const [squareMeter, setSquareMeter] = useState<string | number>("전용면적");
 
     return (
         <>
-            <CategoryHeader title="전용 면적 (실평수)" />
+            <CategoryHeader title="방 크기" />
             <div className="flex gap-room_register_gap">
                 <div className="relative h-room_register_btn_height2 mb-4 w-full">
                     <input
                         type="number"
-                        className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-orange"
+                        className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
                         placeholder="평"
                         value={pyeong}
                         onChange={(e) => {
@@ -23,7 +23,7 @@ export default function Area() {
                         }}
                     ></input>
                     <div
-                        className="absolute text-border_color text-xl
+                        className="absolute  text-xl
             right-8 bottom-[50%] translate-y-[50%]"
                     >
                         평
@@ -32,7 +32,7 @@ export default function Area() {
                 <div className="relative h-room_register_btn_height2 mb-4 w-full">
                     <input
                         type="number"
-                        className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-orange"
+                        className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
                         placeholder="m2"
                         value={squareMeter}
                         onChange={(e) => {
@@ -43,7 +43,7 @@ export default function Area() {
                         }}
                     ></input>
                     <div
-                        className="absolute text-border_color text-xl
+                        className="absolute  text-xl
             right-8 bottom-[50%] translate-y-[50%]"
                     >
                         m2

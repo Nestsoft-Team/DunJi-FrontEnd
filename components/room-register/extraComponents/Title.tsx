@@ -5,15 +5,13 @@ export default function Parking() {
     const [text, setText] = useState("");
     return (
         <>
-            <CategoryHeader title="상세설명" />
-            <textarea
+            <CategoryHeader title="방 제목" />
+            <input
+                className="h-room_register_btn_height1 w-full rounded-room_register_rounded  text-xl pl-4 placeholder-font_gray outline-0"
                 value={text}
+                placeholder="제목"
                 onChange={(e) => setText(e.target.value)}
-                className="border border-border_color
-                rounded-room_register_rounded w-full h-48 p-4 text-xl
-                focus:outline-orange
-                "
-            ></textarea>
+            />
         </>
     );
 }

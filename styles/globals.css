@@ -2,13 +2,14 @@
 html {
     font-size: 62.5%;
     -webkit-tap-highlight-color: transparent;
+    background-color: #f1eee8;
     /* font-family: NotoSansKR; */
 }
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    @font-face {
+    /* @font-face {
         font-family: "SegoeUI";
         src: local("SegoeUI"), url("../fonts/SegoeUI.ttf") format("truetype");
         font-display: swap;
@@ -26,5 +27,5 @@ html {
         src: local("NotoSansKR"),
             url("../fonts/NotoSansKR-Medium.otf") format("truetype");
         font-display: swap;
-    }
+    } */
 }
