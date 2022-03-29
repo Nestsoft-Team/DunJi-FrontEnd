@@ -7,6 +7,8 @@ import {
     faBars,
     faPlus,
     faMagnifyingGlass,
+    faX,
+    faFilter,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -16,5 +18,7 @@ library.add(
     faChevronUp,
     faBars,
     faPlus,
-    faMagnifyingGlass
+    faMagnifyingGlass,
+    faX,
+    faFilter
 );
