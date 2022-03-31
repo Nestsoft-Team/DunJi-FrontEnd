@@ -3,31 +3,7 @@ module.exports = {
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
-    methods: {
-        setViewHeight: function () {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty("--vh", `${vh}px`);
-        },
-    },
-    mounted: function () {
-        this.setViewHeight();
-        window.addEventListener("resize", () => {
-            this.setViewHeight();
-        });
-    },
     theme: {
-        height: (theme) => ({
-            auto: "auto",
-            ...theme("spacing"),
-            full: "100%",
-            screen: "calc(var(--vh) * 100)",
-        }),
-        minHeight: (theme) => ({
-            0: "0",
-            ...theme("spacing"),
-            full: "100%",
-            screen: "calc(var(--vh) * 100)",
-        }),
         extend: {
             colors: {
                 background_beige: "#F1EEE8",
