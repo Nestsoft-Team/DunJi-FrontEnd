@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import CategoryHeader from "../CategoryHeader";
-import CommonBtn from "../components/CommonBtn";
+import CommonBtn from "../../common/Btn";
 
 export default function Option() {
     const [btn1Check, setBtn1Check] = useState(false);

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import CommonBtn from "../components/CommonBtn";
+import CommonBtn from "../../common/Btn";
 import { RootState } from "store";
 
 export default function TransactionType() {

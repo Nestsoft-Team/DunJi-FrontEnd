@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ChooseOneBtn from "../components/ChooseOneBtn";
+import ChooseOneBtn from "../../common/ChooseOneBtn";
 
 export default function Pet() {
     const [btn1Check, setBtn1Check] = useState(false);
