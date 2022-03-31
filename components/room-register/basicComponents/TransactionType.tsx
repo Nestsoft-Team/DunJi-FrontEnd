@@ -13,18 +13,18 @@ export default function TransactionType() {
 
     const btnArr = [
         {
-            value: btn1Check,
-            valueHandler: setBtn1Check,
+            check: btn1Check,
+            checkHandler: setBtn1Check,
             type: "월세",
         },
         {
-            value: btn2Check,
-            valueHandler: setBtn2Check,
+            check: btn2Check,
+            checkHandler: setBtn2Check,
             type: "단기임대",
         },
         {
-            value: btn3Check,
-            valueHandler: setBtn3Check,
+            check: btn3Check,
+            checkHandler: setBtn3Check,
             type: "양도",
         },
     ];
@@ -58,8 +58,8 @@ export default function TransactionType() {
                     <CommonBtn
                         key={index}
                         value={item.type}
-                        check={item.value}
-                        checkHandler={item.valueHandler}
+                        check={item.check}
+                        checkHandler={item.checkHandler}
                     />
                 ))}
             </div>

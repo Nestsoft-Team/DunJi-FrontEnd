@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import CategoryHeader from "../CategoryHeader";
 import CommonBtn from "../../common/Btn";
 
 export default function Option() {
