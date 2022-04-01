@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CategoryHeader from "../CategoryHeader";
+import CategoryHeader from "components/common/CategoryHeader";
 import CommonSelect from "../../common/Select";
 export default function Floor() {
     const [elevatorCheck, setElevatorCheck] = useState(false);

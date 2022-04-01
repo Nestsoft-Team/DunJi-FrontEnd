@@ -81,7 +81,7 @@ module.exports = {
             //     },
             // },
             gap: {
-                room_register_gap: "1rem",
+                room_register_gap: "0.5rem",
             },
         },
     },

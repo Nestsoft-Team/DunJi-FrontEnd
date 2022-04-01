@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import RoomType from "./Roomtype";
+import RoomType from "./RoomType";
 
 export default function RoomList() {
     const [upDown, setUpDown] = useState<null | boolean>(null);
@@ -12,7 +12,8 @@ export default function RoomList() {
             ref={containerRef}
             className={`flex flex-col justify-center w-full items-center 
                 shadow-2xl
-            translate-y-map_room_list_height  transition duration-300
+            translate-y-map_room_list_height  transition 
+          
                     ${upDown === true && " translate-y-0"}
             `}
         >

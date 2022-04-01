@@ -70,9 +70,9 @@ export default function Map() {
             inputContainerRef.current.classList.remove("shadow-xl");
     }
     return (
-        <div className="w-full h-full flex flex-col">
-            <Header inputRef={inputRef} inputContainerRef={inputContainerRef} />
-            <div className="flex flex-col  fixed bottom-0 z-10 items-center">
+        <div className="w-full h-full flex flex-col ">
+            <Header />
+            <div className="flex flex-col absolute bottom-0 z-10 items-center ">
                 <RoomList />
                 <Nav />
             </div>

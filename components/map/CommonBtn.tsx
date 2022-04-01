@@ -1,24 +1,21 @@
 import { Dispatch, SetStateAction } from "react";
 
 type propsType = {
-    value: string;
+    value: String;
     check: Boolean;
-    checkHandler: Dispatch<
-        SetStateAction<{
-            value: string;
-            check: boolean;
-        }>
-    >;
+    checkHandler: Dispatch<SetStateAction<boolean>>;
 };
 
 export default function CommonBtn({ value, check, checkHandler }: propsType) {
     return (
         <button
-            className={` focus-bg-black rounded-[0.5rem] h-full px-4 text-[1rem] text-font_gray border border-border_color ${
-                check && "bg-font_gray  text-component_white border-font_gray"
+            className={`focus-bg-black  text-font_gray rounded-[0.5rem] h-full  px-3  text-[1rem]  border border-border_color ${
+                check
+                    ? "bg-font_gray  text-component_white"
+                    : "border border-font_gray"
             } `}
             onClick={() => {
-                checkHandler({ value, check: !check });
+                checkHandler(!check);
             }}
         >
             {value}

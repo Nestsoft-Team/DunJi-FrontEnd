@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CategoryHeader from "../CategoryHeader";
+import CategoryHeader from "components/common/CategoryHeader";
 import CommonBtn from "../../common/Btn";
 
 export default function Price() {

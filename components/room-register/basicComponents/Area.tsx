@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CategoryHeader from "../CategoryHeader";
+import CategoryHeader from "components/common/CategoryHeader";
 
 export default function Area() {
     const [pyeong, setPyeong] = useState<string | number>("실평수");
