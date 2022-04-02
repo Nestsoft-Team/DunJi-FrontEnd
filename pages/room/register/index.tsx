@@ -1,4 +1,4 @@
-import Header from "components/Map/Header";
+import Header from "components/room-register/Header";
 import AddressRegister from "components/room-register/addressComponents";
 import { useSelector } from "react-redux";
 import { RootState } from "store";

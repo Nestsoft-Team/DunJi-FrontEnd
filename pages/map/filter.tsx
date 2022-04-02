@@ -1,4 +1,4 @@
-import Header from "components/Map/Header";
+import Header from "components/Filter/Header";
 import RoomType from "components/Filter/RoomType";
 import TransactionType from "components/Filter/TransactionType";
 import InputRange from "components/common/InputRange";
