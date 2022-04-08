@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 export default function Header() {
     return (
@@ -7,9 +8,11 @@ export default function Header() {
                 py-4  h-24 items-center text-xl  border-b"
         >
             <div className="flex text-2xl items-center">
-                <div>
-                    <FontAwesomeIcon icon="chevron-left" />
-                </div>
+                <Link href="/map">
+                    <a>
+                        <FontAwesomeIcon icon="chevron-left" />
+                    </a>
+                </Link>
                 <div className="ml-4">필터 설정</div>
             </div>
             <div className="text-main">초기화</div>

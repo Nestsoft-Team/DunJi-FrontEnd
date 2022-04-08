@@ -1,24 +1,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { RefObject, useEffect, useState } from "react";
+import { RefObject, useState } from "react";
 import CommonBtn from "./CommonBtn";
 
 type propsType = {
     inputRef: RefObject<HTMLInputElement>;
     inputContainerRef: RefObject<HTMLInputElement>;
 };
-export default function Header({ inputRef, inputContainerRef }: propsType) {
+// export default function Header({ inputRef, inputContainerRef }: propsType) {
+export default function Header() {
     const [searchVal, setSearchVal] = useState("");
     const [filterSelect1, setFilterSelect1] = useState(false);
     const [filterSelect2, setFilterSelect2] = useState(false);
     const [filterSelect3, setFilterSelect3] = useState(false);
     const [filterSelect4, setFilterSelect4] = useState(false);
 
-    function inputShadowHandler() {
-        // input Box 클릭 시 그림자 추가
-        inputContainerRef.current &&
-            inputContainerRef.current.classList.add("shadow-xl");
-    }
+    // function inputShadowHandler() {
+    //     // input Box 클릭 시 그림자 추가
+    //     inputContainerRef.current &&
+    //         inputContainerRef.current.classList.add("shadow-xl");
+    // }
 
     const btnArr = [
         {
@@ -69,7 +70,11 @@ export default function Header({ inputRef, inputContainerRef }: propsType) {
                 </div>
             </div>
             <div className="h-[2.5rem] flex gap-2 my-8">
-                <FontAwesomeIcon icon="filter"></FontAwesomeIcon>
+                <Link href="/map/filter">
+                    <a>
+                        <FontAwesomeIcon icon="filter"></FontAwesomeIcon>
+                    </a>
+                </Link>
                 {btnArr.map((item, index) => (
                     <CommonBtn
                         key={index}
