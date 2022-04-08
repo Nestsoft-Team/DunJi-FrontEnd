@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CategoryHeader from "../CategoryHeader";
-import CommonBtn from "../components/CommonBtn";
+import CategoryHeader from "components/common/CategoryHeader";
+import CommonBtn from "../../common/Btn";
 
 export default function Price() {
     const [fee, setFee] = useState("");

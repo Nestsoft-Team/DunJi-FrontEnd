@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import CommonBtn from "../../common/Btn";
+import CommonBtn from "../common/Btn";
 import { RootState } from "store";
+import CategoryHeader2 from "components/common/CategoryHeader2";
 
 export default function TransactionType() {
     const dispatch = useDispatch();
@@ -50,10 +51,8 @@ export default function TransactionType() {
 
     return (
         <>
-            <div className="py-6 text-2xl flex items-center">
-                거래유형<span className="text-main">&nbsp;*</span>
-            </div>
-            <div className="w-full flex gap-room_register_gap  h-room_register_btn_height1">
+            <CategoryHeader2 title="거래 유형" />
+            <div className="w-full grid grid-cols-3 gap-room_register_gap">
                 {btnArr.map((item, index) => (
                     <CommonBtn
                         key={index}

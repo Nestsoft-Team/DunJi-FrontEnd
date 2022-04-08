@@ -3,31 +3,8 @@ module.exports = {
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
-    methods: {
-        setViewHeight: function () {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty("--vh", `${vh}px`);
-        },
-    },
-    mounted: function () {
-        this.setViewHeight();
-        window.addEventListener("resize", () => {
-            this.setViewHeight();
-        });
-    },
+
     theme: {
-        height: (theme) => ({
-            auto: "auto",
-            ...theme("spacing"),
-            full: "100%",
-            screen: "calc(var(--vh) * 100)",
-        }),
-        minHeight: (theme) => ({
-            0: "0",
-            ...theme("spacing"),
-            full: "100%",
-            screen: "calc(var(--vh) * 100)",
-        }),
         extend: {
             colors: {
                 background_beige: "#F1EEE8",
@@ -76,6 +53,13 @@ module.exports = {
                 "100vh": "100vh",
                 room_register_btn_height1: "3.5rem",
                 room_register_btn_height2: "4.5rem",
+                map_room_list_height: "25rem",
+            },
+            spacing: {
+                map_room_list_height: "25rem",
+            },
+            translate: {
+                map_room_list_height: "25rem",
             },
             minWidth: {
                 20: "25rem",
@@ -87,18 +71,18 @@ module.exports = {
                 middle: "40px 40px 40px 40px",
                 room_register_rounded: "0.9rem",
             },
-            animation: {
-                "room-list-up": "room-list-up-key 0.3s linear reverse",
-                "room-list-down": "room-list-up-key 0.3s linear",
-            },
-            keyframes: {
-                "room-list-up-key": {
-                    "0%": { transform: "none" },
-                    "100%": { transform: "translateY(100%)" },
-                },
-            },
+            // animation: {
+            //     "room-list-up": "room-list-up-key 0.3s linear reverse",
+            //     "room-list-down": "room-list-up-key 0.3s linear",
+            // },
+            // keyframes: {
+            //     "room-list-up-key": {
+            //         "0%": { transform: "none" },
+            //         "100%": { transform: "translateY(100%)" },
+            //     },
+            // },
             gap: {
-                room_register_gap: "1rem",
+                room_register_gap: "0.5rem",
             },
         },
     },

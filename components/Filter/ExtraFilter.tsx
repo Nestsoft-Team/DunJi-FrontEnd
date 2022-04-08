@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import CommonBtn from "../../common/Btn";
+import CommonBtn from "../common/Btn";
 import { RootState } from "store";
+import CategoryHeader2 from "components/common/CategoryHeader2";
 
 export default function TransactionType() {
     const dispatch = useDispatch();
@@ -10,22 +11,40 @@ export default function TransactionType() {
     const [btn1Check, setBtn1Check] = useState(false);
     const [btn2Check, setBtn2Check] = useState(false);
     const [btn3Check, setBtn3Check] = useState(false);
+    const [btn4Check, setBtn4Check] = useState(false);
+    const [btn5Check, setBtn5Check] = useState(false);
+    const [btn6Check, setBtn6Check] = useState(false);
 
     const btnArr = [
         {
             check: btn1Check,
             checkHandler: setBtn1Check,
-            type: "월세",
+            type: "주차가능",
         },
         {
             check: btn2Check,
             checkHandler: setBtn2Check,
-            type: "단기임대",
+            type: "보안/안전시설",
         },
         {
             check: btn3Check,
             checkHandler: setBtn3Check,
-            type: "양도",
+            type: "풀옵션",
+        },
+        {
+            check: btn4Check,
+            checkHandler: setBtn4Check,
+            type: "빌트인",
+        },
+        {
+            check: btn5Check,
+            checkHandler: setBtn5Check,
+            type: "엘리베이터",
+        },
+        {
+            check: btn6Check,
+            checkHandler: setBtn6Check,
+            type: "360° VR",
         },
     ];
 
@@ -50,10 +69,8 @@ export default function TransactionType() {
 
     return (
         <>
-            <div className="py-6 text-2xl flex items-center">
-                거래유형<span className="text-main">&nbsp;*</span>
-            </div>
-            <div className="w-full flex gap-room_register_gap  h-room_register_btn_height1">
+            <CategoryHeader2 title="추가필터" />
+            <div className="w-full grid grid-cols-3 gap-room_register_gap">
                 {btnArr.map((item, index) => (
                     <CommonBtn
                         key={index}
@@ -62,6 +79,10 @@ export default function TransactionType() {
                         checkHandler={item.checkHandler}
                     />
                 ))}
+            </div>
+            <div className="text-lg text-font_gray my-6">
+                * 풀옵션 항목은 세탁기, 냉장고, 에어컨, 가스레인지 또는
+                인덕션입니다.
             </div>
         </>
     );

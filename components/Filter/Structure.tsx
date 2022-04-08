@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import CommonBtn from "../../common/Btn";
+import CommonBtn from "../common/Btn";
 import { RootState } from "store";
+import CategoryHeader2 from "components/common/CategoryHeader2";
 
 export default function TransactionType() {
     const dispatch = useDispatch();
@@ -10,50 +11,35 @@ export default function TransactionType() {
     const [btn1Check, setBtn1Check] = useState(false);
     const [btn2Check, setBtn2Check] = useState(false);
     const [btn3Check, setBtn3Check] = useState(false);
+    const [btn4Check, setBtn4Check] = useState(false);
 
     const btnArr = [
         {
             check: btn1Check,
             checkHandler: setBtn1Check,
-            type: "월세",
+            type: "전체",
         },
         {
             check: btn2Check,
             checkHandler: setBtn2Check,
-            type: "단기임대",
+            type: "오픈형(방1)",
         },
         {
             check: btn3Check,
             checkHandler: setBtn3Check,
-            type: "양도",
+            type: "분리형(방1,거실1)",
+        },
+        {
+            check: btn4Check,
+            checkHandler: setBtn4Check,
+            type: "복층형",
         },
     ];
 
-    useEffect(() => {
-        if (btn1Check) {
-            setBtn2Check(false);
-            setBtn3Check(false);
-        }
-    }, [btn1Check]);
-    useEffect(() => {
-        if (btn2Check) {
-            setBtn1Check(false);
-            setBtn3Check(false);
-        }
-    }, [btn2Check]);
-    useEffect(() => {
-        if (btn3Check) {
-            setBtn1Check(false);
-            setBtn2Check(false);
-        }
-    }, [btn3Check]);
-
     return (
         <>
-            <div className="py-6 text-2xl flex items-center">
-                거래유형<span className="text-main">&nbsp;*</span>
-            </div>
-            <div className="w-full flex gap-room_register_gap  h-room_register_btn_height1">
+            <CategoryHeader2 title="방 구조" />
+            <div className="w-full grid grid-cols-2 gap-room_register_gap">
                 {btnArr.map((item, index) => (
                     <CommonBtn
                         key={index}

@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "store";
 import { dispatchPostCodeOpen } from "store/roomRegister";

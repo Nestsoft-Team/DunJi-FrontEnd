@@ -1,17 +1,14 @@
-import { useState, useRef, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
-import Image from "next/image";
-import Nav from "../components/map/nav";
-import RoomList from "../components/map/roomList";
+import Nav from "components/Map/Nav";
+import RoomList from "components/Map/RoomList";
+import Header from "components/Map/Header";
 
 export default function Map() {
     const [latitude, setLatitude] = useState(37.297526827747966); //한양대 에리카 위도,경도
     const [longitude, setLongitude] = useState(126.835628984629);
-
     const inputRef = useRef<HTMLInputElement>(null);
-    const inputContainerRef = useRef<HTMLDivElement>(null);
+    const inputContainerRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         const getLocation = () => {
@@ -66,64 +63,23 @@ export default function Map() {
         mapScript.addEventListener("load", onLoadKakaoMap);
         return () => mapScript.removeEventListener("load", onLoadKakaoMap);
     }, [latitude, longitude]);
-
-    function inputShadowHandler() {
-        //input Box 클릭 시 그림자 추가
-        inputContainerRef.current
-            ? inputContainerRef.current.classList.add("shadow-xl")
-            : null;
-    }
     function inputBlurHandler() {
         //지도 클릭 시 input Box 그림자 제거
-        inputRef.current ? inputRef.current.blur() : null;
-        inputContainerRef.current
-            ? inputContainerRef.current.classList.remove("shadow-xl")
-            : null;
+        inputRef.current && inputRef.current.blur();
+        inputContainerRef.current &&
+            inputContainerRef.current.classList.remove("shadow-xl");
     }
-
     return (
-        <div className="w-full h-full flex flex-col">
-            <div className="absolute z-10 text-dark_yellow text-5xl top-12 left-5">
-                <Link href="/">
-                    <a>
-                        <FontAwesomeIcon icon="chevron-left" />
-                    </a>
-                </Link>
-            </div>
-            <div
-                ref={inputContainerRef}
-                className="absolute z-10 bg-white top-32 right-1/2 translate-x-1/2  flex items-center h-20 w-4/5 border  rounded-3xl "
-            >
-                <div className=" ml-4  flex items-center">
-                    <Image
-                        src={require("../image/map/search.png")}
-                        alt="search"
-                        width={40}
-                        height={40}
-                    ></Image>
-                </div>
-                <input
-                    onFocus={inputShadowHandler}
-                    ref={inputRef}
-                    className="ml-4 w-full h-full border-none outline-none bg-transparent text-xl "
-                ></input>
-                <div className=" mr-6 flex items-center">
-                    <Image
-                        src={require("../image/map/filter_yellow.png")}
-                        alt="filter"
-                        width={40}
-                        height={40}
-                    ></Image>
-                </div>
-            </div>
-            <div className="flex flex-col  fixed bottom-0 z-10 items-center">
+        <div className="w-full h-full flex flex-col ">
+            <Header />
+            <div className="flex flex-col absolute bottom-0 z-10 items-center ">
                 <RoomList />
                 <Nav />
             </div>
             <div
                 id="map"
                 onClick={inputBlurHandler}
-                className="w-screen h-[90vh]"
+                className=" w-screen h-[80vh]"
             ></div>
         </div>
     );

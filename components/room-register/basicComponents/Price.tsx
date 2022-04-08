@@ -1,5 +1,5 @@
+import CategoryHeader from "components/common/CategoryHeader";
 import { useState } from "react";
-import CategoryHeader from "../CategoryHeader";
 
 export default function Price() {
     const [deposit, setDeposit] = useState("");
