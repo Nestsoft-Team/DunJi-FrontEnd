@@ -13,7 +13,7 @@ export default function Area() {
                     <input
                         type="number"
                         className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
-                        placeholder="평"
+                        placeholder="실평수"
                         value={pyeong}
                         onChange={(e) => {
                             setPyeong(e.target.value);
@@ -33,7 +33,7 @@ export default function Area() {
                     <input
                         type="number"
                         className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
-                        placeholder="m2"
+                        placeholder="전용 면적"
                         value={squareMeter}
                         onChange={(e) => {
                             setSquareMeter(e.target.value);
