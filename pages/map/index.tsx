@@ -58,13 +58,20 @@ export default function Map() {
                     position: markerPosition,
                 });
                 marker.setMap(map);
+                window.kakao.maps.event.addListener(map, "dragend", () =>
+                    console.log(map.getBounds())
+                ); // 드래그 이동 시 좌표 출력
+                window.kakao.maps.event.addListener(map, "zoom_changed", () =>
+                    console.log(map.getBounds())
+                ); // 줌 변경 시 좌표 출력
             });
         };
         mapScript.addEventListener("load", onLoadKakaoMap);
         return () => mapScript.removeEventListener("load", onLoadKakaoMap);
     }, [latitude, longitude]);
+
+    //지도 클릭 시 input Box 그림자 제거
     function inputBlurHandler() {
-        //지도 클릭 시 input Box 그림자 제거
         inputRef.current && inputRef.current.blur();
         inputContainerRef.current &&
             inputContainerRef.current.classList.remove("shadow-xl");
