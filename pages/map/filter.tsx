@@ -7,6 +7,8 @@ import Floor from "components/Filter/Floor";
 import Structure from "components/Filter/Structure";
 import ExtraFilter from "components/Filter/ExtraFilter";
 import TransactionType2 from "components/Filter/TransactionType2";
+import PriceUnit from "components/Filter/PriceUnit";
+import ApprovalDate from "components/Filter/ApprovalDate";
 
 export default function Filter() {
     return (
@@ -15,10 +17,12 @@ export default function Filter() {
             <div className="px-room_register_pd w-screen mb-4">
                 <RoomType />
                 <TransactionType />
+                <PriceUnit />
                 <InputRange />
                 <ManagementFee />
                 <Floor />
                 <Structure />
+                <ApprovalDate />
                 <ExtraFilter />
                 <TransactionType2 />
             </div>

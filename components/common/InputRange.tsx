@@ -19,7 +19,8 @@ export default function InputRange() {
                     range
                     allowCross={false}
                     defaultValue={[min1, max1]}
-                    onChange={(e) => {
+                    onChange={(e: any) => {
+                        // 수정 필요
                         setMin1(e[0]);
                         setMax1(e[1]);
                     }}
@@ -40,7 +41,7 @@ export default function InputRange() {
                     allowCross={false}
                     defaultValue={[min2, max2]}
                     max={1000}
-                    onChange={(e) => {
+                    onChange={(e: any) => {
                         if (!noFeeCheck) {
                             setMin2(e[0]);
                             setMax2(e[1]);
