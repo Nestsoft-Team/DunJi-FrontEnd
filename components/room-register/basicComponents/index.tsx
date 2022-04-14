@@ -7,6 +7,8 @@ import ManagementFee from "./ManagementFee";
 import Floor from "./Floor";
 import Area from "./Area";
 import MoveDate from "./MoveDate";
+import RoomType from "./RoomType";
+import PriceUnit from "./PriceUnit";
 
 export default function DetailRegister() {
     const dispatch = useDispatch();
@@ -19,7 +21,9 @@ export default function DetailRegister() {
                 <div className="h-full">
                     <SubHeader />
                     <div className="px-room_register_pd w-screen mb-4">
+                        <RoomType />
                         <TransactionType />
+                        <PriceUnit />
                         <Price />
                         <ManagementFee />
                         <Floor />
