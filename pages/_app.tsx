@@ -5,6 +5,7 @@ import { wrapper } from "../store";
 import { useEffect } from "react";
 
 function app({ Component, pageProps }: AppProps) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         if (typeof window !== "undefined") {
             const handleResize = function () {

@@ -56,7 +56,7 @@ export default function Map() {
         };
         mapScript.addEventListener("load", onLoadKakaoMap);
         return () => mapScript.removeEventListener("load", onLoadKakaoMap);
-    }, []);
+    }, [address]);
 
     return <div id="map" className="w-full h-[25vh]"></div>;
 }
