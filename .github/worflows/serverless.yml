@@ -18,8 +18,8 @@ jobs:
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v1
               with:
-                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  aws-access-key-id: ${{AKIAUVIBHU2Z34G735FM}}
+                  aws-secret-access-key: ${{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}}
                   aws-region: ap-northeast-2
 
             - name: Deploy Next.js app
