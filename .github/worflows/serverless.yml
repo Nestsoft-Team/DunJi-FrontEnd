@@ -1,15 +1,15 @@
 name: NEXT Deploy
 on:
     push:
-        branches: master
+        branches: Feat/31-배포
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout source code.
-              uses: actions/checkout@master
+              uses: actions/checkout@Feat/배포
               with:
-                  ref: master
+                  ref: Feat/31배포
 
             - name: Install Dependencies
               run: |
