@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout source code.
-              uses: actions/checkout@Feat/배포
+              uses: actions/checkout@master
               with:
                   ref: Feat/31배포
 
