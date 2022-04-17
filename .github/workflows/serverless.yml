@@ -9,7 +9,7 @@ jobs:
             - name: Checkout source code.
               uses: actions/checkout@master
               with:
-                  ref: Feat/31배포
+                  ref: Feat/31-배포
 
             - name: Install Dependencies
               run: |
