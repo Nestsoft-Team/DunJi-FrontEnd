@@ -1,11 +1,12 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Nav() {
+function Nav() {
     return (
         <nav
             className="bg-white flex w-screen justify-between h-28
-            items-center px-10 z-10 shadow-thick"
+            items-center px-10 z-[20] shadow-thick"
         >
             <div>
                 <Link href="/">
@@ -58,3 +59,4 @@ export default function Nav() {
         </nav>
     );
 }
+export default memo(Nav);

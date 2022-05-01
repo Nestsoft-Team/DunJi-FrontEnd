@@ -3,8 +3,10 @@ import type { AppProps } from "next/app";
 import "../styles/FontAwesome";
 import { wrapper } from "../store";
 import { useEffect } from "react";
+import Layout from "components/Layout";
 
 function app({ Component, pageProps }: AppProps) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         if (typeof window !== "undefined") {
             const handleResize = function () {
@@ -17,7 +19,11 @@ function app({ Component, pageProps }: AppProps) {
             return () => window.removeEventListener("resize", handleResize);
         }
     }, []);
-    return <Component {...pageProps} />;
+    return (
+        <Layout>
+            <Component {...pageProps} />;
+        </Layout>
+    );
 }
 
 export default wrapper.withRedux(app);

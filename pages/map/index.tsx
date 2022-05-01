@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import React from "react";
-import Nav from "components/Map/Nav";
 import RoomList from "components/Map/RoomList";
 import Header from "components/Map/Header";
 
@@ -77,12 +76,9 @@ export default function Map() {
             inputContainerRef.current.classList.remove("shadow-xl");
     }
     return (
-        <div className="w-full h-full flex flex-col ">
+        <div className="w-full h-full flex flex-col">
             <Header />
-            <div className="flex flex-col absolute bottom-0 z-10 items-center ">
-                <RoomList />
-                <Nav />
-            </div>
+            <div className="flex flex-col absolute bottom-0 z-10 items-center "></div>
             <div
                 id="map"
                 onClick={inputBlurHandler}
