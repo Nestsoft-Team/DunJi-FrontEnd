@@ -69,7 +69,7 @@ export default function Login({}) {
                     <Image
                         width={30}
                         height={30}
-                        src={require("image/logo/naver_logo.png")}
+                        src={require("icon/logo/naver_logo.png")}
                         alt="naver_logo"
                     />
                     <Link href={KAKAO_AUTH_URL}>
@@ -77,7 +77,7 @@ export default function Login({}) {
                             <Image
                                 width={30}
                                 height={30}
-                                src={require("image/logo/kakao_logo.png")}
+                                src={require("icon/logo/kakao_logo.png")}
                                 alt="naver_logo"
                             />
                         </a>

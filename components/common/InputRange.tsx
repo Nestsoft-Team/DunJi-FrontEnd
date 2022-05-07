@@ -19,10 +19,9 @@ export default function InputRange() {
                     range
                     allowCross={false}
                     defaultValue={[min1, max1]}
-                    onChange={(e: any) => {
-                        // 수정 필요
-                        setMin1(e[0]);
-                        setMax1(e[1]);
+                    onChange={(e: number | number[]) => {
+                        if (typeof e === "object") setMin1(e[0]);
+                        if (typeof e === "object") setMin1(e[1]);
                     }}
                 />
             </div>

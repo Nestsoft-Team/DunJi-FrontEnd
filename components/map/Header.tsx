@@ -1,25 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
-import { RefObject, useState } from "react";
+import { useState } from "react";
 import CommonBtn from "./CommonBtn";
 
-type propsType = {
-    inputRef: RefObject<HTMLInputElement>;
-    inputContainerRef: RefObject<HTMLInputElement>;
-};
-// export default function Header({ inputRef, inputContainerRef }: propsType) {
 export default function Header() {
     const [searchVal, setSearchVal] = useState("");
     const [filterSelect1, setFilterSelect1] = useState(false);
     const [filterSelect2, setFilterSelect2] = useState(false);
     const [filterSelect3, setFilterSelect3] = useState(false);
     const [filterSelect4, setFilterSelect4] = useState(false);
-
-    // function inputShadowHandler() {
-    //     // input Box 클릭 시 그림자 추가
-    //     inputContainerRef.current &&
-    //         inputContainerRef.current.classList.add("shadow-xl");
-    // }
 
     const btnArr = [
         {
@@ -39,13 +29,17 @@ export default function Header() {
             value: "관리비",
         },
     ];
+
     return (
-        <header className=" w-full px-room_register_pd pt-6 z-10 bg-component_beige">
+        <header className=" w-full px-room_register_pd pt-6 z-10 bg-background_beige">
             <div className="text-2xl h-[3.5rem] flex items-center justify-between">
-                <Link href="/">
-                    <a>
-                        <FontAwesomeIcon icon="chevron-left" />
-                    </a>
+                <Link href="/" passHref>
+                    <Image
+                        width={22}
+                        height={22}
+                        alt="arrow"
+                        src={require("icon/map/화살표.svg")}
+                    />
                 </Link>
                 <div className="relative h-[3.5rem] w-[90%]">
                     <input
@@ -60,11 +54,14 @@ export default function Header() {
                     {searchVal && (
                         <div
                             onClick={() => setSearchVal("")}
-                            className="absolute  
-                        right-6 bottom-[50%] translate-y-[50%] bg-border_color rounded-[10rem] text-white
-                        // w-[1.4rem] h-[1.4rem] flex items-center justify-center text-base"
+                            className="absolute  right-3 bottom-[0] flex items-center h-full"
                         >
-                            <FontAwesomeIcon icon="x"></FontAwesomeIcon>
+                            <Image
+                                width={22}
+                                height={22}
+                                alt="x"
+                                src={require("icon/map/검색_X.svg")}
+                            ></Image>
                         </div>
                     )}
                 </div>
@@ -72,7 +69,12 @@ export default function Header() {
             <div className="h-[2.5rem] flex gap-2 my-8">
                 <Link href="/map/filter">
                     <a>
-                        <FontAwesomeIcon icon="filter"></FontAwesomeIcon>
+                        <Image
+                            width={22}
+                            height={22}
+                            alt="x"
+                            src={require("icon/map/검색_X.svg")}
+                        ></Image>
                     </a>
                 </Link>
                 {btnArr.map((item, index) => (

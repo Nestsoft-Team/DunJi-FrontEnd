@@ -1,20 +1,21 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Nav() {
+function Nav() {
     return (
         <nav
-            className="bg-white flex w-screen justify-between h-28
-            items-center px-10 z-10 shadow-thick"
+            className="absolute bottom-0 bg-white flex w-screen justify-between h-nav_height
+            items-center px-10 z-[20] shadow-thick"
         >
             <div>
                 <Link href="/">
                     <a>
                         <Image
-                            src={require("../../image/map/home.jpg")}
+                            src={require("../../icon/map/home.jpg")}
                             alt="home"
-                            width={40}
-                            height={40}
+                            width={30}
+                            height={30}
                         ></Image>
                     </a>
                 </Link>
@@ -22,39 +23,40 @@ export default function Nav() {
             <div>
                 <Image
                     className="text-yellow"
-                    src={require("../../image/map/heart_yellow.jpg")}
+                    src={require("../../icon/map/heart_yellow.jpg")}
                     alt="heart"
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                 ></Image>
             </div>
             <div>
                 <Image
                     className="text-yellow"
-                    src={require("../../image/map/plus.jpg")}
+                    src={require("../../icon/map/plus.jpg")}
                     alt="plus"
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                 ></Image>
             </div>
             <div>
                 <Image
                     className="text-yellow"
-                    src={require("../../image/map/talk.jpg")}
+                    src={require("../../icon/map/talk.jpg")}
                     alt="talk"
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                 ></Image>
             </div>
             <div>
                 <Image
                     className="text-yellow"
-                    src={require("../../image/map/list.jpg")}
+                    src={require("../../icon/map/list.jpg")}
                     alt="list"
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                 ></Image>
             </div>
         </nav>
     );
 }
+export default memo(Nav);
