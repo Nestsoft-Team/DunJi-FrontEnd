@@ -38,7 +38,7 @@ export default function Header() {
                         width={22}
                         height={22}
                         alt="arrow"
-                        src={require("icon/map/화살표.svg")}
+                        src={require("icon/화살표.svg")}
                     />
                 </Link>
                 <div className="relative h-[3.5rem] w-[90%]">
@@ -60,7 +60,7 @@ export default function Header() {
                                 width={22}
                                 height={22}
                                 alt="x"
-                                src={require("icon/map/검색_X.svg")}
+                                src={require("icon/검색_X.svg")}
                             ></Image>
                         </div>
                     )}
@@ -73,7 +73,7 @@ export default function Header() {
                             width={22}
                             height={22}
                             alt="x"
-                            src={require("icon/map/검색_X.svg")}
+                            src={require("icon/검색_X.svg")}
                         ></Image>
                     </a>
                 </Link>

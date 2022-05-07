@@ -17,7 +17,7 @@ export default function RoomList() {
                 <div className="flex my-8 px-4">
                     <div className="flex items-center text-[1.5rem]">
                         <Image
-                            src={require("icon/map/방.svg")}
+                            src={require("icon/방.svg")}
                             width={25}
                             height={25}
                             alt="room"

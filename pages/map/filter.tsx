@@ -1,14 +1,14 @@
-import Header from "components/Filter/Header";
-import RoomType from "components/Filter/RoomType";
-import TransactionType from "components/Filter/TransactionType";
+import Header from "components/filter/Header";
+import RoomType from "components/filter/RoomType";
+import TransactionType from "components/filter/TransactionType";
 import InputRange from "components/common/InputRange";
-import ManagementFee from "components/Filter/ManagementFee";
-import Floor from "components/Filter/Floor";
-import Structure from "components/Filter/Structure";
-import ExtraFilter from "components/Filter/ExtraFilter";
-import TransactionType2 from "components/Filter/TransactionType2";
-import PriceUnit from "components/Filter/PriceUnit";
-import ApprovalDate from "components/Filter/ApprovalDate";
+import ManagementFee from "components/filter/ManagementFee";
+import Floor from "components/filter/Floor";
+import Structure from "components/filter/Structure";
+import ExtraFilter from "components/filter/ExtraFilter";
+import TransactionType2 from "components/filter/TransactionType2";
+import PriceUnit from "components/filter/PriceUnit";
+import ApprovalDate from "components/filter/ApprovalDate";
 
 export default function Filter() {
     return (

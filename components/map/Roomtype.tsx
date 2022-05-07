@@ -21,7 +21,7 @@ export default function RoomType({ upDown, setUpDown }: propsType) {
             />
             <div className="text-[1.5rem] flex items-center">
                 <Image
-                    src={require("icon/map/방.svg")}
+                    src={require("icon/방.svg")}
                     width={25}
                     height={25}
                     alt="room"
