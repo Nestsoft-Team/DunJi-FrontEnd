@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import React from "react";
-import RoomList from "components/Map/RoomList";
-import Header from "components/Map/Header";
+import RoomList from "components/map/RoomList";
+import Header from "components/map/Header";
 
 export default function Map() {
     const [latitude, setLatitude] = useState(37.297526827747966); //한양대 에리카 위도,경도
@@ -69,21 +69,14 @@ export default function Map() {
         return () => mapScript.removeEventListener("load", onLoadKakaoMap);
     }, [latitude, longitude]);
 
-    //지도 클릭 시 input Box 그림자 제거
-    function inputBlurHandler() {
-        inputRef.current && inputRef.current.blur();
-        inputContainerRef.current &&
-            inputContainerRef.current.classList.remove("shadow-xl");
-    }
     return (
-        <div className="w-full h-full flex flex-col">
+        <div className=" w-screen flex flex-col h-100vh relative overflow-hidden">
             <Header />
-            <div className="flex flex-col absolute bottom-0 z-10 items-center "></div>
-            <div
-                id="map"
-                onClick={inputBlurHandler}
-                className=" w-screen h-[80vh]"
-            ></div>
+            <RoomList />
+            <div id="map" className="absolute top-0 w-screen h-100vh" />
         </div>
     );
 }
+// 1. w-screen flex flex-col h-100vh relative overflow-hidden (모바일 100vh 오류)
+
+// 2. w-screen flex flex-col h-screen  relative overflow-hidden (모바일 100vh 해결하지만 resize해야 변경됨)

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import Nav from "./Nav";
 
 type AppLayoutProps = {
@@ -7,12 +8,15 @@ type AppLayoutProps = {
 
 function AppLayout({ children }: AppLayoutProps) {
     const router = useRouter();
-    return (
-        <div>
-            {children}
-            {router.pathname !== "/room/register" && <Nav />}
-        </div>
-    );
+    useEffect(() => {
+        const handleResize = function () {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    return <div>{children}</div>;
 }
 
 export default AppLayout;

@@ -5,6 +5,18 @@ module.exports = {
     ],
 
     theme: {
+        height: (theme) => ({
+            auto: "auto",
+            ...theme("spacing"),
+            full: "100%",
+            screen: "calc(var(--vh) * 100)",
+        }),
+        minHeight: (theme) => ({
+            0: "0",
+            ...theme("spacing"),
+            full: "100%",
+            screen: "calc(var(--vh) * 100)",
+        }),
         extend: {
             colors: {
                 background_beige: "#F1EEE8",
@@ -54,6 +66,7 @@ module.exports = {
                 room_register_btn_height1: "3.5rem",
                 room_register_btn_height2: "4.5rem",
                 map_room_list_height: "25rem",
+                nav_height: "5rem",
             },
             spacing: {
                 map_room_list_height: "25rem",
