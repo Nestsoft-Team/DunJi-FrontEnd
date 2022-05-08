@@ -15,7 +15,7 @@ export default function Review() {
                         <Image src={require("./person.png")} alt="person" />
                     </div>
                     <div className="ml-4">
-                        <div className="text-[1.5rem] font-[800]">둥지냉면</div>
+                        <div className="text-[1.5rem] font-[600]">둥지냉면</div>
                         <div className="flex gap-1 text-font_gray ">
                             <span className="border-[0.1rem] w-24 text-center py-[0.1rem] rounded-[0.6rem]  border-border_color">
                                 대학생
