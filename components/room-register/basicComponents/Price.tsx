@@ -12,7 +12,7 @@ export default function Price() {
     return (
         <>
             <CategoryHeader title="가격" />
-            <div className="  mb-4 w-full rounded-room_register_rounded overflow-hidden">
+            <div className="  mb-4 w-full rounded-standard_rounded overflow-hidden">
                 {priceArr.map((item, index) => (
                     <div className="relative" key={index}>
                         <input

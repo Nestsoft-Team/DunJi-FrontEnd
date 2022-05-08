@@ -37,7 +37,7 @@ export default function MoveDate() {
                     <div key={index} className="relative h-full mb-4 w-full">
                         <select
                             onChange={(e) => item.valueHandler(e.target.value)}
-                            className="bg-white border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-main"
+                            className="bg-white border border-border_color w-full rounded-standard_rounded h-full text-xl pl-4 placeholder-black outline-0 focus:border-main"
                             value={item.value}
                         >
                             {item.arr.map((item, index) => (

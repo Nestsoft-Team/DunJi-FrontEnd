@@ -50,7 +50,7 @@ module.exports = {
                 "100vw": "100vw",
             },
             padding: {
-                room_register_pd: "6vw",
+                standard_pd: "6vw",
             },
             height: {
                 "10vh": "10vh",
@@ -82,7 +82,7 @@ module.exports = {
             },
             borderRadius: {
                 middle: "40px 40px 40px 40px",
-                room_register_rounded: "0.9rem",
+                standard_rounded: "0.9rem",
             },
             // animation: {
             //     "room-list-up": "room-list-up-key 0.3s linear reverse",

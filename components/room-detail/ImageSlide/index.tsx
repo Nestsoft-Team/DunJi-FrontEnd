@@ -1,8 +1,6 @@
-import { Swiper, SwiperSlide } from "swiper/react"; // basic
+import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
-import "swiper/css"; //basic
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css";
 import Image from "next/image";
 import SwiperBtn from "./SwiperBtn";
 import SlideIndex from "./SlideIndex";
@@ -18,7 +16,6 @@ export default function ImageSlide() {
             className="relative"
             spaceBetween={10}
             slidesPerView={1}
-            scrollbar={{ draggable: true }}
             rewind={true}
             breakpoints={{
                 500: {

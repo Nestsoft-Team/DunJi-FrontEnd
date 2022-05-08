@@ -28,7 +28,7 @@ export default function AddressRegister() {
                         <>
                             {!roomRegister.ROOM_REGISTER_POSTCODE_OPEN && (
                                 <>
-                                    <div className="px-room_register_pd  w-full">
+                                    <div className="px-standard_pd  w-full">
                                         <div className="text-lg my-8 text-center">
                                             주소는 동, 면, 읍, 단지명 까지만
                                             노출됩니다.
@@ -55,10 +55,10 @@ export default function AddressRegister() {
                             {roomRegister.ROOM_REGISTER_MAIN_ADDRESS &&
                                 !roomRegister.ROOM_REGISTER_POSTCODE_OPEN && (
                                     <>
-                                        <div className="w-screen px-room_register_pd ">
+                                        <div className="w-screen px-standard_pd ">
                                             <Map />
                                         </div>
-                                        <div className="w-screen justify-between px-room_register_pd  items-center text-xl">
+                                        <div className="w-screen justify-between px-standard_pd  items-center text-xl">
                                             <div className="mt-12 mb-4 text-2xl">
                                                 주소 등록
                                                 <span className="text-main">

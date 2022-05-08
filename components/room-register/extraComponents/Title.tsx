@@ -7,7 +7,7 @@ export default function Parking() {
         <>
             <CategoryHeader title="방 제목" />
             <input
-                className="h-room_register_btn_height1 w-full rounded-room_register_rounded  text-xl pl-4 placeholder-font_gray outline-0"
+                className="h-room_register_btn_height1 w-full rounded-standard_rounded  text-xl pl-4 placeholder-font_gray outline-0"
                 value={text}
                 placeholder="제목"
                 onChange={(e) => setText(e.target.value)}

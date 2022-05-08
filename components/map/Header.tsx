@@ -31,7 +31,7 @@ export default function Header() {
     ];
 
     return (
-        <header className=" w-full px-room_register_pd pt-6 z-10 bg-background_beige">
+        <header className=" w-full px-standard_pd pt-6 z-10 bg-background_beige">
             <div className="text-2xl h-[3.5rem] flex items-center justify-between">
                 <Link href="/" passHref>
                     <Image

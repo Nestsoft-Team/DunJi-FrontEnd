@@ -14,7 +14,7 @@ export default function Filter() {
     return (
         <div className="mb-12">
             <Header />
-            <div className="px-room_register_pd w-screen mb-4">
+            <div className="px-standard_pd w-screen mb-4">
                 <RoomType />
                 <TransactionType />
                 <PriceUnit />

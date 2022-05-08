@@ -18,7 +18,7 @@ export default function DetailRegister() {
             {roomRegister.ROOM_REGISTER_COMPONENT_HANDLER === 2 && (
                 <div className="h-full">
                     <SubHeader />
-                    <div className="px-room_register_pd w-screen mb-4">
+                    <div className="px-standard_pd w-screen mb-4">
                         <Option />
                         <div className="pt-4 mt-8 border-t border-border_color">
                             <Parking />

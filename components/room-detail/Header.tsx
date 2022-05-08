@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Header() {
     return (
         <header
-            className="flex w-full justify-between px-room_register_pd 
+            className="flex w-full justify-between px-standard_pd 
         py-4  h-24 items-center text-xl  border-b"
         >
             <div className="flex text-2xl items-center">
