@@ -6,6 +6,8 @@ import Review from "components/room-detail/Review";
 import Info from "components/room-detail/Info";
 import Price from "components/room-detail/Price";
 import Option from "components/room-detail/Option";
+import Location from "components/room-detail/Location";
+// import LifeInfo from "components/room-detail/LifeInfo";
 
 export default function RoomDetail() {
     return (
@@ -18,7 +20,9 @@ export default function RoomDetail() {
                 <Review />
                 <Info />
                 <Price />
+                {/* <LifeInfo /> 우선 생략 컴포넌트 */}
                 <Option />
+                <Location />
             </div>
         </div>
     );
