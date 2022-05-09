@@ -18,7 +18,7 @@ export default function UploadImageSmall({ file, setFile, index }: propsType) {
         };
     };
     return (
-        <div className="bg-component_white h-full w-full rounded-room_register_rounded flex items-center justify-center relative">
+        <div className="bg-component_white h-full w-full rounded-standard_rounded flex items-center justify-center relative">
             {file ? (
                 <div>
                     <label htmlFor="image-upload">

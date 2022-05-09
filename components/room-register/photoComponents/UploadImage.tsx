@@ -15,7 +15,7 @@ export default function UploadImage({ file, setFile }: propsType) {
         reader.onload = () => setFile(String(reader.result));
     };
     return (
-        <div className="bg-component_white h-full w-full rounded-room_register_rounded flex items-center justify-center relative">
+        <div className="bg-component_white h-full w-full rounded-standard_rounded flex items-center justify-center relative">
             {file ? (
                 <div>
                     <label htmlFor="image-upload">

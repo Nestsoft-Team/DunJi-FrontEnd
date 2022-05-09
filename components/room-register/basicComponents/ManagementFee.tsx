@@ -31,7 +31,7 @@ export default function Price() {
                 <div className="relative h-full mb-4">
                     <input
                         type="number"
-                        className="bg-white  w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-font_gray outline-0"
+                        className="bg-white  w-full rounded-standard_rounded h-full text-xl pl-4 placeholder-font_gray outline-0"
                         placeholder="관리비"
                         value={fee}
                         onChange={(e) => {

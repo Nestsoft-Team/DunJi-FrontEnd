@@ -12,7 +12,7 @@ export default function Area() {
                 <div className="relative h-room_register_btn_height2 mb-4 w-full">
                     <input
                         type="number"
-                        className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
+                        className=" border border-border_color w-full rounded-standard_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
                         placeholder="실평수"
                         value={pyeong}
                         onChange={(e) => {
@@ -32,7 +32,7 @@ export default function Area() {
                 <div className="relative h-room_register_btn_height2 mb-4 w-full">
                     <input
                         type="number"
-                        className=" border border-border_color w-full rounded-room_register_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
+                        className=" border border-border_color w-full rounded-standard_rounded h-full text-xl pl-4 placeholder-text_gray outline-0 focus:border-main"
                         placeholder="전용 면적"
                         value={squareMeter}
                         onChange={(e) => {

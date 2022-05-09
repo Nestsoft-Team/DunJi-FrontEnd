@@ -31,14 +31,14 @@ export default function Header() {
     ];
 
     return (
-        <header className=" w-full px-room_register_pd pt-6 z-10 bg-background_beige">
+        <header className=" w-full px-standard_pd pt-6 z-10 bg-background_beige">
             <div className="text-2xl h-[3.5rem] flex items-center justify-between">
                 <Link href="/" passHref>
                     <Image
                         width={22}
                         height={22}
                         alt="arrow"
-                        src={require("icon/map/화살표.svg")}
+                        src={require("icon/화살표.svg")}
                     />
                 </Link>
                 <div className="relative h-[3.5rem] w-[90%]">
@@ -60,7 +60,7 @@ export default function Header() {
                                 width={22}
                                 height={22}
                                 alt="x"
-                                src={require("icon/map/검색_X.svg")}
+                                src={require("icon/검색_X.svg")}
                             ></Image>
                         </div>
                     )}
@@ -73,7 +73,7 @@ export default function Header() {
                             width={22}
                             height={22}
                             alt="x"
-                            src={require("icon/map/검색_X.svg")}
+                            src={require("icon/검색_X.svg")}
                         ></Image>
                     </a>
                 </Link>

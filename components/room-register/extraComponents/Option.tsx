@@ -47,7 +47,7 @@ export default function Option() {
                     />
                 ))}
             </div>
-            <button className="bg-component_white flex px-4 w-full h-room_register_btn_height1 mt-4 rounded-room_register_rounded text-[1.3rem] justify-between items-center text-font_gray">
+            <button className="bg-component_white flex px-4 w-full h-room_register_btn_height1 mt-4 rounded-standard_rounded text-[1.3rem] justify-between items-center text-font_gray">
                 <div>기타 옵션 추가</div>
                 <FontAwesomeIcon
                     className="border-[0.1rem] p-1 border-font_gray  rounded-[50%]"
