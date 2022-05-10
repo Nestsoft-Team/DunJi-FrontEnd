@@ -12,13 +12,10 @@ export default function RoomType({ upDown, setUpDown }: propsType) {
     return (
         <div
             className="w-full flex flex-col items-center  bg-white
-             border-b border-1 "
+             border-b border-1 h-[6rem]"
             onClick={unDownHandler}
         >
-            <div
-                className={`w-16 h-2 bg-border_color rounded-[2rem] my-4
-            `}
-            />
+            <div className="w-16 h-2 bg-border_color rounded-[2rem] my-4" />
             <div className="text-[1.5rem] flex items-center">
                 <Image
                     src={require("icon/방.svg")}
@@ -28,7 +25,6 @@ export default function RoomType({ upDown, setUpDown }: propsType) {
                 />
                 33개의 방
             </div>
-            <nav className="grid grid-cols-3 gap-2 w-full items-center text-xl pb-2 px-12 text-border_color"></nav>
         </div>
     );
 }

@@ -52,6 +52,9 @@ module.exports = {
             padding: {
                 standard_pd: "6vw",
             },
+            margin: {
+                standard_m: "6vw",
+            },
             height: {
                 "10vh": "10vh",
                 "20vh": "20vh",
@@ -65,14 +68,12 @@ module.exports = {
                 "100vh": "100vh",
                 room_register_btn_height1: "3.5rem",
                 room_register_btn_height2: "4.5rem",
-                map_room_list_height: "25rem",
+                map_room_list_height: "20rem",
                 nav_height: "5rem",
             },
-            spacing: {
-                map_room_list_height: "25rem",
-            },
+
             translate: {
-                map_room_list_height: "25rem",
+                map_room_list_height: "20rem",
             },
             minWidth: {
                 20: "25rem",

@@ -6,8 +6,7 @@ import Header from "components/map/Header";
 export default function Map() {
     const [latitude, setLatitude] = useState(37.297526827747966); //한양대 에리카 위도,경도
     const [longitude, setLongitude] = useState(126.835628984629);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const inputContainerRef = useRef<HTMLInputElement>(null);
+    const [openPopup, setOpenPopup] = useState(true);
 
     useEffect(() => {
         const getLocation = () => {
@@ -70,9 +69,9 @@ export default function Map() {
     }, [latitude, longitude]);
 
     return (
-        <div className=" w-screen flex flex-col h-100vh relative overflow-hidden">
+        <div className=" w-screen flex flex-col justify-between h-100vh relative overflow-hidden ">
             <Header />
-            <RoomList />
+            <RoomList openPopup={openPopup} />
             <div id="map" className="absolute top-0 w-screen h-100vh" />
         </div>
     );

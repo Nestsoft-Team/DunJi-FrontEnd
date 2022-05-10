@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -10,6 +9,7 @@ export default function Header() {
     const [filterSelect2, setFilterSelect2] = useState(false);
     const [filterSelect3, setFilterSelect3] = useState(false);
     const [filterSelect4, setFilterSelect4] = useState(false);
+    const [filterSelect5, setFilterSelect5] = useState(false);
 
     const btnArr = [
         {
@@ -28,18 +28,25 @@ export default function Header() {
             checkHandler: setFilterSelect4,
             value: "관리비",
         },
+        {
+            check: filterSelect5,
+            checkHandler: setFilterSelect5,
+            value: "거래가능",
+        },
     ];
 
     return (
         <header className=" w-full px-standard_pd pt-6 z-10 bg-background_beige">
             <div className="text-2xl h-[3.5rem] flex items-center justify-between">
-                <Link href="/" passHref>
-                    <Image
-                        width={22}
-                        height={22}
-                        alt="arrow"
-                        src={require("icon/화살표.svg")}
-                    />
+                <Link href="/">
+                    <a>
+                        <Image
+                            width={22}
+                            height={22}
+                            alt="arrow"
+                            src={require("icon/화살표.svg")}
+                        />
+                    </a>
                 </Link>
                 <div className="relative h-[3.5rem] w-[90%]">
                     <input
@@ -72,8 +79,8 @@ export default function Header() {
                         <Image
                             width={22}
                             height={22}
-                            alt="x"
-                            src={require("icon/검색_X.svg")}
+                            alt="필터"
+                            src={require("icon/필터.svg")}
                         ></Image>
                     </a>
                 </Link>
