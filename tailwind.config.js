@@ -68,12 +68,13 @@ module.exports = {
                 "100vh": "100vh",
                 room_register_btn_height1: "3.5rem",
                 room_register_btn_height2: "4.5rem",
-                map_room_list_height: "20rem",
+                map_room_list_height: "25rem",
                 nav_height: "5rem",
+                map_header_height: "11rem",
             },
 
             translate: {
-                map_room_list_height: "20rem",
+                map_room_list_height: "25rem",
             },
             minWidth: {
                 20: "25rem",

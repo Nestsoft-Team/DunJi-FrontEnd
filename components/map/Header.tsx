@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import CommonBtn from "./CommonBtn";
+import { map_header_height } from "./Variable";
 
 export default function Header() {
     const [searchVal, setSearchVal] = useState("");
@@ -36,7 +37,9 @@ export default function Header() {
     ];
 
     return (
-        <header className=" w-full px-standard_pd pt-6 z-10 bg-background_beige">
+        <header
+            className={`h-[${map_header_height}] w-full px-standard_pd pt-6 z-10 bg-background_beige`}
+        >
             <div className="text-2xl h-[3.5rem] flex items-center justify-between">
                 <Link href="/">
                     <a>

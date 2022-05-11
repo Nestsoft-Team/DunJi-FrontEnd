@@ -1,55 +1,31 @@
-import Image from "next/image";
 import { useState } from "react";
 import Popup from "./Popup";
-import RoomType from "./Roomtype";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
-import "swiper/css";
+import RoomListHeader from "./RoomListHeader";
+import RoomListSlider from "./RoomListSlider";
+import RoomListYSlider from "./RoomListYSlider";
 
 type propsType = {
     openPopup: boolean;
 };
 export default function RoomList({ openPopup }: propsType) {
-    const [upDown, setUpDown] = useState<null | boolean>(null);
-    const slides = ["./room.png", "./room.png", "./room.png", "./room.png"];
+    const [upDown, setUpDown] = useState(0); // 컴포넌트 올라온 단계(0: 지도 하단 가림, 1: 지도 절반 가림 2: 지도 가림)
+    const [touchY, setTouchY] = useState(10000);
+    const [margin, setMargin] = useState({ marginTop: "calc(100vh - 17rem)" });
 
     return (
         <div
-            className={`flex flex-col justify-center w-full items-center transition   z-10    ${
-                upDown && " translate-y-0"
-            } translate-y-map_room_list_height
-            `}
+            className={`flex flex-col justify-center w-full items-center z-10 `}
+            style={margin}
         >
-            {!upDown && openPopup && <Popup />}
-            <RoomType upDown={upDown} setUpDown={setUpDown} />
-            <div className="h-map_room_list_height bg-white w-full pl-[3vw] py-2">
-                <div className="flex-col  w-full">
-                    <div className="flex  items-center text-[1.5rem] mb-2">
-                        <Image
-                            src={require("icon/방.svg")}
-                            width={25}
-                            height={25}
-                            alt="room"
-                        />
-                        이 구역 인기 방 먼저 둘러보세요!
-                    </div>
-                    <Swiper
-                        spaceBetween={10}
-                        slidesPerView={2.5}
-                        breakpoints={{
-                            600: {
-                                slidesPerView: 3,
-                            },
-                        }}
-                    >
-                        {slides.map((item, index) => (
-                            <SwiperSlide key={index} virtualIndex={index}>
-                                <Image src={require("./room.png")} alt="room" />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
-            </div>
+            {upDown === 0 && openPopup && touchY === 0 && <Popup />}
+            <RoomListHeader
+                setUpDown={setUpDown}
+                touchY={touchY}
+                setTouchY={setTouchY}
+                setMargin={setMargin}
+            />
+            <RoomListSlider />
+            <RoomListYSlider />
         </div>
     );
 }

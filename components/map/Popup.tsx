@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Popup() {
     return (
-        <div className="w-[94vw] h-[15vh] rounded-standard_rounded border border-font_gray bg-white grid grid-cols-[3fr_4fr] mb-6">
+        <div className="absolute bottom-[10vh] w-[94vw] h-[15vh] rounded-standard_rounded border border-font_gray bg-white grid grid-cols-[3fr_4fr] mb-6 z-10">
             <div className="overflow-hidden">
                 <Image src={require("./room.png")} alt="room"></Image>
             </div>

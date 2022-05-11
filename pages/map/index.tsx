@@ -69,7 +69,7 @@ export default function Map() {
     }, [latitude, longitude]);
 
     return (
-        <div className=" w-screen flex flex-col justify-between h-100vh relative overflow-hidden ">
+        <div className=" w-screen flex flex-col h-100vh relative overflow-hidden ">
             <Header />
             <RoomList openPopup={openPopup} />
             <div id="map" className="absolute top-0 w-screen h-100vh" />
