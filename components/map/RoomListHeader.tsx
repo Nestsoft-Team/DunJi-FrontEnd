@@ -40,8 +40,8 @@ export default function RoomListHeader({
     //드래그시 margin 설정
     const touchHandler = (e: TouchEvent<HTMLDivElement>) => {
         let clientY = Math.round(e.touches[0].clientY);
-        // Header 의 높이 11rem 보다 마우스가 위로 가는 경우
-        if (clientY < 110) clientY = 110;
+        // Header 의 높이 9.5rem 보다 마우스가 위로 가는 경우
+        if (clientY < 95) clientY = 95;
         else if (clientY > windowHeight - 60) clientY = windowHeight - 60;
         setTouchY(clientY);
         setMargin({
@@ -54,14 +54,14 @@ export default function RoomListHeader({
         if (touchY >= windowHeight * 0.65) {
             setUpDown(0);
             setMargin({
-                marginTop: "calc(100vh - 17rem)",
-            }); // 컴포넌트가 화면 하단만 가린 상태. 17rem(Header높이(6em) + 하단 n개방 컴포넌트 높이(11em))을 제외한 margin: ;
+                marginTop: "calc(100vh - 15.5rem)",
+            }); // 컴포넌트가 화면 하단만 가린 상태. 15.5rem(Header높이(9.5rem) + 하단 n개방 컴포넌트 헤더(6rem))을 제외한 margin
         } else if (
             windowHeight * 0.35 < touchY &&
             touchY < windowHeight * 0.65
         ) {
             setUpDown(1);
-            setMargin({ marginTop: `calc(100vh - 40.5rem)` }); //지도를 절반 가린 상태
+            setMargin({ marginTop: `calc(100vh - 39.5rem)` }); //지도를 절반 가린 상태
         } else if (touchY <= windowHeight * 0.35) {
             setUpDown(2);
             setMargin({ marginTop: "0" }); // 지도를 다 가린 상태
@@ -70,13 +70,13 @@ export default function RoomListHeader({
 
     return (
         <div
-            className={`w-full flex flex-col items-center  bg-white
+            className={`w-screen   bg-white flex flex-col items-center
              border-b border-1 h-[${map_room_list_header_height}]`}
             onTouchMove={touchHandler}
             onTouchEnd={touchEndHandler}
         >
-            <div className="w-16 h-2 bg-border_color rounded-[2rem] my-4" />
-            <div className="text-[1.5rem] flex items-center">
+            <div className="w-16 h-2 bg-border_color rounded-[2rem] my-2" />
+            <div className="text-[1.5rem] flex items-center mt-2">
                 <Image
                     src={require("icon/방.svg")}
                     width={25}

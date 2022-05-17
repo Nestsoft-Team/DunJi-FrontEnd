@@ -23,6 +23,7 @@ export default function RoomListSlider() {
                 <Swiper
                     spaceBetween={15}
                     slidesPerView={2}
+                    className=""
                     breakpoints={{
                         400: {
                             slidesPerView: 2.5,

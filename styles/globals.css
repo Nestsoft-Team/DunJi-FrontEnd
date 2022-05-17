@@ -5,8 +5,15 @@ html {
     background-color: #f1eee8;
     /* font-family: NotoSansKR; */
 }
+
 @tailwind components;
 @tailwind utilities;
+
+.root,
+#root,
+#docs-root {
+    --vh: 100%;
+}
 
 @layer base {
     /* @font-face {

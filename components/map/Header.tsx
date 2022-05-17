@@ -37,8 +37,8 @@ export default function Header() {
     ];
 
     return (
-        <header
-            className={`h-[${map_header_height}] w-full px-standard_pd pt-6 z-10 bg-background_beige`}
+        <div
+            className={`h-[[${map_header_height}]] w-screen px-standard_pd pt-6 z-10 bg-background_beige`}
         >
             <div className="text-2xl h-[3.5rem] flex items-center justify-between">
                 <Link href="/">
@@ -76,7 +76,7 @@ export default function Header() {
                     )}
                 </div>
             </div>
-            <div className="h-[2.5rem] flex gap-2 my-8">
+            <div className="h-[2.5rem] flex gap-2 my-4">
                 <Link href="/map/filter">
                     <a>
                         <Image
@@ -96,6 +96,6 @@ export default function Header() {
                     />
                 ))}
             </div>
-        </header>
+        </div>
     );
 }
