@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import RoomList from "components/map/RoomList";
 import Header from "components/map/Header";
@@ -17,7 +17,6 @@ export default function Map() {
                         setLongitude(position.coords.longitude);
                     },
                     function (error) {
-                        // alert("브라우저 설정에서 위치 접근을 허용해 주세요");
                         console.log(error);
                     },
                     {
@@ -76,6 +75,3 @@ export default function Map() {
         </div>
     );
 }
-// 1. w-screen flex flex-col h-100vh relative overflow-hidden (모바일 100vh 오류)
-
-// 2. w-screen flex flex-col h-screen  relative overflow-hidden (모바일 100vh 해결하지만 resize해야 변경됨)

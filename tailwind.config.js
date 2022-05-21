@@ -58,7 +58,6 @@ module.exports = {
                 standard_m: "6vw",
             },
             height: {
-                "--vh": "var(--vh)*10",
                 "10vh": "10vh",
                 "20vh": "20vh",
                 "30vh": "30vh",
@@ -68,6 +67,7 @@ module.exports = {
                 "70vh": "70vh",
                 "80vh": "80vh",
                 "90vh": "90vh",
+                "100vh": "100vh",
                 room_register_btn_height1: "3.5rem",
                 room_register_btn_height2: "4.5rem",
                 map_room_list_height: "25rem",

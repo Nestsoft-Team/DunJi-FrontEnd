@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Popup from "./Popup";
 import RoomListHeader from "./RoomListHeader";
 import RoomListSlider from "./RoomListSlider";
@@ -13,6 +13,18 @@ export default function RoomList({ openPopup }: propsType) {
     const [margin, setMargin] = useState({
         marginTop: "calc(100vh - 15.5rem)",
     });
+    const [innerHeight, setInnerHeight] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setInnerHeight(window.innerHeight);
+        };
+        handleResize();
+        window.addEventListener("resize", () => handleResize);
+
+        setMargin({ marginTop: `calc(${innerHeight}px - 15.5rem)` });
+        return () => window.removeEventListener("resize", handleResize);
+    }, [innerHeight]);
 
     return (
         <div className="w-full  z-10" style={margin}>
@@ -22,6 +34,7 @@ export default function RoomList({ openPopup }: propsType) {
                 touchY={touchY}
                 setTouchY={setTouchY}
                 setMargin={setMargin}
+                innerHeight={innerHeight}
             />
             <RoomListSlider />
             <RoomListYSlider />
