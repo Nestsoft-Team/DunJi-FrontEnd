@@ -10,12 +10,14 @@ module.exports = {
             ...theme("spacing"),
             full: "100%",
             screen: "calc(var(--vh) * 100)",
+            "100vh": "calc(var(--vh) * 100)",
         }),
         minHeight: (theme) => ({
             0: "0",
             ...theme("spacing"),
             full: "100%",
             screen: "calc(var(--vh) * 100)",
+            "100vh": "calc(var(--vh) * 100)",
         }),
         extend: {
             colors: {
@@ -52,6 +54,9 @@ module.exports = {
             padding: {
                 standard_pd: "6vw",
             },
+            margin: {
+                standard_m: "6vw",
+            },
             height: {
                 "10vh": "10vh",
                 "20vh": "20vh",
@@ -67,10 +72,9 @@ module.exports = {
                 room_register_btn_height2: "4.5rem",
                 map_room_list_height: "25rem",
                 nav_height: "5rem",
+                map_header_height: "11rem",
             },
-            spacing: {
-                map_room_list_height: "25rem",
-            },
+
             translate: {
                 map_room_list_height: "25rem",
             },

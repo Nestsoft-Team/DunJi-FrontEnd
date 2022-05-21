@@ -9,6 +9,7 @@ import PhotoRegister from "components/room-register/PhotoComponents";
 
 export default function Register() {
     const roomRegister = useSelector((state: RootState) => state.roomRegister);
+
     return (
         <div className="pb-[12rem] min-h-screen">
             <Header />

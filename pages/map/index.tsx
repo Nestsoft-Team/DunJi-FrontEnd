@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import RoomList from "components/map/RoomList";
 import Header from "components/map/Header";
@@ -6,8 +6,7 @@ import Header from "components/map/Header";
 export default function Map() {
     const [latitude, setLatitude] = useState(37.297526827747966); //한양대 에리카 위도,경도
     const [longitude, setLongitude] = useState(126.835628984629);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const inputContainerRef = useRef<HTMLInputElement>(null);
+    const [openPopup, setOpenPopup] = useState(true);
 
     useEffect(() => {
         const getLocation = () => {
@@ -18,7 +17,6 @@ export default function Map() {
                         setLongitude(position.coords.longitude);
                     },
                     function (error) {
-                        // alert("브라우저 설정에서 위치 접근을 허용해 주세요");
                         console.log(error);
                     },
                     {
@@ -70,13 +68,10 @@ export default function Map() {
     }, [latitude, longitude]);
 
     return (
-        <div className=" w-screen flex flex-col h-100vh relative overflow-hidden">
+        <div className="flex flex-col w-screen  h-screen relative overflow-hidden">
             <Header />
-            <RoomList />
-            <div id="map" className="absolute top-0 w-screen h-100vh" />
+            <RoomList openPopup={openPopup} />
+            <div id="map" className="absolute top-0 w-screen h-screen" />
         </div>
     );
 }
-// 1. w-screen flex flex-col h-100vh relative overflow-hidden (모바일 100vh 오류)
-
-// 2. w-screen flex flex-col h-screen  relative overflow-hidden (모바일 100vh 해결하지만 resize해야 변경됨)

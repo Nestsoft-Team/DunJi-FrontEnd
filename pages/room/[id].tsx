@@ -20,7 +20,7 @@ export default function RoomDetail() {
                 <Review />
                 <Info />
                 <Price />
-                {/* <LifeInfo /> 우선 생략 컴포넌트 */}
+                {/* <LifeInfo />  생략 컴포넌트 */}
                 <Option />
                 <Location />
             </div>
