@@ -21,7 +21,7 @@ export default function Location() {
                     }`}
                 >
                     <Image
-                        src={require("icon/화살표_펼치기.svg")}
+                        src={require("assets/icon/화살표_펼치기.svg")}
                         alt="arrow"
                         objectFit="contain"
                         layout="fill"

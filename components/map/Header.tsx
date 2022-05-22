@@ -47,7 +47,7 @@ export default function Header() {
                             width={22}
                             height={22}
                             alt="arrow"
-                            src={require("icon/화살표.svg")}
+                            src={require("assets/icon/화살표.svg")}
                         />
                     </a>
                 </Link>
@@ -70,7 +70,7 @@ export default function Header() {
                                 width={22}
                                 height={22}
                                 alt="x"
-                                src={require("icon/검색_X.svg")}
+                                src={require("assets/icon/검색_X.svg")}
                             ></Image>
                         </div>
                     )}
@@ -83,7 +83,7 @@ export default function Header() {
                             width={22}
                             height={22}
                             alt="필터"
-                            src={require("icon/필터.svg")}
+                            src={require("assets/icon/필터.svg")}
                         ></Image>
                     </a>
                 </Link>

@@ -11,7 +11,7 @@ export default function Header() {
                 <Link href="/map">
                     <a>
                         <Image
-                            src={require("icon/화살표.svg")}
+                            src={require("assets/icon/화살표.svg")}
                             width={20}
                             height={20}
                             alt="arrow"
@@ -22,19 +22,19 @@ export default function Header() {
             </div>
             <div className="flex gap-4">
                 <Image
-                    src={require("icon/하트_찜_X.svg")}
+                    src={require("assets/icon/하트_찜_X.svg")}
                     width={22}
                     height={22}
                     alt="heart"
                 />
                 <Image
-                    src={require("icon/공유.svg")}
+                    src={require("assets/icon/공유.svg")}
                     width={22}
                     height={22}
                     alt="share"
                 />
                 <Image
-                    src={require("icon/더보기.svg")}
+                    src={require("assets/icon/더보기.svg")}
                     width={22}
                     height={22}
                     alt="three-dot"
