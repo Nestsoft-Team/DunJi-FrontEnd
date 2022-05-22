@@ -33,10 +33,7 @@ export default function Option() {
 
     return (
         <>
-            <div className="py-4 text-2xl mt-4">
-                옵션
-                <span className="text-main">&nbsp;*</span>
-            </div>
+            <div className="py-4 text-2xl mt-4">옵션</div>
             <div className=" grid grid-cols-3 gap-room_register_gap ">
                 {arr.map((item, index) => (
                     <CommonBtn

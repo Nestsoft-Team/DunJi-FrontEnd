@@ -31,7 +31,7 @@ export default function MoveDate() {
     ];
     return (
         <>
-            <CategoryHeader title="입주가능일" />
+            <CategoryHeader title="입주가능기간" />
             <div className="w-full flex gap-room_register_gap h-room_register_btn_height1">
                 {arr.map((item, index) => (
                     <div key={index} className="relative h-full mb-4 w-full">

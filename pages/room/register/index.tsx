@@ -23,7 +23,7 @@ export default function Register() {
         fetchData();
     });
     return (
-        <div className="pb-[12rem] min-h-screen">
+        <div className="pb-[12rem] min-h-screen relative">
             <Header />
             <AddressRegister />
             <BasicInfo />

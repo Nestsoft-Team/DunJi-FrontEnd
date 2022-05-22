@@ -23,22 +23,22 @@ export default function TransactionType() {
         {
             check: btn2Check,
             checkHandler: setBtn2Check,
-            type: "투. 쓰리룸",
+            type: "투룸",
         },
         {
             check: btn3Check,
             checkHandler: setBtn3Check,
-            type: "오피스텔",
+            type: "쓰리룸 이상",
         },
         {
             check: btn4Check,
             checkHandler: setBtn4Check,
-            type: "아파트",
+            type: "반지하",
         },
         {
             check: btn5Check,
             checkHandler: setBtn5Check,
-            type: "공공주택",
+            type: "옥탑방",
         },
     ];
     useEffect(() => {
@@ -84,10 +84,7 @@ export default function TransactionType() {
 
     return (
         <>
-            <div className="py-4 text-2xl  mt-8">
-                방 종류
-                <span className="text-main">&nbsp;*</span>
-            </div>
+            <div className="py-4 text-2xl  mt-8">방 종류</div>
             <div className="w-full grid grid-cols-3 gap-room_register_gap">
                 {btnArr.map((item, index) => (
                     <CommonBtn
