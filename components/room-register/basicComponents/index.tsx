@@ -17,7 +17,7 @@ export default function DetailRegister() {
 
     return (
         <>
-            {roomRegister.ROOM_REGISTER_COMPONENT_HANDLER === 1 && (
+            {roomRegister.COMPONENT_HANDLER === 1 && (
                 <div className="h-full">
                     <SubHeader />
                     <div className="px-standard_pd w-screen mb-4">

@@ -11,7 +11,7 @@ export default function PhotoRegister() {
 
     return (
         <>
-            {roomRegister.ROOM_REGISTER_COMPONENT_HANDLER === 3 && (
+            {roomRegister.COMPONENT_HANDLER === 3 && (
                 <div className="h-full">
                     <SubHeader />
                     <div className="px-standard_pd w-screen">

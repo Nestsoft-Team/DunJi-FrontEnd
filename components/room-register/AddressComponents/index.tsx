@@ -13,20 +13,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function AddressRegister() {
     const dispatch = useDispatch();
     const roomRegister = useSelector((state: RootState) => state.roomRegister);
+
     const [detailAddress, updateDetailAddress] = useState("");
-    const btnHandler = (val: Boolean) => dispatch(dispatchPostCodeOpen(val));
+    const btnHandler = (val: boolean) => dispatch(dispatchPostCodeOpen(val));
     const inputHandler = (e: React.FormEvent<HTMLInputElement>) => {
         updateDetailAddress(e.currentTarget.value);
         dispatch(dispatchDetailAddress(e.currentTarget.value));
     };
     return (
         <>
-            {roomRegister.ROOM_REGISTER_COMPONENT_HANDLER === 0 && (
+            {roomRegister.COMPONENT_HANDLER === 0 && (
                 <>
-                    {!roomRegister.ROOM_REGISTER_POSTCODE_OPEN && <SubHeader />}
-                    {roomRegister.ROOM_REGISTER_ADDRESS_OPEN && (
+                    {!roomRegister.POSTCODE_OPEN && <SubHeader />}
+                    {roomRegister.ADDRESS_OPEN && (
                         <>
-                            {!roomRegister.ROOM_REGISTER_POSTCODE_OPEN && (
+                            {!roomRegister.POSTCODE_OPEN && (
                                 <>
                                     <div className="px-standard_pd  w-full">
                                         <div className="text-lg my-8 text-center">
@@ -39,7 +40,7 @@ export default function AddressRegister() {
                             text-2xl rounded-[20rem]"
                                             onClick={() =>
                                                 btnHandler(
-                                                    !roomRegister.ROOM_REGISTER_POSTCODE_OPEN
+                                                    !roomRegister.POSTCODE_OPEN
                                                 )
                                             }
                                         >
@@ -49,11 +50,9 @@ export default function AddressRegister() {
                                     </div>
                                 </>
                             )}
-                            {roomRegister.ROOM_REGISTER_POSTCODE_OPEN && (
-                                <PostCode />
-                            )}
-                            {roomRegister.ROOM_REGISTER_MAIN_ADDRESS &&
-                                !roomRegister.ROOM_REGISTER_POSTCODE_OPEN && (
+                            {roomRegister.POSTCODE_OPEN && <PostCode />}
+                            {roomRegister.MAIN_ADDRESS &&
+                                !roomRegister.POSTCODE_OPEN && (
                                     <>
                                         <div className="w-screen px-standard_pd ">
                                             <Map />
@@ -71,9 +70,7 @@ export default function AddressRegister() {
                                                         bg-component_white   rounded-2xl overflow-hidden"
                                             >
                                                 <div className="p-4 border-b border-border_color">
-                                                    {
-                                                        roomRegister.ROOM_REGISTER_MAIN_ADDRESS
-                                                    }
+                                                    {roomRegister.MAIN_ADDRESS}
                                                 </div>
                                                 <input
                                                     className="p-4 h-full w-full bg-transparent outline-0

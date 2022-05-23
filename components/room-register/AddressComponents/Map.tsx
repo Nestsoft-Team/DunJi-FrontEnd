@@ -9,7 +9,7 @@ declare global {
 }
 export default function Map() {
     const address = useSelector(
-        (state: RootState) => state.roomRegister.ROOM_REGISTER_MAIN_ADDRESS
+        (state: RootState) => state.roomRegister.MAIN_ADDRESS
     );
 
     useEffect(() => {

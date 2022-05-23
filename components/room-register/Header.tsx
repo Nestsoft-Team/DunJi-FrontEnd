@@ -9,7 +9,7 @@ export default function Header() {
 
     return (
         <>
-            {roomRegister.ROOM_REGISTER_POSTCODE_OPEN ? (
+            {roomRegister.POSTCODE_OPEN ? (
                 <header
                     className="flex w-screen justify-between px-standard_pd 
         py-4  h-24 items-center text-xl  border-b"
@@ -19,7 +19,7 @@ export default function Header() {
                             onClick={() => {
                                 dispatch(
                                     dispatchPostCodeOpen(
-                                        !roomRegister.ROOM_REGISTER_POSTCODE_OPEN
+                                        !roomRegister.POSTCODE_OPEN
                                     )
                                 );
                             }}

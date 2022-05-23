@@ -6,7 +6,7 @@ export default function SubHeader() {
     const dispatch = useDispatch();
     const roomRegister = useSelector((state: RootState) => state.roomRegister);
 
-    const onClickHandler = (num: Number) => {
+    const onClickHandler = (num: number) => {
         dispatch(dispatchComponentHandler(num));
     };
     const btnArr = ["주소 등록", "기본 정보", "추가 정보", "사진 등록"];
