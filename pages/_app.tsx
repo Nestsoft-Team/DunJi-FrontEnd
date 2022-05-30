@@ -1,10 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "../styles/FontAwesome";
-import { wrapper } from "../store";
+import { wrapper } from "store/index";
 import Layout from "components/layout";
+import withReduxSaga from "next-redux-saga";
 
-function app({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
     return (
         <Layout>
             <Component {...pageProps} />
@@ -12,4 +13,4 @@ function app({ Component, pageProps }: AppProps) {
     );
 }
 
-export default wrapper.withRedux(app);
+export default wrapper.withRedux(App);

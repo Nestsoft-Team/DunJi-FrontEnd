@@ -1,21 +1,27 @@
-import { Dispatch, SetStateAction } from "react";
-
 type propsType = {
     value: string;
-    check: boolean;
-    checkHandler: Dispatch<SetStateAction<boolean>>;
+    check: number;
+    index: number;
+    checkHandler: (index: number, val: 0 | 1) => void;
+    blockCheck: 0 | 1;
 };
 
-export default function CommonBtn({ value, check, checkHandler }: propsType) {
+export default function DuplicateSelectBtn({
+    value,
+    check,
+    index,
+    checkHandler,
+    blockCheck = 1,
+}: propsType) {
     return (
         <button
             className={`focus-bg-black  rounded-standard_rounded h-room_register_btn_height1 w-full   text-[1.3rem]   ${
-                check
+                check === 1
                     ? "bg-font_gray border-0 text-white"
                     : "border border-font_gray"
             } `}
             onClick={() => {
-                checkHandler(!check);
+                checkHandler(index, blockCheck);
             }}
         >
             {value}

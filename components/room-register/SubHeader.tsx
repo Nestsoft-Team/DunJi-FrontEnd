@@ -1,13 +1,11 @@
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "store";
-import { dispatchComponentHandler } from "store/roomRegister";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
+import { componentHandle } from "store/modules/roomRegister";
 
 export default function SubHeader() {
-    const dispatch = useDispatch();
-    const roomRegister = useSelector((state: RootState) => state.roomRegister);
+    const [state, dispatch] = useRoomRegisterRedux();
 
     const onClickHandler = (num: number) => {
-        dispatch(dispatchComponentHandler(num));
+        dispatch(componentHandle(num));
     };
     const btnArr = ["주소 등록", "기본 정보", "추가 정보", "사진 등록"];
     return (
@@ -15,8 +13,8 @@ export default function SubHeader() {
             {btnArr.map((title, index) => (
                 <button
                     className={`py-4  text-xl  h-max ${
-                        roomRegister.ROOM_REGISTER_COMPONENT_HANDLER ===
-                            index && "text-main border-b-2 border-main"
+                        state.COMPONENT_HANDLER === index &&
+                        "text-main border-b-2 border-main"
                     }`}
                     onClick={() => onClickHandler(index)}
                     key={index}

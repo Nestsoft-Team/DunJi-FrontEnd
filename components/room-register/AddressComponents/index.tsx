@@ -1,33 +1,31 @@
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "store";
 import PostCode from "components/daum-postcode";
 import Map from "./Map";
 import { useState } from "react";
 import {
     dispatchDetailAddress,
     dispatchPostCodeOpen,
-} from "store/roomRegister";
+} from "store/modules/roomRegister";
 import SubHeader from "../SubHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 export default function AddressRegister() {
-    const dispatch = useDispatch();
-    const roomRegister = useSelector((state: RootState) => state.roomRegister);
+    const [state, dispatch] = useRoomRegisterRedux();
 
-    const [detailAddress, updateDetailAddress] = useState("");
+    const [detailAddress, setDetailAddress] = useState("");
     const btnHandler = (val: boolean) => dispatch(dispatchPostCodeOpen(val));
     const inputHandler = (e: React.FormEvent<HTMLInputElement>) => {
-        updateDetailAddress(e.currentTarget.value);
+        setDetailAddress(e.currentTarget.value);
         dispatch(dispatchDetailAddress(e.currentTarget.value));
     };
     return (
         <>
-            {roomRegister.COMPONENT_HANDLER === 0 && (
+            {state.COMPONENT_HANDLER === 0 && (
                 <>
-                    {!roomRegister.POSTCODE_OPEN && <SubHeader />}
-                    {roomRegister.ADDRESS_OPEN && (
+                    {!state.POSTCODE_OPEN && <SubHeader />}
+                    {state.ADDRESS_OPEN && (
                         <>
-                            {!roomRegister.POSTCODE_OPEN && (
+                            {!state.POSTCODE_OPEN && (
                                 <>
                                     <div className="px-standard_pd  w-full">
                                         <div className="text-lg my-8 text-center">
@@ -39,9 +37,7 @@ export default function AddressRegister() {
                             h-[6vh]
                             text-2xl rounded-[20rem]"
                                             onClick={() =>
-                                                btnHandler(
-                                                    !roomRegister.POSTCODE_OPEN
-                                                )
+                                                btnHandler(!state.POSTCODE_OPEN)
                                             }
                                         >
                                             <FontAwesomeIcon icon="magnifying-glass" />
@@ -50,40 +46,37 @@ export default function AddressRegister() {
                                     </div>
                                 </>
                             )}
-                            {roomRegister.POSTCODE_OPEN && <PostCode />}
-                            {roomRegister.MAIN_ADDRESS &&
-                                !roomRegister.POSTCODE_OPEN && (
-                                    <>
-                                        <div className="w-screen px-standard_pd ">
-                                            <Map />
+                            {state.POSTCODE_OPEN && <PostCode />}
+                            {state.MAIN_ADDRESS && !state.POSTCODE_OPEN && (
+                                <>
+                                    <div className="w-screen px-standard_pd ">
+                                        <Map />
+                                    </div>
+                                    <div className="w-screen justify-between px-standard_pd  items-center text-xl">
+                                        <div className="mt-12 mb-4 text-2xl">
+                                            주소 등록
+                                            <span className="text-main">*</span>
                                         </div>
-                                        <div className="w-screen justify-between px-standard_pd  items-center text-xl">
-                                            <div className="mt-12 mb-4 text-2xl">
-                                                주소 등록
-                                                <span className="text-main">
-                                                    *
-                                                </span>
-                                            </div>
-                                            <div
-                                                className="
+                                        <div
+                                            className="
                                                         flex flex-col contents-center
                                                         bg-component_white   rounded-2xl overflow-hidden"
-                                            >
-                                                <div className="p-4 border-b border-border_color">
-                                                    {roomRegister.MAIN_ADDRESS}
-                                                </div>
-                                                <input
-                                                    className="p-4 h-full w-full bg-transparent outline-0
-                                                        placeholder:text-font_gray"
-                                                    type="text"
-                                                    value={detailAddress}
-                                                    onChange={inputHandler}
-                                                    placeholder="상세 주소를 입력해주세요"
-                                                />
+                                        >
+                                            <div className="p-4 border-b border-border_color">
+                                                {state.MAIN_ADDRESS}
                                             </div>
+                                            <input
+                                                className="p-4 h-full w-full bg-transparent outline-0
+                                                        placeholder:text-font_gray"
+                                                type="text"
+                                                value={detailAddress}
+                                                onChange={inputHandler}
+                                                placeholder="상세 주소를 입력해주세요"
+                                            />
                                         </div>
-                                    </>
-                                )}
+                                    </div>
+                                </>
+                            )}
                         </>
                     )}
                 </>

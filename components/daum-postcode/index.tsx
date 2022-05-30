@@ -1,16 +1,16 @@
 import DaumPostcode from "react-daum-postcode";
-import { dispatchMainAddress, dispatchPostCodeOpen } from "store/roomRegister";
-
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "store";
+import {
+    dispatchMainAddress,
+    dispatchPostCodeOpen,
+} from "store/modules/roomRegister";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 const PostCode = () => {
-    const dispatch = useDispatch();
-    const RoomRegister = useSelector((state: RootState) => state.roomRegister);
+    const [state, dispatch] = useRoomRegisterRedux();
 
     const handleComplete = (data: any) => {
         let fullAddress = data.autoJibunAddress || data.jibunAddress;
-        dispatch(dispatchPostCodeOpen(!RoomRegister.POSTCODE_OPEN));
+        dispatch(dispatchPostCodeOpen(!state.POSTCODE_OPEN));
         dispatch(dispatchMainAddress(fullAddress));
     };
 
@@ -19,7 +19,7 @@ const PostCode = () => {
     };
     return (
         <>
-            {RoomRegister.ADDRESS_OPEN && (
+            {state.ADDRESS_OPEN && (
                 <DaumPostcode
                     style={postCodeStyle}
                     onComplete={handleComplete}

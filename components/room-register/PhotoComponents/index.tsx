@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { RootState } from "store";
+import { RootState } from "store/modules";
 
 import SubHeader from "../SubHeader";
 import MainImage from "./MainImage";
