@@ -1,29 +1,55 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import CategoryHeader from "components/common/CategoryHeader";
-import CommonBtn from "../../common/Btn";
+import DuplicateSelectBtn from "components/common/DuplicateSelectBtn";
+import DuplicateSelect from "hooks/useDuplicateSelect";
+import {
+    dispatchManage,
+    dispatchManageCost,
+    dispatchManageSelect,
+} from "store/modules/roomRegister";
+import InputSelectBox from "components/common/InputSelectBox";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 export default function Price() {
-    const [fee, setFee] = useState("");
-    const [noFeeCheck, setNoFeeCheck] = useState(false);
-    const [negotiable, setNegotiable] = useState(false);
-    const [btn1Check, setBtn1Check] = useState(false);
-    const [btn2Check, setBtn2Check] = useState(false);
-    const [btn3Check, setBtn3Check] = useState(false);
-    const [btn4Check, setBtn4Check] = useState(false);
-    const [btn5Check, setBtn5Check] = useState(false);
+    const [state, dispatch] = useRoomRegisterRedux();
+
+    // 관리비
+    const fee = state.MANAGE_COST;
+    // 관리비 유무(있으면 1, 없으면 0)
+    const noFeeCheck = state.MANAGE;
+    // 관리비 카테고리 배열
+    const selectArr = state.MANAGE_SELECT;
 
     const feeHandler = (value: string) => {
-        if (!noFeeCheck && !negotiable) {
-            setFee(value);
+        const num = Number(value);
+        if (noFeeCheck === 1) {
+            if (num === 0) dispatch(dispatchManageCost(""));
+            else {
+                dispatch(dispatchManageCost(num));
+            }
         }
     };
 
-    const feeOptionHandler = (value: boolean, handler: Function) => {
-        setNoFeeCheck(false);
-        setNegotiable(false);
-        setFee("");
-        handler(!value);
+    const feeOptionHandler = () => {
+        if (noFeeCheck === 0) dispatch(dispatchManage(1));
+        else {
+            dispatch(dispatchManage(0));
+            dispatch(dispatchManageCost(""));
+            resetHandler();
+        }
     };
+
+    const typeArr = useMemo(
+        () => ["전기세", "가스", "수도", "인터넷", "TV"],
+        []
+    );
+
+    const [checkHandler, resetHandler] = DuplicateSelect(
+        selectArr,
+        typeArr,
+        dispatchManageSelect
+    );
+
     return (
         <>
             <CategoryHeader title="관리비" />
@@ -45,47 +71,24 @@ export default function Price() {
                         만원
                     </div>
                 </div>
-                <div className="flex justify-end gap-2 items-center text-xl">
-                    <label
-                        htmlFor="noFee"
-                        className={`inline-block before:content-[''] w-[1.6rem] h-[1.6rem] border  border-black mr-2  algin-middle  rounded-[0.3rem] text-center  ${
-                            noFeeCheck &&
-                            "before:content-['✔️']  bg-font_gray border-0"
-                        }`}
-                        onClick={() =>
-                            feeOptionHandler(noFeeCheck, setNoFeeCheck)
-                        }
-                    ></label>
-                    <input type="checkbox" id="noFee" className="hidden" />
-                    <span>관리비 없음</span>
-                </div>
+                <InputSelectBox
+                    check={noFeeCheck}
+                    content="관리비 없음"
+                    checkHandler={feeOptionHandler}
+                    converse={true}
+                />
             </div>
             <div className="w-full grid grid-cols-3 h-[7rem] gap-2">
-                <CommonBtn
-                    value="전기세"
-                    check={btn1Check}
-                    checkHandler={setBtn1Check}
-                ></CommonBtn>
-                <CommonBtn
-                    value="가스"
-                    check={btn2Check}
-                    checkHandler={setBtn2Check}
-                ></CommonBtn>
-                <CommonBtn
-                    value="수도"
-                    check={btn3Check}
-                    checkHandler={setBtn3Check}
-                ></CommonBtn>
-                <CommonBtn
-                    value="인터넷"
-                    check={btn4Check}
-                    checkHandler={setBtn4Check}
-                ></CommonBtn>
-                <CommonBtn
-                    value="TV"
-                    check={btn5Check}
-                    checkHandler={setBtn5Check}
-                ></CommonBtn>
+                {typeArr.map((item, index) => (
+                    <DuplicateSelectBtn
+                        key={index}
+                        value={item}
+                        check={selectArr[index]}
+                        index={index}
+                        checkHandler={checkHandler}
+                        blockCheck={noFeeCheck}
+                    />
+                ))}
             </div>
         </>
     );

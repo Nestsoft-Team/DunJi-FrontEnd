@@ -14,7 +14,7 @@ export default function SlideNextButton({ way }: { way: string }) {
                     <Image
                         alt="arrow"
                         className="scale-x-[-1]"
-                        src={require("icon/화살표_사진위.svg")}
+                        src={require("assets/icon/화살표_사진위.svg")}
                     />
                 </button>
             ) : (
@@ -24,7 +24,7 @@ export default function SlideNextButton({ way }: { way: string }) {
                 >
                     <Image
                         alt="arrow"
-                        src={require("icon/화살표_사진위.svg")}
+                        src={require("assets/icon/화살표_사진위.svg")}
                     />
                 </button>
             )}

@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "store";
+import { RootState } from "store/modules/index";
 import {
     dispatchAddressOpen,
     dispatchDetailComponentOpen,
     dispatchPostCodeOpen,
-} from "store/roomRegister";
+} from "store/modules/roomRegister";
 
 export default function BottomNextBtn() {
     const roomRegister = useSelector((state: RootState) => state.roomRegister);

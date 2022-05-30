@@ -34,7 +34,7 @@ export default function Review() {
                         }`}
                     >
                         <Image
-                            src={require("icon/화살표_펼치기.svg")}
+                            src={require("assets/icon/화살표_펼치기.svg")}
                             alt="arrow"
                             objectFit="contain"
                             layout="fill"
@@ -46,27 +46,27 @@ export default function Review() {
                 <div className="px-standard_pd">
                     <div>
                         <Image
-                            src={require("icon/별점_활성화.svg")}
+                            src={require("assets/icon/별점_활성화.svg")}
                             alt="star"
                             width={20}
                         />
                         <Image
-                            src={require("icon/별점_활성화.svg")}
+                            src={require("assets/icon/별점_활성화.svg")}
                             alt="star"
                             width={20}
                         />
                         <Image
-                            src={require("icon/별점_활성화.svg")}
+                            src={require("assets/icon/별점_활성화.svg")}
                             alt="star"
                             width={20}
                         />
                         <Image
-                            src={require("icon/별점_활성화.svg")}
+                            src={require("assets/icon/별점_활성화.svg")}
                             alt="star"
                             width={20}
                         />
                         <Image
-                            src={require("icon/별점_비활성화.svg")}
+                            src={require("assets/icon/별점_비활성화.svg")}
                             alt="star"
                             width={20}
                         />

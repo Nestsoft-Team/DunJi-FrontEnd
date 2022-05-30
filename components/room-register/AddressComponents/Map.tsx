@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "store";
+import { RootState } from "store/modules";
 
 declare global {
     interface Window {
@@ -9,7 +9,7 @@ declare global {
 }
 export default function Map() {
     const address = useSelector(
-        (state: RootState) => state.roomRegister.ROOM_REGISTER_MAIN_ADDRESS
+        (state: RootState) => state.roomRegister.MAIN_ADDRESS
     );
 
     useEffect(() => {

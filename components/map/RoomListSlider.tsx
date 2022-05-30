@@ -13,7 +13,7 @@ export default function RoomListSlider() {
             <div className="flex-col w-full">
                 <div className="flex  items-center text-[1.5rem] my-2">
                     <Image
-                        src={require("icon/방.svg")}
+                        src={require("assets/icon/방.svg")}
                         width={25}
                         height={25}
                         alt="room"
