@@ -3,17 +3,35 @@ module.exports = {
         "./pages/**/*.{js,ts,jsx,tsx}",
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
+
     theme: {
+        height: (theme) => ({
+            auto: "auto",
+            ...theme("spacing"),
+            full: "100%",
+            screen: "calc(var(--vh) * 100)",
+            "100vh": "calc(var(--vh) * 100)",
+        }),
+        minHeight: (theme) => ({
+            0: "0",
+            ...theme("spacing"),
+            full: "100%",
+            screen: "calc(var(--vh) * 100)",
+            "100vh": "calc(var(--vh) * 100)",
+        }),
         extend: {
             colors: {
+                background_beige: "#F1EEE8",
                 dark_yellow: "#e58e26",
                 yellow: "#fbd40a",
                 light_yellow: "#FEECA3",
                 title_color: "#282F66",
                 blur: "rgba(0,0,0,0.4)",
-                sky_blue: "#8ec2f6",
-                orange: "#EF9545",
-                border_color: "#D2D2D2",
+                main: "#FF9240",
+                border_color: "#E3E2E0",
+                component_white: "#F9F9F9",
+                font_gray: "#A9A7A2",
+                black: "#3F3C3A",
             },
             fontFamily: {
                 sans: ["SegoeUI"],
@@ -34,7 +52,10 @@ module.exports = {
                 "100vw": "100vw",
             },
             padding: {
-                room_register_pd: "6vw",
+                standard_pd: "6vw",
+            },
+            margin: {
+                standard_m: "6vw",
             },
             height: {
                 "10vh": "10vh",
@@ -49,6 +70,13 @@ module.exports = {
                 "100vh": "100vh",
                 room_register_btn_height1: "3.5rem",
                 room_register_btn_height2: "4.5rem",
+                map_room_list_height: "25rem",
+                nav_height: "5rem",
+                map_header_height: "11rem",
+            },
+
+            translate: {
+                map_room_list_height: "25rem",
             },
             minWidth: {
                 20: "25rem",
@@ -58,20 +86,20 @@ module.exports = {
             },
             borderRadius: {
                 middle: "40px 40px 40px 40px",
-                room_register_rounded: "0.9rem",
+                standard_rounded: "0.9rem",
             },
-            animation: {
-                "room-list-up": "room-list-up-key 0.3s linear reverse",
-                "room-list-down": "room-list-up-key 0.3s linear",
-            },
-            keyframes: {
-                "room-list-up-key": {
-                    "0%": { transform: "none" },
-                    "100%": { transform: "translateY(100%)" },
-                },
-            },
+            // animation: {
+            //     "room-list-up": "room-list-up-key 0.3s linear reverse",
+            //     "room-list-down": "room-list-up-key 0.3s linear",
+            // },
+            // keyframes: {
+            //     "room-list-up-key": {
+            //         "0%": { transform: "none" },
+            //         "100%": { transform: "translateY(100%)" },
+            //     },
+            // },
             gap: {
-                room_register_gap: "1rem",
+                room_register_gap: "0.5rem",
             },
         },
     },

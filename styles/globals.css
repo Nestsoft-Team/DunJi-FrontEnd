@@ -2,13 +2,24 @@
 html {
     font-size: 62.5%;
     -webkit-tap-highlight-color: transparent;
+    background-color: #f1eee8;
     /* font-family: NotoSansKR; */
 }
+body {
+    overscroll-behavior-y: none;
+}
+
 @tailwind components;
 @tailwind utilities;
 
+.root,
+#root,
+#docs-root {
+    --vh: 100%;
+}
+
 @layer base {
-    @font-face {
+    /* @font-face {
         font-family: "SegoeUI";
         src: local("SegoeUI"), url("../fonts/SegoeUI.ttf") format("truetype");
         font-display: swap;
@@ -26,5 +37,5 @@ html {
         src: local("NotoSansKR"),
             url("../fonts/NotoSansKR-Medium.otf") format("truetype");
         font-display: swap;
-    }
+    } */
 }

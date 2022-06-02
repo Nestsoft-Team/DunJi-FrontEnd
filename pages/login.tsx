@@ -15,7 +15,7 @@ export default function Login({}) {
         console.log(1);
     };
     return (
-        <div className="flex min-w-20 items-center flex-col mx-auto my-40 w-main_width  font-bold ">
+        <div className="h-screen flex min-w-20 items-center flex-col mx-auto my-40 w-main_width  font-bold ">
             <h1 className="text-6xl mb-8  text-yellow font-NotoSansKR">
                 DUNGJI
             </h1>
@@ -69,7 +69,7 @@ export default function Login({}) {
                     <Image
                         width={30}
                         height={30}
-                        src={require("image/logo/naver_logo.png")}
+                        src={require("icon/logo/naver_logo.png")}
                         alt="naver_logo"
                     />
                     <Link href={KAKAO_AUTH_URL}>
@@ -77,7 +77,7 @@ export default function Login({}) {
                             <Image
                                 width={30}
                                 height={30}
-                                src={require("image/logo/kakao_logo.png")}
+                                src={require("icon/logo/kakao_logo.png")}
                                 alt="naver_logo"
                             />
                         </a>

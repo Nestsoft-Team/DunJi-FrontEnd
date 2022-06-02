@@ -1,61 +1,42 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "store";
-import { dispatchPostCodeOpen } from "store/roomRegister";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
+import { dispatchPostCodeOpen } from "store/modules/roomRegister";
 
 export default function Header() {
-    const dispatch = useDispatch();
-    const roomRegister = useSelector((state: RootState) => state.roomRegister);
+    const [state, dispatch] = useRoomRegisterRedux();
 
     return (
         <>
-            {roomRegister.ROOM_REGISTER_POSTCODE_OPEN ? (
+            {state.POSTCODE_OPEN ? (
                 <header
-                    className="flex w-screen justify-between px-room_register_pd 
+                    className="flex w-screen justify-between px-standard_pd 
         py-4  h-24 items-center text-xl  border-b"
                 >
                     <div className="flex text-2xl items-center">
                         <div
-                            className="flex items-center"
                             onClick={() => {
                                 dispatch(
-                                    dispatchPostCodeOpen(
-                                        !roomRegister.ROOM_REGISTER_POSTCODE_OPEN
-                                    )
+                                    dispatchPostCodeOpen(!state.POSTCODE_OPEN)
                                 );
                             }}
                         >
                             <FontAwesomeIcon icon="chevron-left" />
-                            <div className="ml-4">주소 검색</div>
                         </div>
+                        <div className="ml-4">주소 찾기</div>
                     </div>
-                    <Image
-                        width={15}
-                        height={15}
-                        alt="x"
-                        src={require("image/header/x.png")}
-                        onClick={() =>
-                            dispatch(
-                                dispatchPostCodeOpen(
-                                    !roomRegister.ROOM_REGISTER_POSTCODE_OPEN
-                                )
-                            )
-                        }
-                    />
                 </header>
             ) : (
                 <header
-                    className="flex w-screen justify-between px-room_register_pd 
+                    className="flex w-screen justify-between px-standard_pd 
                 py-4  h-24 items-center text-xl  border-b"
                 >
                     <div className="flex text-2xl items-center">
-                        <div className="flex items-center" onClick={() => {}}>
+                        <div>
                             <FontAwesomeIcon icon="chevron-left" />
-                            <div className="ml-4">집 내놓기</div>
                         </div>
+                        <div className="ml-4">방 내놓기</div>
                     </div>
-                    <div className="text-orange">도움말</div>
+                    <div className="text-main">도움말</div>
                 </header>
             )}
         </>

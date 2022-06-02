@@ -1,3 +1,55 @@
 import axios from "axios";
 
-const api = axios.create({});
+const api = axios.create({
+    baseURL: "http://3.39.129.136:8090/DungziProject",
+});
+
+export const roomApi = {
+    postRoom: () =>
+        api.post("/room/registerAction", {
+            Sido: "경기도",
+            Sigungu: "안산시 상록구",
+            Dong: "사동",
+            Ri: "",
+            Jibun: "1271",
+            Address: "경기도 안산시 상록구 사동 1271",
+            Detail_Address: "행복관 211호",
+            Room_Type: "원룸",
+            Deal_Type: "단기임대",
+            Price_Unit: "월",
+            Deposit: 10,
+            Price: 50,
+            Manage: 1,
+            Manage_Cost: 5,
+            Manage_Elec: 1,
+            Manage_Gas: 1,
+            Manage_Water: 1,
+            Manage_Internet: 1,
+            Manage_TV: 1,
+            Entire_Floor: 5,
+            Floor: 2,
+            Struct: "오픈형",
+            Elevator: 1,
+            Room_Size: 8,
+            Avail_Period_From: "2022-06-02",
+            Avail_Period_To: "2022-10-23",
+            Avail_Period_Consul: 1,
+            Aircon: 1,
+            Refri: 1,
+            Washer: 1,
+            Gas: 1,
+            Induc: 1,
+            Micro: 1,
+            Desk: 1,
+            Shelf: 1,
+            Bed: 1,
+            Closet: 1,
+            Sink: 1,
+            Shoe: 1,
+            Car: 1,
+            Pet: 1,
+            Loan: 1,
+            Title: "한대앞역 도보 20분",
+            Explain: "안녕하세요. 방에 대한 소개입니다.",
+        }),
+};
