@@ -1353,11 +1353,6 @@
     "array-includes" "^3.1.3"
     "object.assign" "^4.1.2"
 
-"kakao.maps.d.ts@^0.1.32":
-  "integrity" "sha512-xQULJE5XDOjfeK4Ba04AH4l/raTvHEoX72cbBhCUp6nS9rpJ7tEQgJP2A68kwTesnK5ug0Pa9LVEp+HfYHBsrg=="
-  "resolved" "https://registry.npmjs.org/kakao.maps.d.ts/-/kakao.maps.d.ts-0.1.32.tgz"
-  "version" "0.1.32"
-
 "language-subtag-registry@~0.3.2":
   "integrity" "sha512-L0IqwlIXjilBVVYKFT37X9Ih11Um5NEl9cbJIuU/SwP/zEEAbBPOnEeeuxVMf45ydWQRDQN3Nqc96OgbH1K+Pg=="
   "resolved" "https://registry.npmjs.org/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz"
@@ -1814,7 +1809,7 @@
     "prop-types" "^15.7.2"
     "react" "^17.0.2"
 
-"react-dom@^17.0.2", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>=16.9.0", "react-dom@17.0.2":
+"react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>=16.9.0", "react-dom@17.0.2":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -1842,13 +1837,6 @@
   "integrity" "sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
-
-"react-kakao-maps-sdk@^1.1.1":
-  "integrity" "sha512-x7UEBC0qedBZOBJvCXUoxT4p6iH4t4lj8MKgo2QwGPJUsTi4njbhWDY2HYlNty7a42q1kL8gzeYouJjbg1ylAA=="
-  "resolved" "https://registry.npmjs.org/react-kakao-maps-sdk/-/react-kakao-maps-sdk-1.1.1.tgz"
-  "version" "1.1.1"
-  dependencies:
-    "kakao.maps.d.ts" "^0.1.32"
 
 "react-redux@*", "react-redux@^7.2.6":
   "integrity" "sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ=="

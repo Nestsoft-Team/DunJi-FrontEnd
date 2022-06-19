@@ -74,7 +74,7 @@ export default function Map() {
                     content: content,
                 });
 
-                var clusterer = new kakao.maps.MarkerClusterer({
+                var clusterer = new window.kakao.maps.MarkerClusterer({
                     map: map,
                     averageCenter: true,
                     minLevel: 7,
