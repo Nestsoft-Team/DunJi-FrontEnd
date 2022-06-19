@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { takeLatest } from "redux-saga/effects";
+import createRequestSaga from "utils/createRequestSaga";
+import { roomApi } from "_api";
 
 type initialStateTypes = {
     COMPONENT_HANDLER: number;
@@ -29,6 +32,7 @@ type initialStateTypes = {
     LOAN: 0 | 1 | 2;
     TITLE: string;
     EXPLAIN: string;
+    Result: any;
 };
 
 const initialState: initialStateTypes = {
@@ -60,6 +64,7 @@ const initialState: initialStateTypes = {
     LOAN: 2,
     TITLE: "",
     EXPLAIN: "",
+    Result: "",
 };
 
 const roomRegister = createSlice({
@@ -150,6 +155,13 @@ const roomRegister = createSlice({
         dispatchExplain: (state, action) => {
             state.EXPLAIN = action.payload;
         },
+        postRoom: () => {},
+        postRoom_SUCCESS: (state, action) => {
+            console.log(action);
+        },
+        postRoom_FAILURE: (state, action) => {
+            console.log(action);
+        },
     },
 });
 
@@ -184,4 +196,11 @@ export const {
     dispatchLoan,
     dispatchTitle,
     dispatchExplain,
+    postRoom,
 } = roomRegister.actions;
+
+const getPostSaga = createRequestSaga(postRoom.type, roomApi.postRoom);
+
+export function* roomRegisterSaga() {
+    yield takeLatest(postRoom.type, getPostSaga);
+}
