@@ -4,13 +4,14 @@ import { ChangeEvent, useState } from "react";
 import CommonBtn from "./CommonBtn";
 import { map_header_height } from "./Variable";
 
-export default function Header() {
+export default function Header({ setLatitude, setLongitude }: any) {
     const [searchVal, setSearchVal] = useState("");
     const [filterSelect1, setFilterSelect1] = useState(false);
     const [filterSelect2, setFilterSelect2] = useState(false);
     const [filterSelect3, setFilterSelect3] = useState(false);
     const [filterSelect4, setFilterSelect4] = useState(false);
     const [filterSelect5, setFilterSelect5] = useState(false);
+    const [searchResult, setSearchResult] = useState([]);
 
     const btnArr = [
         {
@@ -36,8 +37,6 @@ export default function Header() {
         },
     ];
 
-    const [search, setSearch] = useState([]);
-
     const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchVal(e.target.value);
 
@@ -46,14 +45,12 @@ export default function Header() {
 
         function placesSearchCB(data: any, status: any, pagination: any) {
             if (status === window.kakao.maps.services.Status.OK) {
-                // 정상적으로 검색이 완료됐으면
-                // 검색 목록과 마커를 표출합니다
-                console.log(data, status);
-                setSearch(search);
+                // 검색 성공
+                setSearchResult(data);
             } else if (
+                // 검색 실패
                 status === window.kakao.maps.services.Status.ZERO_RESULT
             ) {
-                console.log("검색 결과가 없");
                 return;
             } else if (status === window.kakao.maps.services.Status.ERROR) {
                 alert("검색 결과 중 오류가 발생했습니다.");
@@ -62,10 +59,21 @@ export default function Header() {
         }
     };
 
+    const clickHander = (item: any) => {
+        setLatitude(item.y);
+        setLongitude(item.x);
+        setSearchResult([]);
+    };
+
+    const searchValClickHandler = () => {
+        setSearchVal("");
+        setSearchResult([]);
+    };
+
     return (
         <>
             <div
-                className={`h-[[${map_header_height}]] w-screen px-standard_pd pt-6 z-10 bg-background_beige`}
+                className={`h-[${map_header_height}] w-screen px-standard_pd pt-6 z-10 bg-background_beige `}
             >
                 <div className="text-2xl h-[3.5rem] flex items-center justify-between">
                     <Link href="/">
@@ -88,7 +96,7 @@ export default function Header() {
                         ></input>
                         {searchVal && (
                             <div
-                                onClick={() => setSearchVal("")}
+                                onClick={searchValClickHandler}
                                 className="absolute  right-3 bottom-[0] flex items-center h-full"
                             >
                                 <Image
@@ -122,12 +130,26 @@ export default function Header() {
                     ))}
                 </div>
             </div>
-            <div className="absolute">
-                {search.length !== 0 &&
-                    search.map((item, index) => (
-                        <div key={index}>{item.place_name}</div>
+            {searchResult.length !== 0 && (
+                <div
+                    className={`top-[6rem] h-[calc(100vh-6rem)] absolute w-screen bg-background_beige z-20  border-t-2 overflow-scroll`}
+                >
+                    {searchResult.map((item) => (
+                        <div
+                            className="flex flex-col justify-evenly h-24 border-b-2 pl-8"
+                            key={item.index}
+                            onClick={() => clickHander(item)}
+                        >
+                            <div className="text-2xl">
+                                {item.place_name.split(searchVal)[0]}
+                                <span className="text-main">{searchVal}</span>
+                                {item.place_name.split(searchVal)[1]}
+                            </div>
+                            <div>{item.address_name}</div>
+                        </div>
                     ))}
-            </div>
+                </div>
+            )}
         </>
     );
 }

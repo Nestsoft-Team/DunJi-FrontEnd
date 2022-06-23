@@ -7,6 +7,7 @@ export default function Map() {
     const [latitude, setLatitude] = useState(37.297526827747966); //한양대 에리카 위도,경도
     const [longitude, setLongitude] = useState(126.835628984629);
     const [openPopup, setOpenPopup] = useState(false);
+    let map: any;
 
     useEffect(() => {
         const getLocation = () => {
@@ -47,7 +48,8 @@ export default function Map() {
                     center: new window.kakao.maps.LatLng(latitude, longitude),
                     level: 6,
                 };
-                const map = new window.kakao.maps.Map(container, options);
+                map = new window.kakao.maps.Map(container, options);
+                console.log(map);
 
                 function overlayClickHandler() {
                     // router.replace("/room/1");
@@ -68,6 +70,22 @@ export default function Map() {
                     latitude,
                     longitude
                 );
+
+                const marker1 = new window.kakao.maps.Marker({
+                    position: new window.kakao.maps.LatLng(
+                        37.5638561,
+                        126.9740863
+                    ),
+                });
+                const marker2 = new window.kakao.maps.Marker({
+                    position: new window.kakao.maps.LatLng(
+                        37.41664017,
+                        126.95927262
+                    ),
+                });
+                const marker3 = new window.kakao.maps.Marker({
+                    position: new window.kakao.maps.LatLng(37.3, longitude),
+                });
 
                 const customOverlay = new window.kakao.maps.CustomOverlay({
                     position: position,
@@ -95,7 +113,12 @@ export default function Map() {
 
                 customOverlay.setMap(map);
                 clusterer.setMap(map);
-                clusterer.addMarkers([customOverlay]);
+                clusterer.addMarkers([
+                    customOverlay,
+                    marker1,
+                    marker2,
+                    marker3,
+                ]);
                 window.kakao.maps.event.addListener(map, "dragend", () => {
                     console.log(map.getBounds());
                 }); // 드래그 이동 시 좌표 출력
@@ -106,12 +129,12 @@ export default function Map() {
         };
         mapScript.addEventListener("load", onLoadKakaoMap);
         return () => mapScript.removeEventListener("load", onLoadKakaoMap);
-    }, [latitude, longitude, openPopup]);
+    }, [openPopup, latitude, longitude]);
 
     return (
         <>
             <div className="flex flex-col w-screen  h-screen relative overflow-hidden">
-                <Header />
+                <Header setLatitude={setLatitude} setLongitude={setLongitude} />
                 <RoomList openPopup={openPopup} />
                 <div
                     className="absolute top-0 w-screen h-screen"
