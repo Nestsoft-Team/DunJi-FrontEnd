@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 type initialStateTypes = {
-    START_LOADING: any;
-    FINISH_LOADING: any;
+    START_LOADING: boolean;
+    FINISH_LOADING: boolean;
 };
 
 const initialState: initialStateTypes = {
-    START_LOADING: {},
-    FINISH_LOADING: {},
+    START_LOADING: false,
+    FINISH_LOADING: true,
 };
 
 const loading = createSlice({
@@ -16,8 +16,10 @@ const loading = createSlice({
     reducers: {
         startLoading: (state, action) => {
             state.START_LOADING = true;
+            state.FINISH_LOADING = false;
         },
         finishLoading: (state, action) => {
+            state.START_LOADING = false;
             state.FINISH_LOADING = true;
         },
     },

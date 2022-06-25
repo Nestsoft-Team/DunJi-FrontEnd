@@ -2,16 +2,19 @@ import { useMemo } from "react";
 import NoDuplicateSelectBtn from "components/common/NoDuplicateSelectBtn";
 import useNoDuplicateSelect from "hooks/useNoDuplicateSelect";
 import { dispatchRoomType } from "store/modules/roomRegister";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 export default function TransactionType() {
     const typeArr = useMemo(
         () => ["원룸", "투룸", "쓰리룸 이상", "반지하", "옥탑방"],
         []
     );
+    const [state] = useRoomRegisterRedux();
 
     const [selectArr, checkHandler] = useNoDuplicateSelect(
         typeArr,
-        dispatchRoomType
+        dispatchRoomType,
+        state.roomType
     );
 
     return (

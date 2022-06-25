@@ -3,13 +3,16 @@ import CategoryHeader from "components/common/CategoryHeader";
 import useNoDuplicateSelect from "hooks/useNoDuplicateSelect";
 import { dispatchTransactionType } from "store/modules/roomRegister";
 import NoDuplicateSelectBtn from "components/common/NoDuplicateSelectBtn";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 export default function TransactionType() {
     const typeArr = useMemo(() => ["단기임대", "임대", "양도"], []);
+    const [state] = useRoomRegisterRedux();
 
     const [selectArr, checkHandler] = useNoDuplicateSelect(
         typeArr,
-        dispatchTransactionType
+        dispatchTransactionType,
+        state.dealType
     );
 
     return (

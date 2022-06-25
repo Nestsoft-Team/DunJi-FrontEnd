@@ -1,8 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import CategoryHeader from "components/common/CategoryHeader";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "store/modules";
-import { dispatchSize } from "store/modules/roomRegister";
+import { dispatchRoomSize } from "store/modules/roomRegister";
 import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 export default function Size() {
@@ -10,12 +8,12 @@ export default function Size() {
 
     const [state, dispatch] = useRoomRegisterRedux();
 
-    const size = state.SIZE;
+    const size = state.roomSize;
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const num = e.target.value;
-        if (num === "" || num === "0") dispatch(dispatchSize(""));
-        else dispatch(dispatchSize(round(e.target.value, 1)));
+        if (num === "" || num === "0") dispatch(dispatchRoomSize(""));
+        else dispatch(dispatchRoomSize(round(e.target.value, 1)));
     };
 
     const onChangePyeongHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -42,8 +40,8 @@ export default function Size() {
                         }}
                         onBlur={() => {
                             if (pyeong !== "")
-                                dispatch(dispatchSize(round(pyeong, 3.3)));
-                            else dispatch(dispatchSize(""));
+                                dispatch(dispatchRoomSize(round(pyeong, 3.3)));
+                            else dispatch(dispatchRoomSize(""));
                         }}
                     ></input>
                     <div

@@ -2,14 +2,14 @@ import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import CategoryHeader from "components/common/CategoryHeader";
 import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 import { ChangeEvent, useEffect, useState } from "react";
-import { dispatchDeposit, dispatchMonthly } from "store/modules/roomRegister";
+import { dispatchDeposit, dispatchPrice } from "store/modules/roomRegister";
 
 export default function Price() {
     const [state, dispatch] = useRoomRegisterRedux();
 
-    const unit = state.PRICE_UNIT;
-    const deposit = state.DEPOSIT;
-    const monthly = state.MONTHLY;
+    const unit = state.priceUnit;
+    const deposit = state.deposit;
+    const price = state.price;
     const [unitPlaceHolder, setUnitPlaceHolder] = useState("월세");
 
     const priceArr = [
@@ -19,8 +19,8 @@ export default function Price() {
             placeHolder: "보증금",
         },
         {
-            value: monthly,
-            valueHandler: dispatchMonthly,
+            value: price,
+            valueHandler: dispatchPrice,
             placeHolder: unitPlaceHolder,
         },
     ];
@@ -31,7 +31,7 @@ export default function Price() {
     ) => {
         if (value !== "" && value !== "0") {
             const num = Number(value);
-            if (num < 999999999999999 && num >= 0) dispatch(handler(num));
+            if (num < 999999999999999 && num > 0) dispatch(handler(num));
         } else {
             dispatch(handler(""));
         }

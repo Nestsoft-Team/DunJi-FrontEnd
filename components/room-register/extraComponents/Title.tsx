@@ -4,7 +4,7 @@ import { dispatchTitle } from "store/modules/roomRegister";
 
 export default function Title() {
     const [state, dispatch] = useRoomRegisterRedux();
-    const title = state.TITLE;
+    const title = state.title;
     return (
         <>
             <CategoryHeader title="방 제목" />

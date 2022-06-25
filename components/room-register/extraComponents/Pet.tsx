@@ -5,7 +5,7 @@ import ChooseOneBtn from "../../common/ChooseOneBtn";
 export default function Pet() {
     const [state, dispatch] = useRoomRegisterRedux();
 
-    const pet = state.PET;
+    const pet = state.pet;
     const checkHandler = (index: number) => {
         if (pet === index) dispatch(dispatchPet(2));
         else dispatch(dispatchPet(index));
