@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 
 type propsType = {
-    value: String;
-    check: Boolean;
+    value: string;
+    check: boolean;
     checkHandler: Dispatch<SetStateAction<boolean>>;
 };
 

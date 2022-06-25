@@ -1,6 +1,9 @@
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "store";
+import {
+    dispatchLatitude,
+    dispatchLongitude,
+} from "store/modules/roomRegister";
 
 declare global {
     interface Window {
@@ -8,9 +11,8 @@ declare global {
     }
 }
 export default function Map() {
-    const address = useSelector(
-        (state: RootState) => state.roomRegister.ROOM_REGISTER_MAIN_ADDRESS
-    );
+    const [state, dispatch] = useRoomRegisterRedux();
+    const address = state.address;
 
     useEffect(() => {
         const mapScript = document.createElement("script");
@@ -29,6 +31,10 @@ export default function Map() {
                         if (status === window.kakao.maps.services.Status.OK) {
                             const longitude = result[0].x; // 경도
                             const latitude = result[0].y; //위도
+
+                            dispatch(dispatchLongitude(longitude));
+                            dispatch(dispatchLatitude(latitude));
+
                             const options = {
                                 center: new window.kakao.maps.LatLng(
                                     latitude,

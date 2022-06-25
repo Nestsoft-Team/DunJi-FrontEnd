@@ -1,3 +1,4 @@
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 import { useState } from "react";
 import PhotoHeader from "./PhotoHeader";
 import UploadImage from "./UploadImage";

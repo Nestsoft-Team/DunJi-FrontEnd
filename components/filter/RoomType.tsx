@@ -1,12 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CommonBtn from "../common/Btn";
-import { RootState } from "store";
 
 export default function TransactionType() {
-    const dispatch = useDispatch();
-    const roomRegister = useSelector((state: RootState) => state.roomRegister);
-
     const [btn1Check, setBtn1Check] = useState(false);
     const [btn2Check, setBtn2Check] = useState(false);
     const [btn3Check, setBtn3Check] = useState(false);

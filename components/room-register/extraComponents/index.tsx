@@ -1,21 +1,18 @@
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "store";
 import SubHeader from "../SubHeader";
 import Parking from "./Parking";
 import Option from "./Option";
 import DetailText from "./DetailText";
 import Pet from "./Pet";
 import Loan from "./Loan";
-import Owner from "./Owner";
 import Title from "./Title";
+import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 export default function DetailRegister() {
-    const dispatch = useDispatch();
-    const roomRegister = useSelector((state: RootState) => state.roomRegister);
+    const [state] = useRoomRegisterRedux();
 
     return (
         <>
-            {roomRegister.ROOM_REGISTER_COMPONENT_HANDLER === 2 && (
+            {state.COMPONENT_HANDLER === 2 && (
                 <div className="h-full">
                     <SubHeader />
                     <div className="px-standard_pd w-screen mb-4">
@@ -24,7 +21,6 @@ export default function DetailRegister() {
                             <Parking />
                             <Pet />
                             <Loan />
-                            <Owner />
                         </div>
                         <Title />
                         <DetailText />

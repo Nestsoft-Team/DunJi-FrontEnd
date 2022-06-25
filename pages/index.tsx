@@ -9,7 +9,7 @@ export default function Home() {
                     <div className="flex items-center">
                         <div className="w-16 h-16 mr-4">
                             <Image
-                                src={require("../icon/main/logo.png")}
+                                src={require("../assets/icon/main/logo.png")}
                                 alt="logo"
                             />
                         </div>
@@ -18,7 +18,7 @@ export default function Home() {
                     <div className="flex items-center ">
                         <div className="w-10 h-10 mr-4">
                             <Image
-                                src={require("../icon/main/ring_icon.png")}
+                                src={require("../assets/icon/main/ring_icon.png")}
                                 alt="Picture of the author"
                             />
                         </div>
@@ -30,7 +30,7 @@ export default function Home() {
                     <div className="bg-white flex items-center h-20 w-full border-2 border-title_color rounded-3xl">
                         <div className="w-12 h-12 ml-2 ">
                             <Image
-                                src={require("../icon/main/search_icon.png")}
+                                src={require("../assets/icon/main/search_icon.png")}
                                 alt="search"
                             ></Image>
                         </div>
@@ -46,7 +46,7 @@ export default function Home() {
                             <div className="w-32 h-32 flex items-center">
                                 <Image
                                     alt="box"
-                                    src={require("../icon/main/box_icon.png")}
+                                    src={require("../assets/icon/main/box_icon.png")}
                                 ></Image>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ export default function Home() {
                             <div className="w-20 h-20 flex items-center">
                                 <Image
                                     alt="mop"
-                                    src={require("../icon/main/mop_icon.png")}
+                                    src={require("../assets/icon/main/mop_icon.png")}
                                 ></Image>
                             </div>
                         </div>
@@ -72,7 +72,7 @@ export default function Home() {
                             <div className="w-32 h-32 flex items-center">
                                 <Image
                                     alt="box"
-                                    src={require("../icon/main/box_icon.png")}
+                                    src={require("../assets/icon/main/box_icon.png")}
                                 ></Image>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ export default function Home() {
                             <div className="w-32 h-32 flex items-center">
                                 <Image
                                     alt="box"
-                                    src={require("../icon/main/box_icon.png")}
+                                    src={require("../assets/icon/main/box_icon.png")}
                                 ></Image>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ export default function Home() {
                             <div className="w-32 h-32 flex items-center">
                                 <Image
                                     alt="box"
-                                    src={require("../icon/main/box_icon.png")}
+                                    src={require("../assets/icon/main/box_icon.png")}
                                 ></Image>
                             </div>
                         </div>
@@ -111,7 +111,7 @@ export default function Home() {
                             <div className="w-32 h-32 flex items-center">
                                 <Image
                                     alt="box"
-                                    src={require("../icon/main/box_icon.png")}
+                                    src={require("../assets/icon/main/box_icon.png")}
                                 ></Image>
                             </div>
                         </div>

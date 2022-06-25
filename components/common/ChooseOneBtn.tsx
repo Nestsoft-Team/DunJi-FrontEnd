@@ -1,34 +1,28 @@
-import { Dispatch, SetStateAction } from "react";
-
 type propsType = {
-    check1: boolean;
-    check2: boolean;
-    checkHandler1: Dispatch<SetStateAction<boolean>>;
-    checkHandler2: Dispatch<SetStateAction<boolean>>;
+    check: 0 | 1 | 2;
+    checkHandler: (index: number) => void;
 };
 
-export default function ChooseOneBtn({
-    check1,
-    check2,
-    checkHandler1,
-    checkHandler2,
-}: propsType) {
+export default function ChooseOneBtn({ check, checkHandler }: propsType) {
+    const arr = [
+        { type: "가능", value: 1 },
+        { type: "불가능", value: 0 },
+    ];
     return (
-        <div className=" rounded-standard_rounded overflow-hidden text-black  grid grid-cols-2 border-[0.1rem] border-font_gray items-center h-full">
-            <button
-                className={`border-r-[0.1rem]  border-font_gray h-full ${
-                    check1 && "text-white bg-font_gray"
-                }`}
-                onClick={() => checkHandler1(!check1)}
-            >
-                가능
-            </button>
-            <button
-                className={` h-full ${check2 && "text-white bg-font_gray"}`}
-                onClick={() => checkHandler2(!check2)}
-            >
-                불가능
-            </button>
+        <div className=" rounded-standard_rounded overflow-hidden text-black  grid grid-cols-2 border border-font_gray items-center h-full">
+            {arr.map((item, index) => (
+                <button
+                    key={index}
+                    className={`${
+                        index === 0 && "border-r"
+                    }  border-font_gray h-full ${
+                        check === item.value && "text-white bg-font_gray"
+                    }`}
+                    onClick={() => checkHandler(item.value)}
+                >
+                    {item.type}
+                </button>
+            ))}
         </div>
     );
 }

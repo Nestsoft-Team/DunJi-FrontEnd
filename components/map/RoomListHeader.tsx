@@ -84,7 +84,7 @@ export default function RoomListHeader({
             <div className="w-16 h-2 bg-border_color rounded-[2rem] my-2" />
             <div className="text-[1.5rem] flex items-center mt-2">
                 <Image
-                    src={require("icon/방.svg")}
+                    src={require("assets/icon/방.svg")}
                     width={25}
                     height={25}
                     alt="room"
