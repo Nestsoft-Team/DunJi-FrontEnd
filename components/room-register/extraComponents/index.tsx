@@ -8,7 +8,7 @@ import Title from "./Title";
 import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 
 export default function DetailRegister() {
-    const [state, dispatch] = useRoomRegisterRedux();
+    const [state] = useRoomRegisterRedux();
 
     return (
         <>

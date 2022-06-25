@@ -9,9 +9,9 @@ import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 export default function MoveDate() {
     const [state, dispatch] = useRoomRegisterRedux();
 
-    const periodFrom = state.PERIOD_FROM;
-    const periodTo = state.PERIOD_TO;
-    const negotiable = state.PERIOD_NEGOTIABLE;
+    const periodFrom = state.availPeriodFrom;
+    const periodTo = state.availPeriodTo;
+    const negotiable = state.availPeriodConsul;
 
     const checkHandler = () => {
         negotiable === 0
@@ -33,7 +33,7 @@ export default function MoveDate() {
             <div className="w-full flex gap-4 items-center h-room_register_btn_height1 text-4xl ">
                 <input
                     type="date"
-                    className="bg-white  w-full rounded-standard_rounded h-full text-xl pl-4 placeholder-black outline-0 "
+                    className="bg-white  w-full rounded-standard_rounded h-full text-xl px-4 placeholder-black outline-0 "
                     onChange={(e) => {
                         dispatch(dispatchPeriodFrom(e.target.value));
                     }}
@@ -42,7 +42,7 @@ export default function MoveDate() {
                 ~
                 <input
                     type="date"
-                    className="bg-white  w-full rounded-standard_rounded h-full text-xl pl-4 placeholder-black outline-0 "
+                    className="bg-white  w-full rounded-standard_rounded h-full text-xl px-4 placeholder-black outline-0 "
                     onChange={(e) => {
                         dispatch(dispatchPeriodTo(e.target.value));
                     }}

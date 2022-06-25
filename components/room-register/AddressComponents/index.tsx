@@ -12,7 +12,7 @@ import useRoomRegisterRedux from "hooks/useRoomRegisterRedux";
 export default function AddressRegister() {
     const [state, dispatch] = useRoomRegisterRedux();
 
-    const [detailAddress, setDetailAddress] = useState("");
+    const [detailAddress, setDetailAddress] = useState(state.detailAddress);
     const btnHandler = (val: boolean) => dispatch(dispatchPostCodeOpen(val));
     const inputHandler = (e: React.FormEvent<HTMLInputElement>) => {
         setDetailAddress(e.currentTarget.value);
@@ -47,7 +47,7 @@ export default function AddressRegister() {
                                 </>
                             )}
                             {state.POSTCODE_OPEN && <PostCode />}
-                            {state.MAIN_ADDRESS && !state.POSTCODE_OPEN && (
+                            {state.address && !state.POSTCODE_OPEN && (
                                 <>
                                     <div className="w-screen px-standard_pd ">
                                         <Map />
@@ -63,7 +63,7 @@ export default function AddressRegister() {
                                                         bg-component_white   rounded-2xl overflow-hidden"
                                         >
                                             <div className="p-4 border-b border-border_color">
-                                                {state.MAIN_ADDRESS}
+                                                {state.address}
                                             </div>
                                             <input
                                                 className="p-4 h-full w-full bg-transparent outline-0
