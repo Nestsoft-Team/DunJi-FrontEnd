@@ -18,6 +18,8 @@ type propsType = {
         }>
     >;
     innerHeight: number;
+    windowHeight: number;
+    setWindowHeight: Dispatch<SetStateAction<number>>;
 };
 
 export default function RoomListHeader({
@@ -26,9 +28,9 @@ export default function RoomListHeader({
     setTouchY,
     setMargin,
     innerHeight,
+    windowHeight,
+    setWindowHeight,
 }: propsType) {
-    const [windowHeight, setWindowHeight] = useState(0); // 화면 전체 y값
-
     // resize 이벤트 발생 시 화면 y값 변경
     useEffect(() => {
         setWindowHeight(window.innerHeight);
@@ -36,8 +38,9 @@ export default function RoomListHeader({
             setWindowHeight(window.innerHeight);
         };
         window.addEventListener("resize", getInnerHeight);
+        setTouchY(windowHeight);
         return () => window.removeEventListener("resize", getInnerHeight);
-    }, []);
+    }, [setWindowHeight, setTouchY, windowHeight]);
 
     //드래그시 margin 설정
     const touchHandler = (e: TouchEvent<HTMLDivElement>) => {
@@ -58,6 +61,7 @@ export default function RoomListHeader({
             setMargin({
                 marginTop: `calc(${innerHeight}px - 15.5rem)`,
             }); // 컴포넌트가 화면 하단만 가린 상태. 15.5rem(Header높이(9.5rem) + 하단 n개방 컴포넌트 헤더(6rem))을 제외한 margin
+            setTouchY(windowHeight);
         } else if (
             windowHeight * 0.35 < touchY &&
             touchY < windowHeight * 0.65
@@ -73,7 +77,7 @@ export default function RoomListHeader({
     return (
         <div
             className={`w-screen   bg-white flex flex-col items-center
-             border-b border-1 h-[6rem] `}
+             border-b border-1 h-[6rem] relative`}
             onTouchMove={touchHandler}
             onTouchEnd={touchEndHandler}
         >

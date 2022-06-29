@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Review() {
+type propsType = {
+    explain: string;
+};
+export default function Review({ explain }: propsType) {
     const [open, setOpen] = useState(false);
     const openHandler = () => setOpen(!open);
     return (
@@ -17,12 +20,6 @@ export default function Review() {
                     <div className="ml-4">
                         <div className="text-[1.5rem] font-[600]">둥지냉면</div>
                         <div className="flex gap-1 text-font_gray ">
-                            <span className="border-[0.1rem] w-24 text-center py-[0.1rem] rounded-[0.6rem]  border-border_color">
-                                대학생
-                            </span>
-                            <span className="border-[0.1rem] w-24 text-center py-[0.1rem] rounded-[0.6rem]  border-border_color">
-                                대학생
-                            </span>
                             <span className="border-[0.1rem] w-24 text-center py-[0.1rem] rounded-[0.6rem]  border-border_color">
                                 대학생
                             </span>
@@ -71,17 +68,7 @@ export default function Review() {
                             width={20}
                         />
                     </div>
-                    <div className="text-[1.5rem]">
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣㅁㄴㅇ러
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ님앎ㅇㄴ 가ㅣㅁㄴㅇ러님앎ㅇㄴ
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣㅁㄴㅇ러님
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣ
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣㅁㄴㅇ러님앎ㅇㄴ
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴㅁㄴㅇ러님앎ㅇㄴ
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣㅁㄴㅇ러님앎ㅇㄴ
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ앎ㅇㄴ 가ㅣㅁㄴㅇ러님앎ㅇㄴ
-                        가ㅣㅁㄴㅇ러님앎ㅇㄴ 가ㅣㅁㄴㅇ러님앎ㅇㄴ
-                    </div>
+                    <div className="text-[1.5rem] pb-4">{explain}</div>
                 </div>
             )}
         </div>
