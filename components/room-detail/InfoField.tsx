@@ -1,6 +1,6 @@
 type propsType = {
     title: string;
-    content: string;
+    content: string | number;
     last: boolean;
 };
 

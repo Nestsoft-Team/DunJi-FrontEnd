@@ -82,7 +82,7 @@ export default function Header({ setLatitude, setLongitude }: any) {
                                 width={22}
                                 height={22}
                                 alt="arrow"
-                                src={require("icon/화살표.svg")}
+                                src={require("assets/icon/화살표.svg")}
                             />
                         </a>
                     </Link>
@@ -103,7 +103,7 @@ export default function Header({ setLatitude, setLongitude }: any) {
                                     width={22}
                                     height={22}
                                     alt="x"
-                                    src={require("icon/검색_X.svg")}
+                                    src={require("assets/icon/검색_X.svg")}
                                 ></Image>
                             </div>
                         )}
@@ -116,7 +116,7 @@ export default function Header({ setLatitude, setLongitude }: any) {
                                 width={22}
                                 height={22}
                                 alt="필터"
-                                src={require("icon/필터.svg")}
+                                src={require("assets/icon/필터.svg")}
                             ></Image>
                         </a>
                     </Link>
@@ -134,10 +134,10 @@ export default function Header({ setLatitude, setLongitude }: any) {
                 <div
                     className={`top-[6rem] h-[calc(100vh-6rem)] absolute w-screen bg-background_beige z-20  border-t-2 overflow-scroll`}
                 >
-                    {searchResult.map((item) => (
+                    {searchResult.map((item: any) => (
                         <div
                             className="flex flex-col justify-evenly h-24 border-b-2 pl-8"
-                            key={item.index}
+                            key={Number(item.id)}
                             onClick={() => clickHander(item)}
                         >
                             <div className="text-2xl">

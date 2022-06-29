@@ -2,7 +2,11 @@ import { useState } from "react";
 import Map from "./Map";
 import Image from "next/image";
 
-export default function Location() {
+type propsType = {
+    latitude: number;
+    longitude: number;
+};
+export default function Location({ latitude, longitude }: propsType) {
     const [open, setOpen] = useState(false);
 
     const openHandler = () => setOpen(!open);
@@ -28,7 +32,7 @@ export default function Location() {
                     />
                 </div>
             </div>
-            {open && <Map />}
+            {open && <Map latitude={latitude} longitude={longitude} />}
         </div>
     );
 }

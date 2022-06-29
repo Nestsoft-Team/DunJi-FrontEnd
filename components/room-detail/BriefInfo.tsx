@@ -1,14 +1,28 @@
-export default function BriefInfo() {
+import useRoomSizeConvert from "hooks/useRoomSizeConvert";
+
+type propsType = {
+    roomSize: number;
+    floor: number;
+    entireFloor: number;
+    struct: string;
+};
+
+export default function BriefInfo({
+    roomSize,
+    floor,
+    entireFloor,
+    struct,
+}: propsType) {
     return (
         <div className="h-16 bg-transparent rounded-standard_rounded grid grid-cols-3 gap-1 overflow-hidden text-[1.4rem]">
             <div className="bg-component_white flex items-center justify-center">
-                25m2/평
+                {roomSize}m<sup>2</sup> / {useRoomSizeConvert(roomSize)}평
             </div>
             <div className="bg-component_white flex items-center justify-center">
-                2층 / 7층
+                {floor}층 / {entireFloor}층
             </div>
             <div className="bg-component_white flex items-center justify-center">
-                분리형 원룸
+                {struct}
             </div>
         </div>
     );

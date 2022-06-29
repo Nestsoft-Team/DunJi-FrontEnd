@@ -1,8 +1,8 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 import { all } from "redux-saga/effects";
-
 import roomRegister from "./roomRegister";
+import room from "./room";
 import { roomRegisterSaga } from "saga/roomRegisterSaga";
 import loading from "./loading";
 
@@ -15,6 +15,7 @@ const reducer = (state: any, action: any) => {
     }
     return combineReducers({
         roomRegister,
+        room,
         loading,
     })(state, action);
 };
