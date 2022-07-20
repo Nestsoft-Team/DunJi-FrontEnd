@@ -1,6 +1,11 @@
 ## 📎 우리들의 방구하기 프로젝트 "둥지"
 
-## 🎨 [흥부하우스 디자인 바로가기](https://xd.adobe.com/view/ca0b3f0b-c2a4-44ea-8509-8d23bc654afe-9f58/grid)
+## 🎨 [둥지 디자인 바로가기](https://xd.adobe.com/view/ca0b3f0b-c2a4-44ea-8509-8d23bc654afe-9f58/grid)
+
+둥지 디자인 방향성 : [둥지_디자인 방향성.pdf](https://github.com/Nestsoft-Team/DunJi-FrontEnd/files/9149745/_.pdf)
+
+
+<br>
 
 ## 📍 프로젝트 소개
 
